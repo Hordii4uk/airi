@@ -1,0 +1,955 @@
+
+<div class="homepage-slider" id="section-{{ section.id }}" data-section2="RevolutionSlider4">
+  <div id="rev_slider_17_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="home-04" data-source="gallery" style="margin:0px auto;background:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+    <!-- START REVOLUTION SLIDER 5.4.7 fullwidth mode -->
+    <div id="rev_slider_17_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.7">
+      <ul> 
+        {% for block in section.blocks %}
+        {% case block.type %}
+        {% when 'slide' %}
+        <!-- SLIDE  -->
+        <li data-index="rs-13-{{ forloop.index }}" data-transition="notransition" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{% if block.settings.slider_img %}{{ block.settings.slider_img | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/10x10{% endif %}"  data-rotate="0"  data-saveperformance="off"  data-title="" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+          <!-- MAIN IMAGE -->
+          <img src="{% if block.settings.slider_img %}{{ block.settings.slider_img | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/10x10{% endif %}" data-bgcolor='#f4f0ee' style='background:#f4f0ee' alt="{{ slider_img.alt }}"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+          <!-- LAYERS -->
+
+          <!-- LAYER NR. 1 -->
+          <div class="tp-caption     rev_group" 
+               id="slide-13-layer-3" 
+               data-x="['right','right','center','center']" data-hoffset="['0','0','0','5']" 
+               data-y="['top','top','middle','top']" data-voffset="['0','0','0','458']" 
+               data-width="['960','580','630','431']"
+               data-height="['970','768','266','175']"
+               data-whitespace="nowrap"
+
+               data-type="group" 
+               data-responsive_offset="on" 
+
+               data-frames='[{"delay":10,"speed":300,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+               data-margintop="[0,0,0,0]"
+               data-marginright="[0,0,0,0]"
+               data-marginbottom="[0,0,0,0]"
+               data-marginleft="[0,0,0,0]"
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[0,0,0,0]"
+               data-paddingright="[0,0,0,0]"
+               data-paddingbottom="[0,0,0,0]"
+               data-paddingleft="[0,0,0,0]"
+
+               style="z-index: 6; min-width: 960px; max-width: 960px; max-width: 970px; max-width: 970px; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: #ffffff; letter-spacing: 0px;">
+
+            {% if block.settings.slider_subtitle != '' %}
+            <!-- LAYER NR. 2 -->
+            <div class="tp-caption   tp-resizeme" 
+                 id="slide-13-layer-4" 
+                 data-x="['left','left','center','center']" data-hoffset="['70','40','0','0']" 
+                 data-y="['middle','middle','middle','top']" data-voffset="['-100','-100','-87','0']" 
+                 data-fontsize="['24','20','20','18']"
+                 data-width="none"
+                 data-height="none"
+                 data-whitespace="nowrap"
+
+                 data-type="text" 
+                 data-responsive_offset="on" 
+
+                 data-frames='[{"delay":"+690","speed":1000,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                 data-margintop="[0,0,0,0]"
+                 data-marginright="[0,0,0,0]"
+                 data-marginbottom="[0,0,0,0]"
+                 data-marginleft="[0,0,0,0]"
+                 data-textAlign="['inherit','inherit','inherit','inherit']"
+                 data-paddingtop="[0,0,0,0]"
+                 data-paddingright="[0,0,0,0]"
+                 data-paddingbottom="[0,0,0,0]"
+                 data-paddingleft="[0,0,0,0]"
+
+                 style="z-index: 7; white-space: nowrap; font-size: 24px; line-height: 30px; font-weight: 400; color: {{ block.settings.subtitle_color }}; letter-spacing: 0px;font-family:Montserrat;">{{ block.settings.slider_subtitle }} </div>
+
+
+            {% endif %}
+
+            {% if block.settings.slider_title != '' %}
+            <!-- LAYER NR. 3 -->
+            <div class="tp-caption   tp-resizeme" 
+                 id="slide-13-layer-5" 
+                 data-x="['left','left','center','center']" data-hoffset="['70','40','0','0']" 
+                 data-y="['middle','middle','middle','top']" data-voffset="['-17','-26','-26','33']" 
+                 data-fontsize="['130','80','80','50']"
+                 data-lineheight="['130','80','80','60']"
+                 data-width="none"
+                 data-height="none"
+                 data-whitespace="nowrap"
+
+                 data-type="text" 
+                 data-responsive_offset="on" 
+
+                 data-frames='[{"delay":"+990","speed":1000,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                 data-margintop="[0,0,0,0]"
+                 data-marginright="[0,0,0,0]"
+                 data-marginbottom="[0,0,0,0]"
+                 data-marginleft="[0,0,0,0]"
+                 data-textAlign="['inherit','inherit','inherit','inherit']"
+                 data-paddingtop="[0,0,0,0]"
+                 data-paddingright="[0,0,0,0]"
+                 data-paddingbottom="[0,0,0,0]"
+                 data-paddingleft="[0,0,0,0]"
+
+                 style="z-index: 8; white-space: nowrap; font-size: 130px; line-height: 130px; font-weight: 700; color: {{ block.settings.title_color }}; letter-spacing: 0px;font-family:Playfair Display;">{{ block.settings.slider_title }}</div>
+
+            {% endif %}
+            {% if block.settings.button_title != '' %}
+            <!-- LAYER NR. 4 -->
+            <a class="tp-caption LaBtnOutlineBlack rev-btn " href="{{ block.settings.button_url }}" 
+               id="slide-13-layer-6" 
+               data-x="['left','left','center','center']" data-hoffset="['70','40','0','0']" 
+               data-y="['middle','middle','middle','top']" data-voffset="['100','100','100','109']" 
+               data-width="none"
+               data-height="none"
+               data-whitespace="nowrap"
+
+               data-type="button" 
+               data-responsive_offset="on" 
+               data-responsive="off"
+               data-frames='[{"delay":"+1390","speed":1000,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(255,255,255);bg:rgb(40,40,40);bw:2 2 2 2;"}]'
+               data-margintop="[0,0,0,0]"
+               data-marginright="[0,0,0,0]"
+               data-marginbottom="[0,0,0,0]"
+               data-marginleft="[0,0,0,0]"
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[15,15,15,12]"
+               data-paddingright="[45,45,45,35]"
+               data-paddingbottom="[15,15,15,12]"
+               data-paddingleft="[45,45,45,35]"
+
+
+               style="z-index: 9; white-space: nowrap; color: {{ block.settings.button_text_color }}; background-color:{{ block.settings.button_bg_color }}; border-color: {{ block.settings.button_border_color }} ;border-width:2px 2px 2px 2px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">{{ block.settings.button_title }} </a>
+
+            {% endif %}
+          </div>
+
+          <!-- LAYER NR. 5 -->
+          <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme" 
+               id="slide-13-layer-2" 
+               data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']" 
+               data-y="['top','top','top','top']" data-voffset="['0','0','0','0']" 
+               data-width="['50%','450','300','480']"
+               data-height="['970','768','960','400']"
+               data-whitespace="nowrap"
+               data-visibility="['on','on','off','on']"
+
+               data-type="shape" 
+               data-basealign="slide" 
+               data-responsive_offset="on" 
+               data-wrapper_class="tp-shape-fullwidth" 
+
+               data-frames='[{"delay":200,"speed":1500,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[0,0,0,0]"
+               data-paddingright="[0,0,0,0]"
+               data-paddingbottom="[0,0,0,0]"
+               data-paddingleft="[0,0,0,0]"
+
+               style="z-index: 5;">
+
+            <div class="tp-element-background" style=" background: url('{% if block.settings.main_img %}{{ block.settings.main_img | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/960x970{% endif %}') no-repeat center center; background-size: cover; opacity: 1;"></div> 
+
+          </div>
+        </li>
+
+        {% when 'slide-2' %}
+        <!-- SLIDE  -->
+        <li data-index="rs-14-{{ forloop.index }}" data-transition="notransition" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{% if block.settings.slider_img_2 %}{{ block.settings.slider_img_2 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/10x7110{% endif %}"  data-rotate="0"  data-saveperformance="off"  data-title="" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+          <!-- MAIN IMAGE -->
+          <img src="{% if block.settings.slider_img_2 %}{{ block.settings.slider_img_2 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/10x7110{% endif %}" data-bgcolor='#f4f0ee' style='background:#f4f0ee' alt="{{ slider_img_2.alt }}"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+          <!-- LAYERS -->
+
+          <!-- LAYER NR. 6 -->
+          <div class="tp-caption     rev_group" 
+               id="slide-14-layer-3" 
+               data-x="['right','right','center','center']" data-hoffset="['0','0','0','5']" 
+               data-y="['top','top','middle','top']" data-voffset="['0','0','0','458']" 
+               data-width="['960','580','630','431']"
+               data-height="['970','768','266','175']"
+               data-whitespace="nowrap"
+
+               data-type="group" 
+               data-responsive_offset="on" 
+
+               data-frames='[{"delay":10,"speed":300,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+               data-margintop="[0,0,0,0]"
+               data-marginright="[0,0,0,0]"
+               data-marginbottom="[0,0,0,0]"
+               data-marginleft="[0,0,0,0]"
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[0,0,0,0]"
+               data-paddingright="[0,0,0,0]"
+               data-paddingbottom="[0,0,0,0]"
+               data-paddingleft="[0,0,0,0]"
+
+               style="z-index: 6; min-width: 960px; max-width: 960px; max-width: 970px; max-width: 970px; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: #ffffff; letter-spacing: 0px;">
+
+            {% if block.settings.slider_subtitle_2 != '' %}
+            <!-- LAYER NR. 7 -->
+            <div class="tp-caption   tp-resizeme" 
+                 id="slide-14-layer-4" 
+                 data-x="['left','left','center','center']" data-hoffset="['70','40','0','0']" 
+                 data-y="['middle','middle','middle','top']" data-voffset="['-100','-100','-87','0']" 
+                 data-fontsize="['24','20','20','18']"
+                 data-width="none"
+                 data-height="none"
+                 data-whitespace="nowrap"
+
+                 data-type="text" 
+                 data-responsive_offset="on" 
+
+                 data-frames='[{"delay":"+690","speed":1000,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                 data-margintop="[0,0,0,0]"
+                 data-marginright="[0,0,0,0]"
+                 data-marginbottom="[0,0,0,0]"
+                 data-marginleft="[0,0,0,0]"
+                 data-textAlign="['inherit','inherit','inherit','inherit']"
+                 data-paddingtop="[0,0,0,0]"
+                 data-paddingright="[0,0,0,0]"
+                 data-paddingbottom="[0,0,0,0]"
+                 data-paddingleft="[0,0,0,0]"
+
+                 style="z-index: 7; white-space: nowrap; font-size: 24px; line-height: 30px; font-weight: 400; color: {{ block.settings.subtitle_color }}; letter-spacing: 0px;font-family:Montserrat;">{{ block.settings.slider_subtitle_2 }} </div>
+
+            {% endif %}
+
+            {% if block.settings.slider_title_2 != '' %}
+            <!-- LAYER NR. 8 -->
+            <div class="tp-caption   tp-resizeme" 
+                 id="slide-14-layer-5" 
+                 data-x="['left','left','center','center']" data-hoffset="['70','40','0','0']" 
+                 data-y="['middle','middle','middle','top']" data-voffset="['-17','-26','-26','33']" 
+                 data-fontsize="['130','80','80','50']"
+                 data-lineheight="['130','80','80','60']"
+                 data-width="none"
+                 data-height="none"
+                 data-whitespace="nowrap"
+
+                 data-type="text" 
+                 data-responsive_offset="on" 
+
+                 data-frames='[{"delay":"+990","speed":1000,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                 data-margintop="[0,0,0,0]"
+                 data-marginright="[0,0,0,0]"
+                 data-marginbottom="[0,0,0,0]"
+                 data-marginleft="[0,0,0,0]"
+                 data-textAlign="['inherit','inherit','inherit','inherit']"
+                 data-paddingtop="[0,0,0,0]"
+                 data-paddingright="[0,0,0,0]"
+                 data-paddingbottom="[0,0,0,0]"
+                 data-paddingleft="[0,0,0,0]"
+
+                 style="z-index: 8; white-space: nowrap; font-size: 130px; line-height: 130px; font-weight: 700; color: {{ block.settings.title_color }}; letter-spacing: 0px;font-family:Playfair Display;">{{ block.settings.slider_title_2 }} </div>
+            {% endif %}
+            {% if block.settings.button_title_2 != '' %}
+            <!-- LAYER NR. 9 -->
+            <a class="tp-caption LaBtnOutlineBlack rev-btn " href="{{ block.settings.button_url_2 }}" 
+               id="slide-14-layer-6" 
+               data-x="['left','left','center','center']" data-hoffset="['70','40','0','0']" 
+               data-y="['middle','middle','middle','top']" data-voffset="['100','100','100','109']" 
+               data-width="none"
+               data-height="none"
+               data-whitespace="nowrap"
+
+               data-type="button" 
+               data-responsive_offset="on" 
+               data-responsive="off"
+               data-frames='[{"delay":"+1390","speed":1000,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(255,255,255);bg:rgb(40,40,40);bw:2 2 2 2;"}]'
+               data-margintop="[0,0,0,0]"
+               data-marginright="[0,0,0,0]"
+               data-marginbottom="[0,0,0,0]"
+               data-marginleft="[0,0,0,0]"
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[15,15,15,12]"
+               data-paddingright="[45,45,45,35]"
+               data-paddingbottom="[15,15,15,12]"
+               data-paddingleft="[45,45,45,35]"
+
+               style="z-index: 9; white-space: nowrap; color: {{ block.settings.button_text_color }}; background-color:{{ block.settings.button_bg_color }}; border-color: {{ block.settings.button_border_color }} ;border-width:2px 2px 2px 2px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">{{ block.settings.button_title_2 }} </a>
+            {% endif %}
+          </div>
+
+          <!-- LAYER NR. 10 -->
+          <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme" 
+               id="slide-14-layer-2" 
+               data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']" 
+               data-y="['top','top','top','top']" data-voffset="['0','0','0','0']" 
+               data-width="['50%','450','300','480']"
+               data-height="['970','768','960','400']"
+               data-whitespace="nowrap"
+               data-visibility="['on','on','off','on']"
+
+               data-type="shape" 
+               data-basealign="slide" 
+               data-responsive_offset="on" 
+               data-wrapper_class="tp-shape-fullwidth" 
+
+               data-frames='[{"delay":200,"speed":1500,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[0,0,0,0]"
+               data-paddingright="[0,0,0,0]"
+               data-paddingbottom="[0,0,0,0]"
+               data-paddingleft="[0,0,0,0]"
+
+               style="z-index: 5;">
+            <div class="tp-element-background" style=" background: url('{% if block.settings.main_img_2 %}{{ block.settings.main_img_2 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/960x970{% endif %}') no-repeat center center; background-size: cover; opacity: 1;"></div> 
+          </div>
+        </li>
+
+        {% when 'slide-3' %}
+        <!-- SLIDE  -->
+        <li data-index="rs-15-{{ forloop.index }}" data-transition="notransition" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{% if block.settings.slider_img_3 %}{{ block.settings.slider_img_3 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/10x10{% endif %}"  data-rotate="0"  data-saveperformance="off"  data-title="" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+          <!-- MAIN IMAGE -->
+          <img src="{% if block.settings.slider_img_3 %}{{ block.settings.slider_img_3 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/10x10{% endif %}" data-bgcolor='#f4f0ee' style='background:#f4f0ee' alt="{{ slider_img_3.alt }}"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+          <!-- LAYERS -->
+
+          <!-- LAYER NR. 11 -->
+          <div class="tp-caption     rev_group" 
+               id="slide-15-layer-3" 
+               data-x="['right','right','center','center']" data-hoffset="['0','0','0','5']" 
+               data-y="['top','top','middle','top']" data-voffset="['0','0','0','458']" 
+               data-width="['960','580','630','431']"
+               data-height="['970','768','266','175']"
+               data-whitespace="nowrap"
+
+               data-type="group" 
+               data-responsive_offset="on" 
+
+               data-frames='[{"delay":10,"speed":300,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+               data-margintop="[0,0,0,0]"
+               data-marginright="[0,0,0,0]"
+               data-marginbottom="[0,0,0,0]"
+               data-marginleft="[0,0,0,0]"
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[0,0,0,0]"
+               data-paddingright="[0,0,0,0]"
+               data-paddingbottom="[0,0,0,0]"
+               data-paddingleft="[0,0,0,0]"
+
+               style="z-index: 6; min-width: 960px; max-width: 960px; max-width: 970px; max-width: 970px; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: #ffffff; letter-spacing: 0px;">
+
+            {% if block.settings.slider_subtitle_3 != '' %}
+            <!-- LAYER NR. 12 -->
+            <div class="tp-caption   tp-resizeme" 
+                 id="slide-15-layer-4" 
+                 data-x="['left','left','center','center']" data-hoffset="['70','40','0','0']" 
+                 data-y="['middle','middle','middle','top']" data-voffset="['-100','-100','-87','0']" 
+                 data-fontsize="['24','20','20','18']"
+                 data-width="none"
+                 data-height="none"
+                 data-whitespace="nowrap"
+
+                 data-type="text" 
+                 data-responsive_offset="on" 
+
+                 data-frames='[{"delay":"+690","speed":1000,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                 data-margintop="[0,0,0,0]"
+                 data-marginright="[0,0,0,0]"
+                 data-marginbottom="[0,0,0,0]"
+                 data-marginleft="[0,0,0,0]"
+                 data-textAlign="['inherit','inherit','inherit','inherit']"
+                 data-paddingtop="[0,0,0,0]"
+                 data-paddingright="[0,0,0,0]"
+                 data-paddingbottom="[0,0,0,0]"
+                 data-paddingleft="[0,0,0,0]"
+
+                 style="z-index: 7; white-space: nowrap; font-size: 24px; line-height: 30px; font-weight: 400; color: {{ block.settings.subtitle_color }}; letter-spacing: 0px;font-family:Montserrat;">{{ block.settings.slider_subtitle_3 }} </div>
+            {% endif %}
+            {% if block.settings.slider_title_3 != '' %}
+            <!-- LAYER NR. 13 -->
+            <div class="tp-caption   tp-resizeme" 
+                 id="slide-15-layer-5" 
+                 data-x="['left','left','center','center']" data-hoffset="['70','40','0','0']" 
+                 data-y="['middle','middle','middle','top']" data-voffset="['-17','-26','-26','33']" 
+                 data-fontsize="['130','80','80','50']"
+                 data-lineheight="['130','80','80','60']"
+                 data-width="none"
+                 data-height="none"
+                 data-whitespace="nowrap"
+
+                 data-type="text" 
+                 data-responsive_offset="on" 
+
+                 data-frames='[{"delay":"+990","speed":1000,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                 data-margintop="[0,0,0,0]"
+                 data-marginright="[0,0,0,0]"
+                 data-marginbottom="[0,0,0,0]"
+                 data-marginleft="[0,0,0,0]"
+                 data-textAlign="['inherit','inherit','inherit','inherit']"
+                 data-paddingtop="[0,0,0,0]"
+                 data-paddingright="[0,0,0,0]"
+                 data-paddingbottom="[0,0,0,0]"
+                 data-paddingleft="[0,0,0,0]"
+
+                 style="z-index: 8; white-space: nowrap; font-size: 130px; line-height: 130px; font-weight: 700; color: {{ block.settings.title_color }}; letter-spacing: 0px;font-family:Playfair Display;">{{ block.settings.slider_title_3 }} </div>
+
+            {% endif %}
+            {% if block.settings.button_title_3 != '' %}
+            <!-- LAYER NR. 14 -->
+            <a class="tp-caption LaBtnOutlineBlack rev-btn " href="{{ block.settings.button_url_3 }}" 
+               id="slide-15-layer-6" 
+               data-x="['left','left','center','center']" data-hoffset="['70','40','0','0']" 
+               data-y="['middle','middle','middle','top']" data-voffset="['100','100','100','109']" 
+               data-width="none"
+               data-height="none"
+               data-whitespace="nowrap"
+
+               data-type="button" 
+               data-responsive_offset="on" 
+               data-responsive="off"
+               data-frames='[{"delay":"+1390","speed":1000,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(255,255,255);bg:rgb(40,40,40);bw:2 2 2 2;"}]'
+               data-margintop="[0,0,0,0]"
+               data-marginright="[0,0,0,0]"
+               data-marginbottom="[0,0,0,0]"
+               data-marginleft="[0,0,0,0]"
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[15,15,15,12]"
+               data-paddingright="[45,45,45,35]"
+               data-paddingbottom="[15,15,15,12]"
+               data-paddingleft="[45,45,45,35]"
+
+               style="z-index: 9; white-space: nowrap;  color: {{ block.settings.button_text_color }}; background-color:{{ block.settings.button_bg_color }}; border-color: {{ block.settings.button_border_color }} ;border-width:2px 2px 2px 2px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">{{ block.settings.button_title_3 }} </a>
+            {% endif %}
+          </div>
+
+          <!-- LAYER NR. 15 -->
+          <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme" 
+               id="slide-15-layer-2" 
+               data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']" 
+               data-y="['top','top','top','top']" data-voffset="['0','0','0','0']" 
+               data-width="['50%','450','300','480']"
+               data-height="['970','768','960','400']"
+               data-whitespace="nowrap"
+               data-visibility="['on','on','off','on']"
+
+               data-type="shape" 
+               data-basealign="slide" 
+               data-responsive_offset="on" 
+               data-wrapper_class="tp-shape-fullwidth" 
+
+               data-frames='[{"delay":200,"speed":1500,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[0,0,0,0]"
+               data-paddingright="[0,0,0,0]"
+               data-paddingbottom="[0,0,0,0]"
+               data-paddingleft="[0,0,0,0]"
+
+               style="z-index: 5;">
+            <div class="tp-element-background" style=" background: url('{% if block.settings.main_img_3 %}{{ block.settings.main_img_3 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/960x970{% endif %}') no-repeat center center; background-size: cover; opacity: 1;"></div> 
+          </div>
+        </li>
+        {% endcase %}
+        {% endfor %}
+
+      </ul>
+      <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div> 
+    </div>
+  </div><!-- END REVOLUTION SLIDER -->
+</div>
+
+
+{%- style -%}
+  #section-{{ section.id }}{
+    {%- for block in section.blocks -%}
+    {%- case block.type -%}
+    {%- when 'section_margin' -%}
+    margin-top: {{ block.settings.section_margin_top }}px;
+    margin-bottom: {{ block.settings.section_margin_bottom }}px;
+    {%- when 'section_padding' -%}
+    padding-top: {{ block.settings.section_padding_top }}px;
+    padding-bottom: {{ block.settings.section_padding_bottom }}px;
+    {%- when 'section_background' -%}    
+    background: {{ block.settings.section_bg_color }} 
+      {%- if block.settings.section_bg_image -%}url("{{ block.settings.section_bg_image | img_url: 'master' }}"){%- endif -%} no-repeat scroll center center / cover;
+    {%- endcase -%}
+    {%- endfor -%}
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {% case block.type %}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_md }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_md }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_md }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_md }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+  @media (max-width: 767px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {%- case block.type -%}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_xs }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_xs }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_xs }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_xs }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+{%- endstyle -%}
+
+
+
+
+{% schema %}
+  {
+    "name": "Slideshow 4",
+    "settings": [
+		
+	],
+	"blocks":[
+	   {
+          "type": "slide",
+          "name": "Slide(Style 1)",
+          "settings": [
+			    {
+                    "type": "image_picker",
+                    "id": "slider_img",
+                    "label": "Image",
+                    "info": "Recommended Size: 10 x 10px"
+                },
+				{
+                    "type": "text",
+                    "id": "slider_subtitle",
+                    "label": "Slider Subtitle",
+                    "default": "Autumn/ Winter 2018",
+					"info": "Use of <strong>"
+                },
+				{
+                    "type": "text",
+                    "id": "slider_title",
+                    "label": "Slider Title",
+                    "default": "New VAXG",
+					"info": "Use of <strong>"
+                },
+				{
+                    "type": "text",
+                    "id": "button_title",
+                    "label": "Button Title", 
+                    "default": "Shop now"
+                },
+				{
+                    "type": "url",
+                    "id": "button_url",
+                    "label": "URL"
+                },
+          		{
+                    "type": "header",
+                    "content": "Main Image"
+                },
+				{
+                    "type": "image_picker",
+                    "id": "main_img",
+                    "label": "Image",
+                    "info": "Recommended Size: 960 x 970px"
+                },
+                  {
+                    "type": "header",
+                    "content": "Color"
+                  },
+                  {
+                    "type": "color",
+                    "id": "subtitle_color",
+                    "label": "Sub-title Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "title_color",
+                    "label": "Title Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_text_color",
+                    "label": "Button Text Color",
+                    "default": "#fff"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_bg_color",
+                    "label": "Button BG Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_border_color",
+                    "label": "Button Border Color",
+                    "default": "#282828"
+                  }
+            ]
+      	 },
+         {
+            "type": "slide-2",
+            "name": "Slide 2(Style 2)",
+            "settings": [
+                  {
+                      "type": "image_picker",
+                      "id": "slider_img_2",
+                      "label": "Image",
+                      "info": "Recommended Size: 10 x 10px"
+                  },
+                  {
+                      "type": "text",
+                      "id": "slider_subtitle_2",
+                      "label": "Slider Subtitle",
+                      "default": "Autumn/ Winter 2018"
+                  },
+                  {
+                      "type": "text",
+                      "id": "slider_title_2",
+                      "label": "Slider Title",
+                      "default": "Wild Garden"
+                  },
+                  {
+                      "type": "text",
+                      "id": "button_title_2",
+                      "label": "Button Title",
+                      "default": "Shop now"
+                  },
+                  {
+                      "type": "url",
+                      "id": "button_url_2",
+                      "label": "URL"
+                  },
+                  {
+                      "type": "header",
+                      "content": "Main Image"
+                  },
+                  {
+                      "type": "image_picker",
+                      "id": "main_img_2",
+                      "label": "Image",
+                      "info": "Recommended Size: 960 x 970px"
+                  },
+                  {
+                    "type": "header",
+                    "content": "Color"
+                  },
+                  {
+                    "type": "color",
+                    "id": "subtitle_color",
+                    "label": "Sub-title Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "title_color",
+                    "label": "Title Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_text_color",
+                    "label": "Button Text Color",
+                    "default": "#fff"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_bg_color",
+                    "label": "Button BG Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_border_color",
+                    "label": "Button Border Color",
+                    "default": "#282828"
+                  }
+              ]
+           },
+           {
+              "type": "slide-3",
+              "name": "Slide 3(Style 3)",
+              "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "slider_img_3",
+                        "label": "Image",
+                        "info": "Recommended Size: 10 x 10px"
+                    },
+                    {
+                        "type": "text",
+                        "id": "slider_subtitle_3",
+                        "label": "Slider Subtitle",
+                        "default": "Autumn/ Winter 2018"
+                    },
+                    {
+                        "type": "text",
+                        "id": "slider_title_3",
+                        "label": "Slider Title",
+                        "default": "Fall Winter"
+                    },
+                    {
+                        "type": "text",
+                        "id": "button_title_3",
+                        "label": "Button Title",
+                        "default": "Shop now"
+                    },
+                    {
+                        "type": "url",
+                        "id": "button_url_3",
+                        "label": "URL"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Main Image"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "main_img_3",
+                        "label": "Image",
+                        "info": "Recommended Size: 960 x 970px"
+                    },
+                  {
+                    "type": "header",
+                    "content": "Color"
+                  },
+                  {
+                    "type": "color",
+                    "id": "subtitle_color",
+                    "label": "Sub-title Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "title_color",
+                    "label": "Title Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_text_color",
+                    "label": "Button Text Color",
+                    "default": "#fff"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_bg_color",
+                    "label": "Button BG Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_border_color",
+                    "label": "Button Border Color",
+                    "default": "#282828"
+                  }
+
+                ]
+        },
+	   {
+          "type": "section_padding",
+          "name": "Section Padding",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 100
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 80
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 60
+			}
+          ]
+       },
+	   {
+          "type": "section_margin",
+          "name": "Section Margin",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			}
+          ]
+       },
+	   {
+          "type": "section_background",
+          "name": "Section Background",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "image_picker",
+			  "id": "section_bg_image",
+			  "label": "BG Image"
+			},
+			{
+			  "type": "color",
+			  "id": "section_bg_color",
+			  "label": "BG Color",
+			  "default": "#ffffff"
+			}
+          ]
+       }
+	],
+	"presets": [
+		{
+		  "name": "Slideshow 4",
+		  "category": " slideshow",
+		  "blocks":[
+				{
+					"type": "slide"
+				},
+				{
+					"type": "slide-2"
+				},
+				{
+					"type": "slide-3"
+				},
+				{
+					"type": "section_padding"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

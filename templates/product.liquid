@@ -1,0 +1,15 @@
+
+<section class="single-product-page-content">
+  <div class="{% if settings.container_style_sidebar == 'sidebar_style_1' %}container {% else %} container-fluid{% endif %}">
+    <div class="row {% if settings.content_sidebar_handle == 'content_sidebar_in_left' %}flex-row-reverse{% endif %}">
+      <div class="col-lg-12 col-md-12">
+        {% section 'product-template' %}
+        {% section 'single-product-tab' %}
+        {% section 'upsell-product' %}
+        {% section 'related-product' %}
+      </div>
+      {% section 'product-sidebar' %}
+    </div>
+  </div>
+</section>
+

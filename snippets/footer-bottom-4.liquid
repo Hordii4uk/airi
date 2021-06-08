@@ -1,0 +1,57 @@
+{% if section.settings.footer_bottom_enable %}
+<div class="row footer-bottom" id="footer-bottom">
+  <div class="col-12 text-{% if section.settings.text_style == 'text_style_left' %}left{% elsif section.settings.text_style == 'text_style_center' %}center{% elsif section.settings.text_style == 'text_style_right' %}right{% endif %}">
+    <div class="copyright-text">{{ section.settings.copy_ritht_text }}</div>
+  </div>
+</div>
+{% endif %}
+
+
+<style>
+  
+       #section-{{ section.id }} #footer-bottom.footer-bottom  .copyright-text p{
+  	color:  {{ section.settings.Copy_right_color }};
+  }
+    #section-{{ section.id }} #footer-bottom.footer-bottom  .copyright-text p a{
+  	color:  {{ section.settings.Copy_anchor_color }};
+  }
+  
+    #section-{{ section.id }} #footer-bottom.footer-bottom  .copyright-text p a:hover{
+  	color:  {{ section.settings.Copy_anchor_hover_color }};
+  }
+    #section-{{ section.id }} #footer-bottom.footer-bottom {
+    background-color: {{ section.settings.bg_color_3 }};
+}
+    #section-{{ section.id }} #footer-bottom.footer-bottom{
+    padding-top:{{ section.settings.section_padding_top_4 }}rem;
+  }
+
+  #section-{{ section.id }} #footer-bottom.footer-bottom{
+    padding-bottom:{{ section.settings.section_padding_bottom_4 }}rem;
+  }
+
+
+  @media (min-width: 768px) and (max-width: 991px){
+
+    #section-{{ section.id }} #footer-bottom.footer-bottom{
+      padding-top:{{ section.settings.section_padding_top_md_4 }}rem;
+    }
+
+    #section-{{ section.id }} #footer-bottom.footer-bottom{
+      padding-bottom:{{ section.settings.section_padding_bottom_md_4 }}rem;
+    }
+
+  }
+  @media (max-width: 767px) {
+
+    #section-{{ section.id }} #footer-bottom.footer-bottom{
+      padding-top:{{ section.settings.section_padding_top_xs_4 }}rem;
+    }
+
+    #section-{{ section.id }} #footer-bottom.footer-bottom{
+      padding-bottom:{{ section.settings.section_padding_bottom_xs_4 }}rem;
+    }
+  }
+
+
+</style> 

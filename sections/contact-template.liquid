@@ -1,0 +1,596 @@
+
+<div class="page-content-inner" id="section-{{ section.id }}">
+  {% if section.settings.contact_style == 'contact_1' %}
+  <div class="{% if section.settings.container_style == 'style_1' %}container {% else %} container-fluid{% endif %}">
+    <div class="row {% if section.settings.sidebar_handle == 'left_banner_handle' %}flex-row-reverse{% endif %}">
+
+
+      <div class="col-md-7 mb-sm--30">
+        {% include 'contact_page_form' %}
+      </div>
+
+      <div class="col-md-5 mb-sm--30">
+        {% include 'contact_location' %}
+        {% if section.settings.contact_social_enable %}
+        <!-- Social Icons Start Here -->
+        <ul class="social body-color">
+          {% include 'contact-social-icon' %}
+        </ul>
+        <!-- Social Icons End Here -->
+        {% endif %}
+
+      </div>
+
+    </div>
+  </div>
+  {% if section.settings.google_map_enable %}
+{% include 'google-map' %}
+  {% endif %}
+  
+  {% else %}
+  
+  <div class="{% if section.settings.container_style == 'style_1' %}container {% else %} container-fluid{% endif %}">
+    <div class="row">
+      <div class="col-md-7 offset-xl-1 order-md-2 mb-sm--30">
+        
+       {% include 'contact_page_form-2' %}
+        
+      </div>
+      <div class="col-md-5 col-xl-4 order-md-1">
+         {% include 'contact_location' %}
+        <!-- Contact info widget end here -->
+        {% if section.settings.contact_social_enable %}
+        <!-- Social Icons Start Here -->
+        <ul class="social body-color mb--45 mb-sm--35">
+          {% include 'contact-social-icon' %}
+        </ul>
+        <!-- Social Icons End Here -->
+        {% endif %}
+        {% if section.settings.google_map_enable %}
+        {% include 'google-map-2' %}
+        {% endif %}
+
+        </div>
+        <!-- Google Map Start Here -->
+      </div>
+  </div>
+  
+  {% endif %}
+  
+</div>
+
+
+{%- style -%}
+  #section-{{ section.id }}{
+    {%- for block in section.blocks -%}
+    {%- case block.type -%}
+    {%- when 'section_margin' -%}
+    margin-top: {{ block.settings.section_margin_top }}px;
+    margin-bottom: {{ block.settings.section_margin_bottom }}px;
+    {%- when 'section_padding' -%}
+    padding-top: {{ block.settings.section_padding_top }}px;
+    padding-bottom: {{ block.settings.section_padding_bottom }}px;
+    {%- when 'section_background' -%}    
+    background: {{ block.settings.section_bg_color }} 
+      {%- if block.settings.section_bg_image -%}url("{{ block.settings.section_bg_image | img_url: 'master' }}"){%- endif -%} no-repeat scroll center center / cover;
+    {%- endcase -%}
+    {%- endfor -%}
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {% case block.type %}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_md }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_md }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_md }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_md }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+  @media (max-width: 767px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {%- case block.type -%}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_xs }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_xs }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_xs }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_xs }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+{%- endstyle -%}
+
+
+{% schema %}
+  {
+    "name": "Contact Template",
+    "settings": [
+		{
+            "type": "header",
+            "content": "Container Style"
+        },
+        {
+            "type": "radio",
+            "id": "container_style",
+            "label": "Container Style",
+            "options":[
+               {
+                   "value":"style_1",
+                   "label": "Container"
+               },
+               {
+                   "value":"style_2",
+                   "label": "Container Fluid"
+               }
+             ],
+
+            "default": "style_1"
+        },
+        {
+          "type": "header",
+          "content": "Information"
+        },
+        {
+          "type": "radio",
+          "id": "sidebar_handle",
+          "label": "Information Position -",
+          "options": [
+            {
+              "label": "Left",
+              "value": "left_banner_handle"
+            },
+            {
+              "label": "Right",
+              "value": "right_banner_handle"
+            }
+          ],
+          "default": "right_banner_handle"
+        },
+		{
+            "type": "header",
+            "content": "Contact Page"
+        },
+        {
+            "type": "radio",
+            "id": "contact_style",
+            "label": "Contact Style",
+            "options":[
+               {
+                   "value":"contact_1",
+                   "label": "Contact Page 1"
+               },
+               {
+                   "value":"contact_2",
+                   "label": "Contact Page 2"
+               }
+             ],
+
+            "default": "contact_1"
+        },
+		{
+          "type": "header",
+          "content": "Contact Form"
+        },
+        {
+          "type": "text",
+          "id": "contact_form_title",
+          "label": "Contact Form Title",
+          "default": "Get in touch"
+        },
+        {
+          "type": "textarea",
+          "id": "contact_form_description",
+          "label": "Contact Description",
+          "default": "Praesent sed ex vel mauris eleifend mollis."
+        },
+        {
+          "type": "text",
+          "id": "name_placeholder",
+          "label": "Name",
+          "default": "Name"
+        },
+        {
+          "type": "text",
+          "id": "email_placeholder",
+          "label": "Email",
+          "default": "Email"
+        },
+        {
+          "type": "text",
+          "id": "subject_placeholder",
+          "label": "Subject",
+          "default": "Subject"
+        },
+        {
+          "type": "text",
+          "id": "message_placeholder",
+          "label": "Massage",
+          "default": "Message"
+        },
+        {
+          "type": "text",
+          "id": "button_title",
+          "label": "Buttom Title",
+          "default": "Send"
+        },
+		{
+          "type": "header",
+          "content": "Store Location"
+        },
+        {
+          "type": "text",
+          "id": "location_title",
+          "label": "Location Title",
+          "default": "Contact info"
+        },
+		{
+          "type": "header",
+          "content": "Store Location 1"
+        },
+        {
+          "type": "text",
+          "id": "store_title_1",
+          "label": "Title 1",
+          "default": "Postal Address"
+        },
+        {
+          "type": "textarea",
+          "id": "store_description_1",
+          "label": "Store Description",
+          "default": "PO Box 16122 Collins Street West <br> Victoria 8007 Australia",
+		  "info": "Use of <br>"
+        },
+		{
+          "type": "header",
+          "content": "Store Location 2"
+        },
+        {
+          "type": "text",
+          "id": "store_title_2",
+          "label": "Title 2",
+          "default": "Airi HQ"
+        },
+        {
+          "type": "textarea",
+          "id": "store_description_2",
+          "label": "Store Description",
+          "default": "Postal Address <br> PO Box 16122 Collins Street West  <br> Victoria 8007 Australia",
+		  "info": "Use of <br>"
+        },
+		{
+          "type": "header",
+          "content": "Store Location 3"
+        },
+        {
+          "type": "text",
+          "id": "store_title_3",
+          "label": "Title 3",
+          "default": "Business Phone"
+        },
+        {
+          "type": "textarea",
+          "id": "store_description_3",
+          "label": "Store Description",
+          "default": "+61 3 8376 6284"
+        },
+		{
+          "type": "header",
+          "content": "Store Location 4"
+        },
+        {
+          "type": "text",
+          "id": "store_title_4",
+          "label": "Title 3",
+          "default": "Say Hello"
+        },
+        {
+          "type": "textarea",
+          "id": "store_description_4",
+          "label": "Store Description",
+          "default": "info@la-studioweb.com"
+        },
+        {
+          "type": "header",
+          "content": "Social Icon"
+        },
+		{
+          "type": "checkbox",
+          "id": "contact_social_enable",
+          "label": "Contact Social Enable",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "social_icon_1_name",
+          "label": "Social Icon Name",
+          "default": "twitter",
+          "info": "FontAwsome Icon [See Icon](https:\/\/fontawsome.com\/icons)"
+        },
+        {
+          "type": "url",
+          "id": "socila_icon_1_link",
+          "label": "Link"
+        },
+        {
+          "type": "header",
+          "content": "Icon With Link"
+        },
+        {
+          "type": "text",
+          "id": "social_icon_2_name",
+          "label": "Social Icon Name",
+          "default": "google-plus",
+          "info": "FontAwsome Icon [See Icon](https:\/\/fontawsome.com\/icons)"
+        },
+        {
+          "type": "url",
+          "id": "socila_icon_2_link",
+          "label": "Link"
+        },
+        {
+          "type": "header",
+          "content": "Icon With Link"
+        },
+        {
+          "type": "text",
+          "id": "social_icon_3_name",
+          "label": "Social Icon Name",
+          "default": "facebook",
+          "info": "FontAwsome Icon [See Icon](https:\/\/fontawsome.com\/icons)"
+        },
+        {
+          "type": "url",
+          "id": "socila_icon_3_link",
+          "label": "Link"
+        },
+        {
+          "type": "header",
+          "content": "Icon With Link"
+        },
+        {
+          "type": "text",
+          "id": "social_icon_4_name",
+          "label": "Social Icon Name",
+          "default": "youtube",
+          "info": "FontAwsome Icon [See Icon](https:\/\/fontawsome.com\/icons)"
+        },
+        {
+          "type": "url",
+          "id": "socila_icon_4_link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "social_icon_5_name",
+          "label": "Social Icon Name",
+          "default": "instagram",
+          "info": "FontAwsome Icon [See Icon](https:\/\/fontawsome.com\/icons)"
+        },
+        {
+          "type": "url",
+          "id": "socila_icon_5_link",
+          "label": "Link"
+        },
+		{
+            "type": "header",
+            "content": "Google Map"
+        },
+		{
+          "type": "checkbox",
+          "id": "google_map_enable",
+          "label": "Google Map Enable",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "api_key",
+          "label": "API Key",
+          "info": "AIzaSyCxvP66_Xk1ts77oL2Z7EpDxhDD_jMg-D0",
+          "default": "AIzaSyCxvP66_Xk1ts77oL2Z7EpDxhDD_jMg-D0"
+        },
+        {
+          "type": "text",
+          "id": "latlong",
+          "label": "Latitude longitude",
+          "info": "23.761226, 90.420766",
+          "default": "40.740610, -73.935242"
+        },
+        {
+          "type": "image_picker",
+          "id": "map_img",
+          "label": "Icon",
+          "info": "Image Size 105 X 105"
+        }
+	],
+	"blocks":[
+	   {
+          "type": "section_padding",
+          "name": "Section Padding",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 100
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 80
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 60
+			}
+          ]
+       },
+	   {
+          "type": "section_margin",
+          "name": "Section Margin",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			}
+          ]
+       },
+	   {
+          "type": "section_background",
+          "name": "Section Background",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "image_picker",
+			  "id": "section_bg_image",
+			  "label": "BG Image"
+			},
+			{
+			  "type": "color",
+			  "id": "section_bg_color",
+			  "label": "BG Color",
+			  "default": "#ffffff"
+			}
+          ]
+       }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

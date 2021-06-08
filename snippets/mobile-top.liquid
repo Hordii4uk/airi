@@ -1,0 +1,72 @@
+
+<div class="row align-items-center mobile">
+  <div class="col-4">
+    {%- include 'header-logo-2' -%}
+  </div>
+  <div class="col-8">
+    <ul class="header-toolbar text-right">
+      {% if section.settings.account_enable %}
+      <li class="header-toolbar__item user-info-menu-btn">
+        <a href="#">
+          <i class="fa fa-user-circle-o"></i>
+        </a>
+        <ul class="user-info-menu">
+          {% if shop.customer_accounts_enabled and customer %}
+          <li><a href="/account/logout">{{ section.settings.signout_title }}</a></li>
+          {% else %}
+          <li><a href="/account/login">{{ section.settings.signin_title }}</a></li>
+          {% endif %}
+          {% assign header_top_menu_handle = section.settings.header_top_menu %}
+          {% for link in linklists[header_top_menu_handle].links %}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
+      {% endif %}
+      {% if section.settings.mini_cart_enable %}
+      <li class="header-toolbar__item">
+        <a href="#miniCart" class="mini-cart-btn toolbar-btn">
+          <i class="dl-icon-cart4"></i>
+          {%- assign item_count = cart.item_count -%}
+          <sup class="mini-cart-count bigcounter">{{ item_count }}</sup>
+        </a>
+      </li>
+      {% endif %}
+
+      {% if section.settings.search_enable %}
+      <li class="header-toolbar__item">
+        <a href="#searchForm" class="search-btn toolbar-btn">
+          <i class="dl-icon-search1"></i>
+        </a>
+      </li>
+      {% endif %}
+      {% if section.settings.side_menu_enable %}
+      <li class="header-toolbar__item d-lg-none">
+        <a href="#" class="menu-btn"></a>                 
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+</div>
+
+
+
+<style>
+  
+#section-{{ section.id }} .mobile .header-toolbar__item > a {
+    color: {{ section.settings.mobile_icon_color }};
+}
+  
+  #section-{{ section.id }} .mobile .header-toolbar__item > a:hover {
+    color:  {{ section.settings.mobile_icon_hover_color }};
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</style>

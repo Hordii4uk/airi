@@ -1,0 +1,552 @@
+
+<div class="page-content-inner blog-page-sidebar" id="section-{{ section.id }}">
+  <div class="{% if section.settings.container_style == 'style_1' %}container {% else %} container-fluid{% endif %}">
+    <div class="row {% if section.settings.sidebar_handle == 'left_sidebar_handle' %}flex-row-reverse{% endif %}">
+      <div class="{% if section.settings.sidebar_handle == 'without_sidebar' %}col-lg-12{% else %}col-lg-9{% endif %}" id="main-content">
+        <div class="single-post">
+          
+          <!-- Single Blog Start Here -->
+          <article class="single-post-details">
+            
+            <div class="entry-header">
+              <h2 class="entry-title"> {{ article.title }}</h2>
+              <div class="entry-meta">
+                <div class="entry-meta-top">
+                  <a href="blog.html" class="posted-on">{{ article.published_at | date: "%b, %d , %y" }}</a>
+                  <span class="meta-separator">-</span>
+                  <a href="blog.html" class="posted-by">{{ article.author }}</a>
+                </div>
+                
+                <div class="entry-meta-bottom">
+                  <a href="{{ article.url }}#comments" class="comments-link">
+                    <i class="dl-icon-comment"></i>
+                    <span>{{ 'blogs.comments.with_count' | t: count: article.comments_count }}</span>
+                  </a>
+                </div>
+                
+              </div>
+            </div>
+            <div class="entry-thumbnail">
+              <img src="{{ article | img_url: 'master' }}" alt="{{ article.image.alt }}">
+            </div>
+            <div class="entry-content">
+                {{ article.content }}
+            </div>
+            
+            
+            <div class="entry-footer-meta">
+              <div class="tag-list">
+                   {% include 'tags-article' %}
+              </div>
+              <div class="author">
+                <span><a href="{{ article.url }}#comments">{{ 'blogs.comments.with_count' | t: count: article.comments_count }}</a>
+                </span>
+              </div>
+            </div>
+            
+          </article>
+          <!-- Single Blog End Here -->
+          {% if section.settings.social_enable %}
+          <!-- Social Sharing Icons Start Here -->
+          <div class="post-share sticky-social">
+            <ul class="social social-big social-round social-sharing bg-gray-2 vertical">
+              {% include 'blog-share' %}
+            </ul>
+          </div>
+          <!-- Social Sharing Icons End Here -->
+          {% endif %}
+          
+          {% if blog.next_article or blog.previous_article %}
+          <!-- Post Navigation Start Here -->
+          <nav class="post-navigation mb--40">
+            <div class="">
+
+              <div class="nav-prev">
+
+                {% if blog.previous_article %}
+                <span class="left">
+                  &larr; {{ 'blogs.article.older_post' | t | link_to: blog.previous_article }}
+                </span>
+                {% endif %}
+              </div>
+
+              <div class="nav-next">
+                {% if blog.next_article %}
+                <span class="right">
+                  {{ 'blogs.article.newer_post' | t | link_to: blog.next_article }} &rarr;
+                </span>
+                {% endif %}
+              </div>
+
+            </div>
+          </nav>
+          <!-- Post Navigation Start Here -->
+          {% endif %}
+          
+          {%- if article.comments_enabled? -%}
+          {%- assign comment_post_limit = section.settings.comment_post_limit_handle -%}
+          {%- paginate article.comments by comment_post_limit -%}
+          <!-- Comments Start Here -->
+          <div id="comments" class="comments-area">
+
+            {%- if comment and comment.created_at -%}
+            <p class="note form-success">
+              {%- if blog.comments_modareted? -%}
+              {{ 'blogs.comments.success_moderated' | t }}            
+              {%- else -%}
+              {{ 'blogs.comments.success' | t }}
+              {%- endif -%}
+            </p>
+            {%- endif -%}
+
+            {%- if article.comments.size > 0 -%}
+            {%- include 'blog-comments' -%}
+
+            {%- endif -%}
+            {%- if paginate.pages > 1 -%}
+            <div class="pagination-wrap mb--40">
+              {% include 'pagination' %}
+            </div>
+            {%- endif -%}
+            {%- include 'blog-comment-form' -%}
+
+
+          </div>
+          <!-- Comments Start Here -->
+          {%- endpaginate -%}
+          {%- endif -%}
+
+          
+        </div>
+      </div>
+      {%- unless section.settings.sidebar_handle == 'without_sidebar' -%}
+      <div class="col-lg-3" id="primary-sidebar">
+        {% include 'blog-sidebar' %}
+      </div>
+      {%- endunless -%}
+    </div>
+  </div>
+</div>
+
+
+{%- style -%}
+  #section-{{ section.id }}{
+    {%- for block in section.blocks -%}
+    {%- case block.type -%}
+    {%- when 'section_margin' -%}
+    margin-top: {{ block.settings.section_margin_top }}px;
+    margin-bottom: {{ block.settings.section_margin_bottom }}px;
+    {%- when 'section_padding' -%}
+    padding-top: {{ block.settings.section_padding_top }}px;
+    padding-bottom: {{ block.settings.section_padding_bottom }}px;
+    {%- when 'section_background' -%}    
+    background: {{ block.settings.section_bg_color }} 
+      {%- if block.settings.section_bg_image -%}url("{{ block.settings.section_bg_image | img_url: 'master' }}"){%- endif -%} no-repeat scroll center center / cover;
+    {%- endcase -%}
+    {%- endfor -%}
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {% case block.type %}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_md }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_md }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_md }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_md }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+  @media (max-width: 767px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {%- case block.type -%}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_xs }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_xs }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_xs }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_xs }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+{%- endstyle -%}
+
+
+{% schema %}
+  {
+    "name": "Article Page",
+    "settings": [
+		{
+            "type": "header",
+            "content": "Container Style"
+        },
+        {
+            "type": "radio",
+            "id": "container_style",
+            "label": "Container Style",
+            "options":[
+               {
+                   "value":"style_1",
+                   "label": "Container"
+               },
+               {
+                   "value":"style_2",
+                   "label": "Container Fluid"
+               }
+             ],
+
+            "default": "style_2"
+        },
+		{
+			"type": "header",
+			"content": "Comment Box"
+		},
+		{
+			"type": "image_picker",
+			"id": "commentator_image",
+			"label": "Comment Thumb Image",
+			"info": "Recommended Size: 80 x 80px"
+		},
+		{
+            "type": "range",
+            "id": "comment_post_limit_handle",
+            "min": 1,
+            "max": 10,
+            "step": 1,
+            "label": "How Many Comment Post Show",
+            "default": 5
+        },
+		{
+			"type": "header",
+			"content": "Comment Form"
+		},
+        {
+          "type": "textarea",
+          "id": "comment_description",
+          "label": "Commend Description Bottom",
+          "default": "Your email address will not be published. Required fields are marked" 
+        },
+        {
+          "type": "text",
+          "id": "text_name_title",
+          "label": "Name Label",
+          "default": "Name" 
+        },
+        {
+          "type": "text",
+          "id": "text_email_title",
+          "label": "Email Label",
+          "default": "Email" 
+        },
+        {
+          "type": "text",
+          "id": "text_area_title",
+          "label": "Textarea Label",
+          "default": "Your Review" 
+        },
+		{
+          "type": "header",
+          "content": "Blog Social Area"
+	    },
+        {
+          "type": "checkbox",
+          "id": "social_enable",
+          "label": "Social Enable",
+          "default": true
+        },
+		{
+			"type": "header",
+			"content": "Article Sidebar"
+		},
+		{
+			"type": "radio",
+			"id": "sidebar_handle",
+			"label": "Sidebar Position -",
+			"options": [
+				{
+					"label": "Left Sidebar",
+					"value": "left_sidebar_handle"
+				},
+				{
+					"label": "Right Sidebar",
+					"value": "right_sidebar_handle"
+				},
+				{
+					"label": "Without Sidebar",
+					"value": "without_sidebar"
+				}
+			],
+			"default": "left_sidebar_handle"
+		}
+	],
+	 "blocks":[
+		{
+          "type": "search",
+          "name": "Search",
+		  "limit": 1,
+          "settings": [
+            {
+              "type": "text",
+              "id": "wedget_title",
+              "label": "Title",
+              "default": "Search"
+            }
+          ]
+       },
+	   {
+          "type": "recent_post",
+          "name": "Recent Post",
+		  "limit": 1,
+          "settings": [
+            {
+              "type": "text",
+              "id": "recent_post_title",
+              "label": "Recent Post Title",
+              "default": "Recent Post"
+			},
+            {
+              "type": "range",
+              "id": "recent_post_limit_handle",
+              "min": 2,
+              "max": 10,
+              "step": 1,
+              "label": "Post Limit",
+              "default": 3
+            }
+          ]
+       },
+	   {
+          "type": "archive",
+          "name": "Archive",
+		  "limit": 1,
+          "settings": [
+            {
+              "type": "text",
+              "id": "archive_title",
+              "label": "Archive Title",
+              "default": "Archive"
+            }
+          ]
+       },
+	   {
+          "type": "tag",
+          "name": "Tag",
+		  "limit": 1,
+          "settings": [
+            {
+              "type": "text",
+              "id": "blog_tags_title",
+              "label": "Tags Title",
+              "default": "Tags"
+			},
+            {
+              "type": "range",
+              "id": "blog_tags_list_limit_handle",
+              "min": 5,
+              "max": 20,
+              "step": 1,
+              "label": "Tag Limit",
+              "default": 10
+            }
+          ]
+       },
+	   {
+          "type": "menu",
+          "name": "Menu",
+          "settings": [
+            {
+              "type": "text",
+              "id": "menu_title",
+              "label": "Menu Title",
+              "default": "Custom Menu"
+            },
+			{
+              "type": "link_list",
+              "id": "menu_handle",
+              "label": "Menu"
+            }
+          ]
+       },
+	   {
+          "type": "section_padding",
+          "name": "Section Padding",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 100
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 80
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 60
+			}
+          ]
+       },
+	   {
+          "type": "section_margin",
+          "name": "Section Margin",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			}
+          ]
+       },
+	   {
+          "type": "section_background",
+          "name": "Section Background",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "image_picker",
+			  "id": "section_bg_image",
+			  "label": "BG Image"
+			},
+			{
+			  "type": "color",
+			  "id": "section_bg_color",
+			  "label": "BG Color",
+			  "default": "#ffffff"
+			}
+          ]
+       }
+	]
+  }
+{% endschema %}

@@ -1,0 +1,57 @@
+<div class="instagram-feed" id="section-{{ section.id }}"  {% if section.settings.instagram_feed_style == 'default' %} data-section="Instagram" {% elsif section.settings.instagram_feed_style == 'image_gallery' %}   {% endif %}>
+  {% if section.settings.section_title != '' %}
+  <div class="{% if section.settings.container_style == 'style_1' %}container {% else %} container-fluid{% endif %}">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title text-{% if section.settings.section_text_align == 'section_text_left' %}left{% elsif section.settings.section_text_align == 'section_text_center' %}center{% elsif section.settings.section_text_align == 'section_text_right' %}right{% endif %}">
+          <h2 class="heading-secondary">{{ section.settings.section_title }}</h2>
+          {% if section.settings.section_title_border %}
+          <hr class="separator mt--15 mb--20">
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  {% endif %}
+  {% if section.settings.instagram_feed_style == 'default' %}
+  <div class="{% if section.settings.container_style == 'style_1' %}container {% else %} container-fluid{% endif %}">
+    <div class="row">
+      <div class="col-12">
+        <div class="instagram-feed-thumb">
+          <div class="instagram-activation" id="instafeed-section-{{ section.id }}" data-username="{{ section.settings.username }}" data-limit="{{ section.settings.feed_limit }}" data-hashtag="{{ section.settings.instgram_hastag }}" data-size="{{ section.settings.image_size }}">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% elsif section.settings.instagram_feed_style == 'image_gallery' %}
+  <div class="{% if section.settings.container_style == 'style_1' %}container {% else %} container-fluid{% endif %}">
+    <div class="row">
+      {% for block in section.blocks %}
+      {% case block.type %}
+      {% when 'image_gallery_banner' %}
+      <div id="block-{{ block.id }}" class="col-lg-{{ block.settings.image_gallery_banner_coloum }} col-md-{{ block.settings.image_gallery_banner_coloum_md }} col-{{ block.settings.image_gallery_banner_coloum_xs }}">
+        <div class="single_banner mb--30">
+          <div class="banner_thumb">
+            <a class=" banner-animation"  href="{{ block.settings.image_gallery_banner_img_url }}"><img src="{% if block.settings.image_gallery_banner_img %}{{ block.settings.image_gallery_banner_img | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/640x640{% endif %}" alt="{{ block.settings.image_gallery_banner_img.alt }}"></a>
+          </div>
+        </div>
+      </div>
+      {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+
+
+  {% if section.settings.instagram_feed_style == 'default' %}
+
+<script src="{{ 'instafeed.min.js' | asset_url }}"></script>
+
+  {% elsif section.settings.instagram_feed_style == 'image_gallery' %}
+
+
+  {% endif %}

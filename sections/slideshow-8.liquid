@@ -1,0 +1,512 @@
+
+
+<div class="homepage-slider" id="section-{{ section.id }}" data-section2="RevolutionSlider8">
+  <div id="rev_slider_5_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="home-09" data-source="gallery" style="margin:0px auto;background:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+    <!-- START REVOLUTION SLIDER 5.4.7 auto mode -->
+    <div id="rev_slider_5_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.7">
+      <ul> 
+        
+            {% for block in section.blocks %}
+        {% case block.type %}
+        {% when 'slide' %}
+        <!-- SLIDE  -->
+        <li data-index="rs-11-{{ forloop.index }}" data-transition="random-premium" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+          <!-- MAIN IMAGE -->
+          <img src="{% if block.settings.slider_img %}{{ block.settings.slider_img | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/10x10{% endif %}" data-bgcolor='#faeaea' style='background:#faeaea' alt="{{ slider_img.alt }}"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+          <!-- LAYERS -->
+
+          <!-- LAYER NR. 1 -->
+          <div class="tp-caption     rev_group" 
+               id="slide-11-layer-1" 
+               data-x="['left','left','left','left']" data-hoffset="['120','120','30','10']" 
+               data-y="['middle','middle','top','top']" data-voffset="['0','0','50','20']" 
+               data-width="['688','688','362','362']"
+               data-height="['621','621','417','417']"
+               data-whitespace="nowrap"
+
+               data-type="group" 
+               data-responsive_offset="on" 
+
+               data-frames='[{"delay":20,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+               data-margintop="[0,0,0,0]"
+               data-marginright="[0,0,0,0]"
+               data-marginbottom="[0,0,0,0]"
+               data-marginleft="[0,0,0,0]"
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[0,0,0,0]"
+               data-paddingright="[0,0,0,0]"
+               data-paddingbottom="[0,0,0,0]"
+               data-paddingleft="[0,0,0,0]"
+
+               style="z-index: 5; min-width: 688px; max-width: 688px; max-width: 621px; max-width: 621px; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: #ffffff; letter-spacing: 0px;">
+            
+        
+            <!-- LAYER NR. 2 -->
+            <div class="tp-caption   tp-resizeme" 
+                 id="slide-11-layer-4" 
+                 data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']" 
+                 data-y="['top','top','top','top']" data-voffset="['0','0','0','0']" 
+                 data-width="none"
+                 data-height="none"
+                 data-whitespace="nowrap"
+
+                 data-type="image" 
+                 data-responsive_offset="on" 
+
+                 data-frames='[{"delay":"+360","speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                 data-margintop="[0,0,0,0]"
+                 data-marginright="[0,0,0,0]"
+                 data-marginbottom="[0,0,0,0]"
+                 data-marginleft="[0,0,0,0]"
+                 data-textAlign="['inherit','inherit','inherit','inherit']"
+                 data-paddingtop="[0,0,0,0]"
+                 data-paddingright="[0,0,0,0]"
+                 data-paddingbottom="[0,0,0,0]"
+                 data-paddingleft="[0,0,0,0]"
+
+                 style="z-index: 6;"><img src="{% if block.settings.text_img %}{{ block.settings.text_img | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/510x490{% endif %}" alt="{{ text_img.alt }}" data-ww="['512px','512px','300px','250px']" data-hh="['491px','491px','288','240px']" data-no-retina> </div>
+
+                {% if block.settings.button_title != '' %}
+            <!-- LAYER NR. 3 -->
+            <a class="tp-caption LaBtnOutlineBlack rev-btn " href="{{ block.settings.button_url }}" 
+               id="slide-11-layer-5" 
+               data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']" 
+               data-y="['top','top','top','top']" data-voffset="['545','545','313','250']" 
+               data-width="none"
+               data-height="none"
+               data-whitespace="nowrap"
+
+               data-type="button" 
+               data-responsive_offset="on" 
+               data-responsive="off"
+               data-frames='[{"delay":"+750","speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(255,255,255);bg:rgb(40,40,40);bw:2 2 2 2;"}]'
+               data-margintop="[0,0,0,0]"
+               data-marginright="[0,0,0,0]"
+               data-marginbottom="[0,0,0,0]"
+               data-marginleft="[0,0,0,0]"
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[15,15,15,12]"
+               data-paddingright="[45,45,45,35]"
+               data-paddingbottom="[15,15,15,12]"
+               data-paddingleft="[45,45,45,35]"
+
+               style="z-index: 7; white-space: nowrap; color: {{ block.settings.button_text_color }}; background-color:{{ block.settings.button_bg_color }}; border-color:{{ block.settings.button_border_color }}; border-width:2px 2px 2px 2px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">{{ block.settings.button_title }} </a>
+          
+            {% endif %}
+          </div>
+
+          <!-- LAYER NR. 4 -->
+          <div class="tp-caption     rev_group" 
+               id="slide-11-layer-6" 
+               data-x="['right','right','right','right']" data-hoffset="['50','50','0','0']" 
+               data-y="['middle','middle','bottom','bottom']" data-voffset="['0','0','30','0']" 
+               data-width="['755','755','429','300']"
+               data-height="['833','833','367','300']"
+               data-whitespace="nowrap"
+
+               data-type="group" 
+               data-responsive_offset="on" 
+
+               data-frames='[{"delay":20,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+               data-margintop="[0,0,0,0]"
+               data-marginright="[0,0,0,0]"
+               data-marginbottom="[0,0,0,0]"
+               data-marginleft="[0,0,0,0]"
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[0,0,0,0]"
+               data-paddingright="[0,0,0,0]"
+               data-paddingbottom="[0,0,0,0]"
+               data-paddingleft="[0,0,0,0]"
+
+               style="z-index: 8; min-width: 755px; max-width: 755px; max-width: 833px; max-width: 833px; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: #ffffff; letter-spacing: 0px;">
+            
+            
+            <!-- LAYER NR. 5 -->
+            <div class="tp-caption   tp-resizeme" 
+                 id="slide-11-layer-8" 
+                 data-x="['left','left','center','center']" data-hoffset="['0','0','0','0']" 
+                 data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
+                 data-width="none"
+                 data-height="none"
+                 data-whitespace="nowrap"
+
+                 data-type="image" 
+                 data-responsive_offset="on" 
+
+                 data-frames='[{"delay":"+770","speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                 data-margintop="[0,0,0,0]"
+                 data-marginright="[0,0,0,0]"
+                 data-marginbottom="[0,0,0,0]"
+                 data-marginleft="[0,0,0,0]"
+                 data-textAlign="['inherit','inherit','inherit','inherit']"
+                 data-paddingtop="[0,0,0,0]"
+                 data-paddingright="[0,0,0,0]"
+                 data-paddingbottom="[0,0,0,0]"
+                 data-paddingleft="[0,0,0,0]"
+
+                 style="z-index: 9;"><img src="{% if block.settings.second_img %}{{ block.settings.second_img | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/580x710{% endif %}" alt="" data-ww="['582px','582px','250px','200px']" data-hh="['707px','707px','304','243']" data-no-retina> </div>
+
+            <!-- LAYER NR. 6 -->
+            
+            <div class="tp-caption   tp-resizeme" 
+                 id="slide-11-layer-9" 
+                 data-x="['left','left','center','center']" data-hoffset="['0','0','0','0']" 
+                 data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
+                 data-width="none"
+                 data-height="none"
+                 data-whitespace="nowrap"
+
+                 data-type="image" 
+                 data-responsive_offset="on" 
+
+                 data-frames='[{"delay":"+1120","speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                 data-margintop="[0,0,0,0]"
+                 data-marginright="[0,0,0,0]"
+                 data-marginbottom="[0,0,0,0]"
+                 data-marginleft="[0,0,0,0]"
+                 data-textAlign="['inherit','inherit','inherit','inherit']"
+                 data-paddingtop="[0,0,0,0]"
+                 data-paddingright="[0,0,0,0]"
+                 data-paddingbottom="[0,0,0,0]"
+                 data-paddingleft="[0,0,0,0]"
+
+                 style="z-index: 10;"><img src="{% if block.settings.thrid_img %}{{ block.settings.thrid_img | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/650x780{% endif %}" alt="" data-ww="['655px','655px','280px','230px']" data-hh="['778px','778px','333px','273px']" data-no-retina> </div>
+          
+          
+          </div>
+        </li>
+        
+            {% endcase %}
+        {% endfor %}
+        
+      </ul>
+      <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div> 
+    </div>
+  </div><!-- END REVOLUTION SLIDER -->
+</div>
+
+{%- style -%}
+  #section-{{ section.id }}{
+    {%- for block in section.blocks -%}
+    {%- case block.type -%}
+    {%- when 'section_margin' -%}
+    margin-top: {{ block.settings.section_margin_top }}px;
+    margin-bottom: {{ block.settings.section_margin_bottom }}px;
+    {%- when 'section_padding' -%}
+    padding-top: {{ block.settings.section_padding_top }}px;
+    padding-bottom: {{ block.settings.section_padding_bottom }}px;
+    {%- when 'section_background' -%}    
+    background: {{ block.settings.section_bg_color }} 
+      {%- if block.settings.section_bg_image -%}url("{{ block.settings.section_bg_image | img_url: 'master' }}"){%- endif -%} no-repeat scroll center center / cover;
+    {%- endcase -%}
+    {%- endfor -%}
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {% case block.type %}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_md }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_md }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_md }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_md }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+  @media (max-width: 767px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {%- case block.type -%}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_xs }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_xs }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_xs }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_xs }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+{%- endstyle -%}
+
+
+
+{% schema %}
+  {
+    "name": "Slideshow 8",
+    "settings": [
+		
+	],
+	"blocks":[
+	   {
+          "type": "slide",
+          "name": "Slide(Style 1)",
+          "settings": [
+			    {
+                    "type": "image_picker",
+                    "id": "slider_img",
+                    "label": "Image",
+                    "info": "Recommended Size: 10 x 10px"
+                },
+				{
+                    "type": "image_picker",
+                    "id": "text_img",
+                    "label": "Image",
+                    "info": "Recommended Size: 510 x 490px"
+                },
+				{
+                    "type": "text",
+                    "id": "button_title",
+                    "label": "Button Title", 
+                    "default": "Shop Now"
+                },
+				{
+                    "type": "url",
+                    "id": "button_url",
+                    "label": "URL"
+                },
+          		{
+                    "type": "header",
+                    "content": "Image 2"
+                },
+				{
+                    "type": "image_picker",
+                    "id": "second_img",
+                    "label": "Image",
+                    "info": "Recommended Size: 580 x 710px"
+                },
+          		{
+                    "type": "header",
+                    "content": "Image 3"
+                },
+				{
+                    "type": "image_picker",
+                    "id": "thrid_img",
+                    "label": "Image",
+                    "info": "Recommended Size: 650 x 780px"
+                },
+                  {
+                    "type": "header",
+                    "content": "Color"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_text_color",
+                    "label": "Button Text Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_bg_color",
+                    "label": "Button BG Color",
+                    "default": "#fff"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_border_color",
+                    "label": "Button Border Color",
+                    "default": "#282828"
+                  }
+            ]
+       },
+	   {
+          "type": "section_padding",
+          "name": "Section Padding",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 100
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 80
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 60
+			}
+          ]
+       },
+	   {
+          "type": "section_margin",
+          "name": "Section Margin",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			}
+          ]
+       },
+	   {
+          "type": "section_background",
+          "name": "Section Background",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "image_picker",
+			  "id": "section_bg_image",
+			  "label": "BG Image"
+			},
+			{
+			  "type": "color",
+			  "id": "section_bg_color",
+			  "label": "BG Color",
+			  "default": "#ffffff"
+			}
+          ]
+       }
+	],
+	"presets": [
+		{
+		  "name": "Slideshow 8",
+		  "category": " slideshow",
+		  "blocks":[
+				{
+					"type": "slide"
+				},
+				{
+					"type": "section_padding"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

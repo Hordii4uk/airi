@@ -1,0 +1,474 @@
+
+<!-- CTA Start Here -->
+<section class="cta-section" id="section-{{ section.id }}">
+  <div class="{% if section.settings.container_style == 'style_1' %}container {% else %} container-fluid{% endif %}">
+    <div class="row align-items-center  {% if section.settings.sidebar_handle == 'left_banner_handle' %}flex-row-reverse{% endif %}">
+      {% if section.settings.banner_text_enable %}
+      <div class="col-md-{{ section.settings.banner_text_coloum }} text-{% if section.settings.text_style == 'text_style_left' %}left{% elsif section.settings.text_style == 'text_style_center' %}center{% elsif section.settings.text_style == 'text_style_right' %}right{% endif %}">
+        {% if section.settings.banner_subtitle != '' %}
+        <h3 class="heading-tertiary">{{ section.settings.banner_subtitle }}</h3>
+        {% endif %}
+        {% if section.settings.banner_title != '' %}
+        <h1 class="heading-bigger font-weight-300 mb--40 mb-md--30">{{ section.settings.banner_title }}</h1>
+        {% endif %}
+        {% if section.settings.button_title != '' %}
+        <a href="{{ section.settings.button_url }}" class="btn btn-style-1 btn-medium">{{ section.settings.button_title }}</a>
+        {% endif %}
+      </div>
+      {% endif %}
+       {% if section.settings.banner_enable %}
+      <div class="col-md-{{ section.settings.banner_coloum }} mb-sm--30">
+        <figure>
+          <img src="{% if section.settings.banner_img %}{{ section.settings.banner_img | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/370x470{% endif %}" alt="{{ section.settings.banner_img.alt }}">
+        </figure>
+      </div>
+      {% endif %}
+      
+    </div>
+  </div>
+</section>
+<!-- CTA End Here -->
+
+
+{%- style -%}
+  #section-{{ section.id }}{
+    {%- for block in section.blocks -%}
+    {%- case block.type -%}
+    {%- when 'section_margin' -%}
+    margin-top: {{ block.settings.section_margin_top }}px;
+    margin-bottom: {{ block.settings.section_margin_bottom }}px;
+    {%- when 'section_padding' -%}
+    padding-top: {{ block.settings.section_padding_top }}px;
+    padding-bottom: {{ block.settings.section_padding_bottom }}px;
+    {%- when 'section_background' -%}    
+    background: {{ block.settings.section_bg_color }} 
+      {%- if block.settings.section_bg_image -%}url("{{ block.settings.section_bg_image | img_url: 'master' }}"){%- endif -%} no-repeat scroll center center / cover;
+    {%- endcase -%}
+    {%- endfor -%}
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {% case block.type %}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_md }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_md }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_md }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_md }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+  @media (max-width: 767px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {%- case block.type -%}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_xs }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_xs }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_xs }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_xs }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+
+#section-{{ section.id }} .heading-tertiary {
+color: {{ section.settings.sub_title_color }};
+}
+#section-{{ section.id }} .heading-bigger {
+color: {{ section.settings.section_title_color }};
+}
+#section-{{ section.id }} .btn-style-1.btn {
+background-color: {{ section.settings.button_bg_color }};
+border-color:  {{ section.settings.button_border_color }};
+color: {{ section.settings.button_text_color }}!important;
+}
+#section-{{ section.id }} .btn-style-1.btn:hover {
+color: {{ section.settings.button_text_hover_color }}!important;
+background-color: {{ section.settings.button_bg_hover_color }};
+border-color: {{ section.settings.button_border_hover_color }};
+}
+
+
+{%- endstyle -%}
+
+{% schema %}
+  {
+    "name": "Ctc Banner Area",
+    "settings": [
+		  {
+              "type": "header",
+              "content": "Container Style"
+          },
+          {
+              "type": "radio",
+              "id": "container_style",
+              "label": "Container Style",
+              "options":[
+                 {
+                     "value":"style_1",
+                     "label": "Container"
+                 },
+                 {
+                     "value":"style_2",
+                     "label": "Container Fluid"
+                 }
+               ],
+
+              "default": "style_1"
+          },
+		  {
+            "type": "header",
+            "content": "Banner Image"
+          },
+          {
+            "type": "radio",
+            "id": "sidebar_handle",
+            "label": "Banner Position -",
+            "options": [
+              {
+                "label": "Left Banner",
+                "value": "left_banner_handle"
+              },
+              {
+                "label": "Right Banner",
+                "value": "right_banner_handle"
+              }
+            ],
+            "default": "left_banner_handle"
+          },
+          {
+              "type": "checkbox",
+              "id": "banner_enable",
+              "label": "Banner Enable",
+              "default": true
+          }, 
+          {
+            "type": "text",
+            "id": "banner_coloum",
+            "label": "Banner Column",
+            "default": "4",
+            "info": "Follow Bootstrap Column"
+          },
+          {
+            "type": "image_picker",
+            "id": "banner_img",
+            "label": "Image",
+            "info": "Recommended Size: 370 x 470px"
+          },
+		  {
+            "type": "header",
+            "content": "Banner Text"
+          },
+          {
+              "type": "checkbox",
+              "id": "banner_text_enable",
+              "label": "Banner Text Enable",
+              "default": true
+          },
+          {
+            "type": "select",
+            "id": "text_style",
+            "label": "Text Align",
+            "options":[
+              {
+                "value":"text_style_left",
+                "label": "Left"
+              },
+              {
+                "value":"text_style_center",
+                "label": "center"
+              },
+              {
+                "value":"text_style_right",
+                "label": "right"
+              }
+            ],
+            "default": "text_style_center"
+          },
+          {
+            "type": "text",
+            "id": "banner_text_coloum",
+            "label": "Banner Text Column",
+            "default": "8",
+            "info": "Follow Bootstrap Column"
+          },
+          {
+            "type": "text",
+            "id": "banner_subtitle",
+            "label": "Banner Subtitle",
+            "default": "Cotton cashmere-blend sweater"
+          },
+          {
+            "type": "text",
+            "id": "banner_title",
+            "label": "Banner Title",
+            "default": "SALE 30%"
+          },
+          {
+            "type": "text",
+            "id": "button_title",
+            "label": "Button Title",
+            "default": "Shop Now"
+          },
+          {
+            "type": "url",
+            "id": "button_url",
+            "label": "URL"
+          },
+          {
+            "type": "header",
+            "content": "Color"
+          },
+          {
+             "type": "color",
+             "id": "sub_title_color",
+             "label": "Sub-title Color",
+             "default": "#cf987e"
+          },
+          {
+             "type": "color",
+             "id": "section_title_color",
+             "label": "Section Title Color",
+             "default": "#cf987e"
+          }, 
+          {
+             "type": "color",
+             "id": "button_text_color",
+             "label": "Button Text Color",
+             "default": "#fff"
+          },  
+          {
+             "type": "color",
+             "id": "button_bg_color",
+             "label": "Button BG Color",
+             "default": "#2e2e2e"
+          },  
+          {
+             "type": "color",
+             "id": "button_border_color",
+             "label": "Button Border Color",
+             "default": "#2e2e2e"
+          }, 
+          {
+             "type": "color",
+             "id": "button_text_hover_color",
+             "label": "Button Text Hover Color",
+             "default": "#fff"
+          },  
+          {
+             "type": "color",
+             "id": "button_bg_hover_color",
+             "label": "Button BG Hover Color",
+             "default": "#cf987e"
+          }, 
+          {
+             "type": "color",
+             "id": "button_border_hover_color",
+             "label": "Button Border Hover Color",
+             "default": "#cf987e"
+          }
+	],
+	"blocks":[
+	   {
+          "type": "section_padding",
+          "name": "Section Padding",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 100
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 80
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 60
+			}
+          ]
+       },
+	   {
+          "type": "section_margin",
+          "name": "Section Margin",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			}
+          ]
+       },
+	   {
+          "type": "section_background",
+          "name": "Section Background",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "image_picker",
+			  "id": "section_bg_image",
+			  "label": "BG Image"
+			},
+			{
+			  "type": "color",
+			  "id": "section_bg_color",
+			  "label": "BG Color",
+			  "default": "#ffffff"
+			}
+          ]
+       }
+	],
+	"presets": [
+		{
+		  "name": "Ctc Banner Area",
+		  "category": " banner",
+		  "blocks":[
+				{
+					"type": "section_padding"
+				},
+				{
+					"type": "section_background"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

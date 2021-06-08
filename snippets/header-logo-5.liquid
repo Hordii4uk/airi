@@ -1,0 +1,13 @@
+{%- if section.settings.logo_sticky -%}
+<!-- Logo Start Here -->
+<a href="/" class="sticky-logo">
+  <figure class="logo--normal"> 
+    <img src="{{ section.settings.logo_sticky | img_url: '300x300' }}" alt="{{ section.settings.logo_sticky.alt | default: shop.name }}">   
+  </figure>
+</a>
+<!-- Logo End Here -->
+{%- else -%}
+<a href="/" class="sticky-logo">
+  {{ shop.name }}
+</a>
+{%- endif -%}

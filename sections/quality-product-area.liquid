@@ -1,0 +1,484 @@
+<!-- PRODUCT SECTION START -->
+<div class="featured-product black_we_provide_area" id="section-{{ section.id }}">
+  <div class="{% if section.settings.container_style == 'style_1' %}container {% else %} container-fluid{% endif %}">
+    <div class="row {% if section.settings.sidebar_handle == 'left_banner_handle' %}flex-row-reverse{% endif %}">
+      <div class="col-lg-6 col-md-12">
+        <!--Single Collection Start-->
+        <div class="provide_area_content mb--30">
+          <div class="collection-content text-{% if section.settings.section_text_align == 'section_text_left' %}left{% elsif section.settings.section_text_align == 'section_text_center' %}center{% elsif section.settings.section_text_align == 'section_text_right' %}right{% endif %}">
+            {% if section.settings.section_sub_title != '' %}
+            <h3>{{section.settings.section_sub_title}}</h3>
+            {% endif %}
+            {%if section.settings.section_title != '' %}
+            <h1>{{ section.settings.section_title }}</h1>
+            {% endif %}
+            <div class="content_variation_wrapper">
+              {% for block in section.blocks %}
+              {% case block.type %}
+              {% when 'product_decription' %}
+              <div id="block-{{ block.id }}" class="service_provided_content text-{% if block.settings.section_text_align == 'section_text_left' %}left{% elsif block.settings.section_text_align == 'section_text_center' %}center{% elsif block.settings.section_text_align == 'section_text_right' %}right{% endif %}">
+                {%if block.settings.des_variation_heading != '' %}
+                <h3>{{ block.settings.des_variation_heading }}</h3>
+                {% endif %}
+                {% if block.settings.section_des != '' %}
+                <p>{{block.settings.section_des}}</p>
+                {% endif %}
+              </div>
+              {% endcase %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <!--Single Collection End-->
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <!--Single Collection Start-->
+        <div class="provide_banner_img mb--30">
+          <div class="collection-img">
+            <img src="{% if section.settings.banner_single_img %}{{ section.settings.banner_single_img | img_url: 'master' }}
+                      {% else %}https://via.placeholder.com/400x530{% endif %})" alt="{{ section.settings.banner_single_img.alt }}">
+          </div>
+        </div>
+        <!--Single Collection End-->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- PRODUCT SECTION END -->
+
+
+
+{%- style -%}
+  #section-{{ section.id }}{
+    {%- for block in section.blocks -%}
+    {%- case block.type -%}
+    {%- when 'section_margin' -%}
+    margin-top: {{ block.settings.section_margin_top }}px;
+    margin-bottom: {{ block.settings.section_margin_bottom }}px;
+    {%- when 'section_padding' -%}
+    padding-top: {{ block.settings.section_padding_top }}px;
+    padding-bottom: {{ block.settings.section_padding_bottom }}px;
+    {%- when 'section_background' -%}    
+    background: {{ block.settings.section_bg_color }} 
+      {%- if block.settings.section_bg_image -%}url("{{ block.settings.section_bg_image | img_url: 'master' }}"){%- endif -%} no-repeat scroll center center / cover;
+    {%- endcase -%}
+    {%- endfor -%}
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {% case block.type %}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_md }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_md }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_md }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_md }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+  @media (max-width: 767px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {%- case block.type -%}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_xs }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_xs }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_xs }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_xs }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+
+#section-{{ section.id }}.black_we_provide_area .collection-content > h3 {
+	color: {{ section.settings.section_sub_title_color }};
+}
+#section-{{ section.id }}.black_we_provide_area .collection-content > h1 {
+	color: {{ section.settings.section_title_color }};
+}
+
+
+  {% for block in section.blocks %}
+              {% case block.type %}
+              {% when 'product_decription' %}
+
+ #block-{{ block.id }}.service_provided_content h3 {
+    color: {{ block.settings.title_color }};
+}
+#block-{{ block.id }}.service_provided_content p {
+    color: {{ block.settings.description_color }};
+}
+
+              {% endcase %}
+              {% endfor %}
+
+
+
+{%- endstyle -%}
+
+
+
+{% schema %}
+  {
+    "name": "Quality Product Area",
+    "settings": [
+		 {
+              "type": "header",
+              "content": "Container Style"
+         },
+         {
+              "type": "radio",
+              "id": "container_style",
+              "label": "Container Style",
+              "options":[
+                 {
+                     "value":"style_1",
+                     "label": "Container"
+                 },
+                 {
+                     "value":"style_2",
+                     "label": "Container Fluid"
+                 }
+               ],
+
+              "default": "style_1"
+        },
+		{
+		  "type": "header",
+          "content": "Section Heading"
+        },
+		{
+          "type": "select",
+          "id": "section_text_align",
+          "label": "Heading Text Align",
+		  "options":[
+				{
+					"label": "Left",
+					"value": "section_text_left"
+				},
+				{
+					"label": "Center",
+					"value": "section_text_center"
+				},
+				{
+					"label": "Right",
+					"value": "section_text_right"
+				}
+			],
+			"default": "section_text_left"
+      	},
+        {
+          "type": "text",
+          "id": "section_title",
+          "label": "Section Title",
+          "default": "Quality Product"
+        },
+        {
+          "type": "text",
+          "id": "section_sub_title",
+          "label": "Section Sub Title",
+          "default": "We Provide"
+        },
+        {
+          "type": "header",
+          "content": "Banner Image"
+        },
+        {
+          "type": "radio",
+          "id": "sidebar_handle",
+          "label": "Banner Position -",
+          "options": [
+            {
+              "label": "Left",
+              "value": "left_banner_handle"
+            },
+            {
+              "label": "Right",
+              "value": "right_banner_handle"
+            }
+          ],
+          "default": "right_banner_handle"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_single_img",
+          "label": "Banner Image",
+          "info": "Recommended Size: 400 x 530px"
+        },
+		{
+          "type": "header",
+          "content": "Color"
+        }, 
+        {
+           "type": "color",
+           "id": "section_sub_title_color",
+           "label": "Section Sub Title Color",
+           "default": "#0c0c0c"
+        }, 
+        {
+           "type": "color",
+           "id": "section_title_color",
+           "label": "Section Title Color",
+           "default": "#fd0505"
+        } 
+
+	],
+	"blocks":[
+      {
+
+        "type": "product_decription",
+        "name": "Product Decription",
+        "settings": [
+            {
+              "type": "select",
+              "id": "section_text_align",
+              "label": "Text Align",
+              "options":[
+                    {
+                        "label": "Left",
+                        "value": "section_text_left"
+                    },
+                    {
+                        "label": "Center",
+                        "value": "section_text_center"
+                    },
+                    {
+                        "label": "Right",
+                        "value": "section_text_right"
+                    }
+                ],
+                "default": "section_text_left"
+            },
+            {
+                "type": "text",
+                "id": "des_variation_heading",
+                "label": "Title",
+                "default": "Prefect Design"
+            },
+            {
+                "type": "textarea",
+                "id": "section_des",
+                "label": "Description",
+                "default": "Offering rationally encounter consequ ences that painful. Nor again is there anyne who loves or pursues desires obtain"
+            },
+              {
+                "type": "header",
+                "content": "Color"
+              }, 
+              {
+                 "type": "color",
+                 "id": "title_color",
+                 "label": "Title Color",
+                 "default": "#000"
+              }, 
+              {
+                 "type": "color",
+                 "id": "description_color",
+                 "label": "Description Color",
+                 "default": "#484848"
+              }
+          ]
+
+      },
+	   {
+          "type": "section_padding",
+          "name": "Section Padding",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 100
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 80
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 60
+			}
+          ]
+       },
+	   {
+          "type": "section_margin",
+          "name": "Section Margin",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			}
+          ]
+       },
+	   {
+          "type": "section_background",
+          "name": "Section Background",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "image_picker",
+			  "id": "section_bg_image",
+			  "label": "BG Image"
+			},
+			{
+			  "type": "color",
+			  "id": "section_bg_color",
+			  "label": "BG Color",
+			  "default": "#ffffff"
+			}
+          ]
+       }
+	],
+	"presets": [
+		{
+		  "name": "Quality Product Area",
+		  "category": " collections",
+		  "blocks":[
+				{
+					"type": "product_decription"
+				},
+				{
+					"type": "section_padding"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,38 @@
+{% if section.settings.contact_form_title != '' %}
+<h2 class="heading-secondary mb--50 mb-md--35 mb-sm--20">{{ section.settings.location_title }}</h2>
+{% endif %}
+
+{% if section.settings.store_title_1 != '' or section.settings.store_description_1 != '' %}
+<!-- Contact info widget start here -->
+<div class="contact-info-widget mb--45 mb-sm--35">
+  <div class="contact-info">
+    <h3>{{ section.settings.store_title_1 }}</h3>
+    <p>{{ section.settings.store_description_1 }}</p>
+  </div>
+</div>
+<!-- Contact info widget end here -->
+{% endif %}
+{% if section.settings.store_title_2 != '' or section.settings.store_description_2 != '' %}
+<!-- Contact info widget start here -->
+<div class="contact-info-widget mb--45 mb-sm--35">
+  <div class="contact-info">
+    <h3>{{ section.settings.store_title_2 }}</h3>
+    <p>{{ section.settings.store_description_2 }}</p>
+  </div>
+</div>
+<!-- Contact info widget end here -->
+{% endif %}
+{% if section.settings.store_title_3 != '' or section.settings.store_description_3 != '' or section.settings.store_title_4 != '' or section.settings.store_description_4 != '' %}
+<!-- Contact info widget start here -->
+<div class="contact-info-widget two-column-list sm-one-column mb--45 mb-sm--35">
+  <div class="contact-info mb-sm--35">
+    <h3>{{ section.settings.store_title_3 }}</h3>
+    <p>{{ section.settings.store_description_3 }}</p>
+  </div>
+  <div class="contact-info">
+    <h3>{{ section.settings.store_title_4 }}</h3>
+    <p>{{ section.settings.store_description_4 }}</p>
+  </div>
+</div>
+<!-- Contact info widget end here -->
+{% endif %}

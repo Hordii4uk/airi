@@ -1,0 +1,6 @@
+
+<script src="{{ 'plugins.js' | asset_url }}"></script>
+{%- if settings.wishlist_enable -%}
+<script src="{{ 'wishlist.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+<script src="{{ 'theme.js' | asset_url }}"></script>

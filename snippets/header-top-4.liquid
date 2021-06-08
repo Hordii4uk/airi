@@ -1,0 +1,23 @@
+<div class="header-top">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      
+      {% if section.settings.welcome_text_enable %}
+      <div class="col-6">
+        {% if shop.customer_accounts_enabled and customer %}
+        <span class="header-text">{{ section.settings.wellcome_customer }} <span class="home-color">{{ customer.name }}</span></span>
+        {% else %}
+        <span class="header-text">{{ section.settings.wellcome_content }}</span>
+        {% endif %}
+      </div>
+      {% endif %}
+       {%- if settings.currency_enable -%}
+      <div class="col-6 text-right">
+        <div class="header-component">
+          {%- include 'currency-picker' -%}
+        </div>
+      </div>
+		{%- endif -%}
+    </div>
+  </div>
+</div>

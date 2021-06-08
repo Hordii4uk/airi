@@ -1,0 +1,835 @@
+
+<div class="section-wrapper" id="section-{{ section.id }}" data-section2="RevolutionSlider9">
+  <div class="{% if section.settings.container_style == 'style_1' %}container {% else %} container-fluid p-0{% endif %}">
+    <div class="{% if section.settings.container_style == 'style_1' %}row {% else %} row no-gutters{% endif %}">
+      <div class="home-11-custom-grid-{{ section.settings.slider_coloum }}">
+        <div class="homepage-slider" id="homepage-slider-1">
+          <div id="rev_slider_6_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="home-11" data-source="gallery" style="margin:0px auto;background:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+            <!-- START REVOLUTION SLIDER 5.4.7 auto mode -->
+            <div id="rev_slider_6_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.7">
+              <ul>    
+                {% for block in section.blocks %}
+                {% case block.type %}
+                {% when 'slide' %}
+                <!-- SLIDE  -->
+                <li data-index="rs-12-{{ forloop.index }}" data-transition="random-premium" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{% if block.settings.slider_img %}{{ block.settings.slider_img | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/1220x655{% endif %}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                  <!-- MAIN IMAGE -->
+                  <img src="{% if block.settings.slider_img %}{{ block.settings.slider_img | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/1220x655{% endif %}"  alt="{{ slider_img.alt }}"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                  <!-- LAYERS -->
+
+                  <!-- LAYER NR. 1 -->
+                  <div class="tp-caption     rev_group" 
+                       id="slide-12-layer-2" 
+                       data-x="['left','left','left','left']" data-hoffset="['124','124','0','0']" 
+                       data-y="['middle','middle','middle','middle']" data-voffset="['2','2','2','2']" 
+                       data-width="['408','408','354','264']"
+                       data-height="['492','492','429','353']"
+                       data-whitespace="nowrap"
+
+                       data-type="group" 
+                       data-responsive_offset="on" 
+
+                       data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                       data-margintop="[0,0,0,0]"
+                       data-marginright="[0,0,0,0]"
+                       data-marginbottom="[0,0,0,0]"
+                       data-marginleft="[0,0,0,0]"
+                       data-textAlign="['inherit','inherit','inherit','inherit']"
+                       data-paddingtop="[0,0,0,0]"
+                       data-paddingright="[0,0,0,0]"
+                       data-paddingbottom="[0,0,0,0]"
+                       data-paddingleft="[0,0,0,0]"
+
+                       style="z-index: 5; min-width: 408px; max-width: 408px; max-width: 492px; max-width: 492px; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: #ffffff; letter-spacing: 0px;">
+
+
+                    <!-- LAYER NR. 2 -->
+                    <div class="tp-caption   tp-resizeme" 
+                         id="slide-12-layer-1" 
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                         data-y="['top','top','top','top']" data-voffset="['0','0','0','0']" 
+                         data-width="none"
+                         data-height="none"
+                         data-whitespace="nowrap"
+
+                         data-type="image" 
+                         data-responsive_offset="on" 
+
+                         data-frames='[{"delay":"+260","speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                         data-margintop="[0,0,0,0]"
+                         data-marginright="[0,0,0,0]"
+                         data-marginbottom="[0,0,0,0]"
+                         data-marginleft="[0,0,0,0]"
+                         data-textAlign="['inherit','inherit','inherit','inherit']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+
+                         style="z-index: 6;"><img src="{% if block.settings.text_img %}{{ block.settings.text_img | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/300x390{% endif %}" alt="{{ text_img.alt }}" data-ww="['310px','310px','251px','191px']" data-hh="['392px','392px','318px','242px']" data-no-retina> </div>
+
+                    {% if block.settings.button_title != '' %}
+                    <!-- LAYER NR. 3 -->
+                    <a class="tp-caption LA_White_btn rev-btn " href="{{ block.settings.button_url }}" 
+                       id="slide-12-layer-3" 
+                       data-x="['center','center','center','center']" data-hoffset="['0','0','0','1']" 
+                       data-y="['top','top','top','top']" data-voffset="['415','415','355','272']" 
+                       data-width="none"
+                       data-height="none"
+                       data-whitespace="nowrap"
+
+                       data-type="button" 
+                       data-responsive_offset="on" 
+                       data-responsive="off"
+                       data-frames='[{"delay":"+680","speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"200","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(255,255,255);bg:rgb(207,152,126);bs:solid;bw:0 0 0 0;"}]'
+                       data-margintop="[0,0,0,0]"
+                       data-marginright="[0,0,0,0]"
+                       data-marginbottom="[0,0,0,0]"
+                       data-marginleft="[0,0,0,0]"
+                       data-textAlign="['inherit','inherit','inherit','inherit']"
+                       data-paddingtop="[15,15,15,12]"
+                       data-paddingright="[45,45,45,35]"
+                       data-paddingbottom="[15,15,15,12]"
+                       data-paddingleft="[45,45,45,35]"
+
+                       style="z-index: 7; white-space: nowrap;  color: {{ block.settings.button_text_color }}; background-color:{{ block.settings.button_bg_color }}; border-color:{{ block.settings.button_border_color }};border-width:2px 2px 2px 2px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">{{ block.settings.button_title }}</a>
+                    {% endif %}
+                  </div>
+                </li>
+                {% when 'slide-2' %}
+
+                <!-- SLIDE  -->
+                <li data-index="rs-13-{{ forloop.index }}" data-transition="random-premium" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{% if block.settings.slider_img_2 %}{{ block.settings.slider_img_2 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/1220x655{% endif %}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                  <!-- MAIN IMAGE -->
+                  <img src="{% if block.settings.slider_img_2 %}{{ block.settings.slider_img_2 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/1220x655{% endif %}"  alt="{{ slider_img_2.alt }}"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                  <!-- LAYERS -->
+
+                  <!-- LAYER NR. 4 -->
+                  <div class="tp-caption     rev_group" 
+                       id="slide-13-layer-2" 
+                       data-x="['left','left','left','left']" data-hoffset="['124','124','30','30']" 
+                       data-y="['middle','middle','middle','middle']" data-voffset="['2','2','2','2']" 
+                       data-width="['407','407','334','275']"
+                       data-height="['436','436','347','332']"
+                       data-whitespace="nowrap"
+
+                       data-type="group" 
+                       data-responsive_offset="on" 
+
+                       data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                       data-margintop="[0,0,0,0]"
+                       data-marginright="[0,0,0,0]"
+                       data-marginbottom="[0,0,0,0]"
+                       data-marginleft="[0,0,0,0]"
+                       data-textAlign="['inherit','inherit','inherit','inherit']"
+                       data-paddingtop="[0,0,0,0]"
+                       data-paddingright="[0,0,0,0]"
+                       data-paddingbottom="[0,0,0,0]"
+                       data-paddingleft="[0,0,0,0]"
+
+                       style="z-index: 5; min-width: 407px; max-width: 407px; max-width: 436px; max-width: 436px; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: #ffffff; letter-spacing: 0px;">
+
+                    <!-- LAYER NR. 5 -->
+                    <div class="tp-caption   tp-resizeme" 
+                         id="slide-13-layer-1" 
+                         data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']" 
+                         data-y="['top','top','top','top']" data-voffset="['0','0','0','0']" 
+                         data-width="none"
+                         data-height="none"
+                         data-whitespace="nowrap"
+
+                         data-type="image" 
+                         data-responsive_offset="on" 
+
+                         data-frames='[{"delay":"+280","speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                         data-margintop="[0,0,0,0]"
+                         data-marginright="[0,0,0,0]"
+                         data-marginbottom="[0,0,0,0]"
+                         data-marginleft="[0,0,0,0]"
+                         data-textAlign="['inherit','inherit','inherit','inherit']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+
+                         style="z-index: 6;"><img src="{% if block.settings.text_img_2 %}{{ block.settings.text_img_2 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/340x330{% endif %}" alt="{{ text_img_2.alt }}" data-ww="['341px','341px','248px','248px']" data-hh="['327px','327px','238px','238px']" data-no-retina> </div>
+
+                    {% if block.settings.button_title_2 != '' %}
+                    <!-- LAYER NR. 6 -->
+
+                    <a class="tp-caption LaBtnOutlineBlack rev-btn " href="{{ block.settings.button_url_2 }}" 
+                       id="slide-13-layer-3" 
+                       data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']" 
+                       data-y="['top','top','top','top']" data-voffset="['366','366','268','268']" 
+                       data-width="none"
+                       data-height="none"
+                       data-whitespace="nowrap"
+
+                       data-type="button" 
+                       data-responsive_offset="on" 
+                       data-responsive="off"
+                       data-frames='[{"delay":"+700","speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(255,255,255);bg:rgb(40,40,40);bw:2 2 2 2;"}]'
+                       data-margintop="[0,0,0,0]"
+                       data-marginright="[0,0,0,0]"
+                       data-marginbottom="[0,0,0,0]"
+                       data-marginleft="[0,0,0,0]"
+                       data-textAlign="['inherit','inherit','inherit','inherit']"
+                       data-paddingtop="[15,15,15,12]"
+                       data-paddingright="[45,45,45,35]"
+                       data-paddingbottom="[15,15,15,12]"
+                       data-paddingleft="[45,45,45,35]"
+
+                       style="z-index: 7; white-space: nowrap;  color: {{ block.settings.button_text_color }}; background-color:{{ block.settings.button_bg_color }}; border-color:{{ block.settings.button_border_color }};border-width:2px 2px 2px 2px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">{{ block.settings.button_title_2 }} </a>
+
+                    {% endif %}
+                  </div>
+                </li>
+
+                {% when 'slide-3' %}
+                <!-- SLIDE  -->
+                <li data-index="rs-14-{{ forloop.index }}" data-transition="random-premium" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{% if block.settings.slider_img_3 %}{{ block.settings.slider_img_3 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/1220x655{% endif %}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                  <!-- MAIN IMAGE -->
+                  <img src="{% if block.settings.slider_img_3 %}{{ block.settings.slider_img_3 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/1220x655{% endif %}"  alt="{{ slider_img_3.alt }}"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                  <!-- LAYERS -->
+
+                  <!-- LAYER NR. 7 -->
+                  <div class="tp-caption     rev_group" 
+                       id="slide-14-layer-1" 
+                       data-x="['right','right','right','right']" data-hoffset="['50','50','0','0']" 
+                       data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
+                       data-width="['642','642','642','418']"
+                       data-height="['253','253','253','187']"
+                       data-whitespace="nowrap"
+
+                       data-type="group" 
+                       data-responsive_offset="on" 
+
+                       data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                       data-margintop="[0,0,0,0]"
+                       data-marginright="[0,0,0,0]"
+                       data-marginbottom="[0,0,0,0]"
+                       data-marginleft="[0,0,0,0]"
+                       data-textAlign="['inherit','inherit','inherit','inherit']"
+                       data-paddingtop="[0,0,0,0]"
+                       data-paddingright="[0,0,0,0]"
+                       data-paddingbottom="[0,0,0,0]"
+                       data-paddingleft="[0,0,0,0]"
+
+                       style="z-index: 5; min-width: 642px; max-width: 642px; max-width: 253px; max-width: 253px; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: #ffffff; letter-spacing: 0px;">
+
+                    {% if block.settings.slider_subtitle_3 != '' %}
+                    <!-- LAYER NR. 8 -->
+                    <div class="tp-caption   tp-resizeme" 
+                         id="slide-14-layer-2" 
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                         data-y="['top','top','top','top']" data-voffset="['0','0','0','0']" 
+                         data-fontsize="['28','28','28','20']"
+                         data-lineheight="['30','30','30','26']"
+                         data-width="none"
+                         data-height="none"
+                         data-whitespace="nowrap"
+
+                         data-type="text" 
+                         data-responsive_offset="on" 
+
+                         data-frames='[{"delay":"+220","speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                         data-margintop="[0,0,0,0]"
+                         data-marginright="[0,0,0,0]"
+                         data-marginbottom="[0,0,0,0]"
+                         data-marginleft="[0,0,0,0]"
+                         data-textAlign="['inherit','inherit','inherit','inherit']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+
+                         style="z-index: 6; white-space: nowrap; font-size: 28px; line-height: 30px; font-weight: 400; color: {{ block.settings.subtitle_color }}; letter-spacing: 0px;font-family:Playfair Display;">{{ block.settings.slider_subtitle_3 }} </div>
+
+                    {% endif %}
+                    {% if block.settings.slider_title_3 != '' %}
+                    <!-- LAYER NR. 9 -->
+                    <div class="tp-caption   tp-resizeme" 
+                         id="slide-14-layer-3" 
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                         data-y="['top','top','top','top']" data-voffset="['32','32','32','32']" 
+                         data-fontsize="['92','92','92','60']"
+                         data-lineheight="['100','100','100','60']"
+                         data-width="none"
+                         data-height="none"
+                         data-whitespace="nowrap"
+
+                         data-type="text" 
+                         data-responsive_offset="on" 
+
+                         data-frames='[{"delay":"+670","speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                         data-margintop="[0,0,0,0]"
+                         data-marginright="[0,0,0,0]"
+                         data-marginbottom="[0,0,0,0]"
+                         data-marginleft="[0,0,0,0]"
+                         data-textAlign="['inherit','inherit','inherit','inherit']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+
+                         style="z-index: 7; white-space: nowrap; font-size: 92px; line-height: 100px; font-weight: 700; color: {{ block.settings.title_color }}; letter-spacing: 2px;font-family:Montserrat;">{{ block.settings.slider_title_3 }}</div>
+                    {% endif %}
+                    {% if block.settings.button_title_3 != '' %}
+                    <!-- LAYER NR. 10 -->
+                    <a class="tp-caption LaBtnOutlineBlack rev-btn " href="{{ block.settings.button_url_3 }}" 
+                       id="slide-14-layer-4" 
+                       data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                       data-y="['top','top','top','top']" data-voffset="['158','158','158','115']" 
+                       data-width="none"
+                       data-height="none"
+                       data-whitespace="nowrap"
+
+                       data-type="button" 
+                       data-responsive_offset="on" 
+                       data-responsive="off"
+                       data-frames='[{"delay":"+1300","speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(255,255,255);bg:rgb(40,40,40);bw:2 2 2 2;"}]'
+                       data-margintop="[0,0,0,0]"
+                       data-marginright="[0,0,0,0]"
+                       data-marginbottom="[0,0,0,0]"
+                       data-marginleft="[0,0,0,0]"
+                       data-textAlign="['inherit','inherit','inherit','inherit']"
+                       data-paddingtop="[15,15,15,12]"
+                       data-paddingright="[45,45,45,35]"
+                       data-paddingbottom="[15,15,15,12]"
+                       data-paddingleft="[45,45,45,35]"
+
+                       style="z-index: 8; white-space: nowrap;  color: {{ block.settings.button_text_color }}; background-color:{{ block.settings.button_bg_color }}; border-color:{{ block.settings.button_border_color }};border-width:2px 2px 2px 2px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">{{ block.settings.button_title_3 }} </a>
+                    {% endif %}
+
+                  </div>
+                </li>
+                {% endcase %}
+                {% endfor %}
+
+              </ul>
+              <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div> 
+            </div>
+          </div><!-- END REVOLUTION SLIDER -->
+        </div>          
+      </div>
+      <div class="home-11-custom-grid-{{ section.settings.banner_coloum }}">
+        {% for block in section.blocks %}
+        {% case block.type %}
+        {% when 'banner' %}
+        <div class="banner-box banner-type-1 banner-hover-1">
+          <div class="banner-inner">
+            <div class="banner-image">
+              <img src="{% if block.settings.banner_img %}{{ block.settings.banner_img | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/700x330{% endif %}" alt="{{ block.settings.banner_img.alt }}">
+            </div>
+            {% if block.settings.banner_button != '' %}
+            <a class="banner-link banner-overlay" href="{{ block.settings.banner_button_url }}">{{ block.settings.banner_button }}</a>
+            {% endif %}
+          </div>
+        </div>
+
+        {% endcase %}
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{%- style -%}
+  #section-{{ section.id }}{
+    {%- for block in section.blocks -%}
+    {%- case block.type -%}
+    {%- when 'section_margin' -%}
+    margin-top: {{ block.settings.section_margin_top }}px;
+    margin-bottom: {{ block.settings.section_margin_bottom }}px;
+    {%- when 'section_padding' -%}
+    padding-top: {{ block.settings.section_padding_top }}px;
+    padding-bottom: {{ block.settings.section_padding_bottom }}px;
+    {%- when 'section_background' -%}    
+    background: {{ block.settings.section_bg_color }} 
+      {%- if block.settings.section_bg_image -%}url("{{ block.settings.section_bg_image | img_url: 'master' }}"){%- endif -%} no-repeat scroll center center / cover;
+    {%- endcase -%}
+    {%- endfor -%}
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {% case block.type %}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_md }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_md }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_md }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_md }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+  @media (max-width: 767px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {%- case block.type -%}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_xs }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_xs }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_xs }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_xs }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+{%- endstyle -%}
+
+
+
+
+{% schema %}
+  {
+    "name": "Slideshow 9",
+    "settings": [
+		{
+          "type": "header",
+          "content": "Container Style"
+        },
+        {
+            "type": "radio",
+            "id": "container_style",
+            "label": "Container Style",
+            "options":[
+              {
+                  "value":"style_1",
+                  "label": "Container"
+              },
+              {
+                  "value":"style_2",
+                  "label": "Container Fluid"
+              }
+            ],
+
+           "default": "style_2"
+        },
+		{
+		  "type": "header",
+          "content": "Slider"
+        },
+        {
+          "type": "text",
+          "id": "slider_coloum",
+          "label": "Slider Column",
+          "default": "8",
+          "info": "Follow Bootstrap Column"
+        },
+		{
+		  "type": "header",
+          "content": "Banner"
+        },
+        {
+          "type": "text",
+          "id": "banner_coloum",
+          "label": "Banner Column",
+          "default": "4",
+          "info": "Follow Bootstrap Column"
+        }
+	],
+	"blocks":[
+	   {
+          "type": "slide",
+          "name": "Slide(Style 1)",
+          "settings": [
+			    {
+                    "type": "image_picker",
+                    "id": "slider_img",
+                    "label": "Image",
+                    "info": "Recommended Size: 1220 x 655px"
+                },
+				{
+                    "type": "image_picker",
+                    "id": "text_img",
+                    "label": "Image",
+                    "info": "Recommended Size: 310 x 390px"
+                },
+				{
+                    "type": "text",
+                    "id": "button_title",
+                    "label": "Button Title", 
+                    "default": "Shop now"
+                },
+				{
+                    "type": "url",
+                    "id": "button_url",
+                    "label": "URL"
+                },
+                  {
+                    "type": "header",
+                    "content": "Color"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_text_color",
+                    "label": "Button Text Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_bg_color",
+                    "label": "Button BG Color",
+                    "default": "#fff"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_border_color",
+                    "label": "Button Border Color",
+                    "default": "#fff"
+                  }
+            ]
+      	 },
+         {
+            "type": "slide-2",
+            "name": "Slide 2(Style 2)",
+            "settings": [
+                  {
+                      "type": "image_picker",
+                      "id": "slider_img_2",
+                      "label": "Image",
+                      "info": "Recommended Size: 1220 x 655px"
+                  },
+                  {
+                      "type": "image_picker",
+                      "id": "text_img_2",
+                      "label": "Image",
+                      "info": "Recommended Size: 340 x 330px"
+                  },
+                  {
+                      "type": "text",
+                      "id": "button_title_2",
+                      "label": "Button Title",
+                      "default": "Shop now"
+                  },
+                  {
+                      "type": "url",
+                      "id": "button_url_2",
+                      "label": "URL"
+                  },
+                  {
+                    "type": "header",
+                    "content": "Color"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_text_color",
+                    "label": "Button Text Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_bg_color",
+                    "label": "Button BG Color",
+                    "default": "#fff"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_border_color",
+                    "label": "Button Border Color",
+                    "default": "#282828"
+                  }
+              ]
+           },
+           {
+              "type": "slide-3",
+              "name": "Slide 3(Style 3)",
+              "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "slider_img_3",
+                        "label": "Image",
+                        "info": "Recommended Size: 1220 x 655px"
+                    },
+                    {
+                        "type": "text",
+                        "id": "slider_subtitle_3",
+                        "label": "Slider subtitle",
+                        "default": "Bow cotton dress"
+                    },
+                    {
+                        "type": "text",
+                        "id": "slider_title_3",
+                        "label": "Slider Title",
+                        "default": "NEW NOW"
+                    },
+                    {
+                        "type": "text",
+                        "id": "button_title_3",
+                        "label": "Button Title",
+                        "default": "Shop Now"
+                    },
+                    {
+                        "type": "url",
+                        "id": "button_url_3",
+                        "label": "URL"
+                    },
+                  {
+                    "type": "header",
+                    "content": "Color"
+                  },
+                  {
+                    "type": "color",
+                    "id": "subtitle_color",
+                    "label": "Sub-title Color",
+                    "default": "#2a2a2a"
+                  },
+                  {
+                    "type": "color",
+                    "id": "title_color",
+                    "label": "Title Color",
+                    "default": "#2a2a2a"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_text_color",
+                    "label": "Button Text Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_bg_color",
+                    "label": "Button BG Color",
+                    "default": "#fff"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_border_color",
+                    "label": "Button Border Color",
+                    "default": "#282828"
+                  }
+                ]
+        },
+		{
+           "type": "banner",
+           "name": "Banner",
+           "settings": [
+              {
+                  "type": "image_picker",
+                  "id": "banner_img",
+                  "label": "Image",
+                  "info": "Recommended Size: 700 x 330px"
+              },
+              {
+                  "type": "text",
+                  "id": "banner_button",
+                  "label": "Button Title",
+                  "default": "Shop Now"
+              },
+              {
+                  "type": "url",
+                  "id": "banner_button_url",
+                  "label": "URL"
+              }
+           ]
+       },
+	   {
+          "type": "section_padding",
+          "name": "Section Padding",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 100
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 80
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 60
+			}
+          ]
+       },
+	   {
+          "type": "section_margin",
+          "name": "Section Margin",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			}
+          ]
+       },
+	   {
+          "type": "section_background",
+          "name": "Section Background",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "image_picker",
+			  "id": "section_bg_image",
+			  "label": "BG Image"
+			},
+			{
+			  "type": "color",
+			  "id": "section_bg_color",
+			  "label": "BG Color",
+			  "default": "#ffffff"
+			}
+          ]
+       }
+	],
+	"presets": [
+		{
+		  "name": "Slideshow 9",
+		  "category": " slideshow",
+		  "blocks":[
+				{
+					"type": "slide"
+				},
+				{
+					"type": "slide-2"
+				},
+				{
+					"type": "slide-3"
+				},
+				{
+					"type": "section_padding"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

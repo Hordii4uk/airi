@@ -1,0 +1,10 @@
+
+{{ 'plugins-extra.css' | asset_url | stylesheet_tag }}
+<!-- Make your theme CSS calls here -->
+{{ 'theme-custom.css' | asset_url | stylesheet_tag }}
+
+{%- if settings.custom_css != '' -%}
+{{ settings.custom_css }}
+{%- endif -%}
+
+

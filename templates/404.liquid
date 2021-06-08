@@ -1,0 +1,24 @@
+
+
+<div class="page-content-inner">
+  <div class="container">
+    <div class="row justify-content-center ptb--80">
+      <div class="col-lg-8 text-center">
+        <div class="error-text">
+           {% if settings.opps_404 %}
+          <img src="{{ settings.opps_404 | img_url: '1024x1024' }}" alt="{{ opps_404.alt }}" />
+          {% endif %}
+          {% if settings.heading_404 !='' %}
+          <h2 class="error-heading mt--20">{{ settings.heading_404 }}</h2>
+                 {% endif %}
+          {% if settings.sub_text_404 !='' %}
+          <p class="mb--40">{{ settings.sub_text_404 }}</p>
+              {% endif %}
+          {% if settings.button_title !='' %}
+          <a href="{{ settings.button_url }}" class="btn btn-color-gray btn-medium btn-bordered btn-style-1">{{ settings.button_title }}</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

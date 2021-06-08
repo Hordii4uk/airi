@@ -1,0 +1,729 @@
+
+<div class="homepage-slider" id="section-{{ section.id }}" data-section2="RevolutionSlider13">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div id="rev_slider_10_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="home-15" data-source="gallery" style="margin:0px auto;background:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+          <!-- START REVOLUTION SLIDER 5.4.7 auto mode -->
+          <div id="rev_slider_10_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.7">
+            <ul>    
+              
+                {% for block in section.blocks %}
+        {% case block.type %}
+        {% when 'slide' %}
+              <!-- SLIDE  -->
+              <li data-index="rs-22-{{ forloop.index }}" data-transition="random" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                <!-- MAIN IMAGE -->
+                <img src="{% if block.settings.slider_img %}{{ block.settings.slider_img | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/1800x710{% endif %}"  alt="{{ slider_img.alt }}"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="2" class="rev-slidebg" data-no-retina>
+                <!-- LAYERS -->
+
+                <!-- LAYER NR. 1 -->
+                <div class="tp-caption     rev_group" 
+                     id="slide-22-layer-1" 
+                     data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']" 
+                     data-y="['bottom','bottom','bottom','bottom']" data-voffset="['0','0','0','0']" 
+                     data-width="['900','900','566','457']"
+                     data-height="['411','411','337','277']"
+                     data-whitespace="nowrap"
+
+                     data-type="group" 
+                     data-basealign="slide" 
+                     data-responsive_offset="on" 
+
+                     data-frames='[{"delay":350,"speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                     data-margintop="[0,0,0,0]"
+                     data-marginright="[0,0,0,0]"
+                     data-marginbottom="[0,0,0,0]"
+                     data-marginleft="[0,0,0,0]"
+                     data-textAlign="['inherit','inherit','inherit','inherit']"
+                     data-paddingtop="[0,0,0,0]"
+                     data-paddingright="[0,0,0,0]"
+                     data-paddingbottom="[0,0,0,0]"
+                     data-paddingleft="[0,0,0,0]"
+
+                     style="z-index: 5; min-width: 900px; max-width: 900px; max-width: 411px; max-width: 411px; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: #ffffff; letter-spacing: 0px;">
+                  <div class="tp-element-background" style=" background: url('{% if block.settings.text_bg_img %}{{ block.settings.text_bg_img | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/1030x407{% endif %}') no-repeat left center; background-size: cover; opacity: 1;"></div>
+                 
+                   {% if block.settings.slider_title != '' %}
+                  <!-- LAYER NR. 2 -->
+                  <div class="tp-caption   tp-resizeme" 
+                       id="slide-22-layer-2" 
+                       data-x="['left','left','left','left']" data-hoffset="['90','90','50','30']" 
+                       data-y="['top','top','top','top']" data-voffset="['56','56','50','30']" 
+                       data-fontsize="['50','50','30','26']"
+                       data-lineheight="['60','60','40','30']"
+                       data-letterspacing="['-1','-1','0','0']"
+                       data-width="none"
+                       data-height="none"
+                       data-whitespace="nowrap"
+
+                       data-type="text" 
+                       data-responsive_offset="on" 
+
+                       data-frames='[{"delay":"+290","speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                       data-margintop="[0,0,0,0]"
+                       data-marginright="[0,0,0,0]"
+                       data-marginbottom="[0,0,0,0]"
+                       data-marginleft="[0,0,0,0]"
+                       data-textAlign="['inherit','inherit','inherit','inherit']"
+                       data-paddingtop="[0,0,0,0]"
+                       data-paddingright="[0,0,0,0]"
+                       data-paddingbottom="[0,0,0,0]"
+                       data-paddingleft="[0,0,0,0]"
+
+                       style="z-index: 6; white-space: nowrap; font-size: 50px; line-height: 60px; font-weight: 700; color: {{ block.settings.title_color }}; letter-spacing: -1px;font-family:Montserrat;text-transform:uppercase;">{{ block.settings.slider_title }} </div>
+   {% endif %}
+                  
+                  <!-- LAYER NR. 3 -->
+                  <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme" 
+                       id="slide-22-layer-3" 
+                       data-x="['left','left','left','left']" data-hoffset="['90','90','50','30']" 
+                       data-y="['top','top','top','top']" data-voffset="['140','140','110','80']" 
+                       data-width="50"
+                       data-height="2"
+                       data-whitespace="nowrap"
+
+                       data-type="shape" 
+                       data-responsive_offset="on" 
+
+                       data-frames='[{"delay":"+690","speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                       data-margintop="[0,0,0,0]"
+                       data-marginright="[0,0,0,0]"
+                       data-marginbottom="[0,0,0,0]"
+                       data-marginleft="[0,0,0,0]"
+                       data-textAlign="['inherit','inherit','inherit','inherit']"
+                       data-paddingtop="[0,0,0,0]"
+                       data-paddingright="[0,0,0,0]"
+                       data-paddingbottom="[0,0,0,0]"
+                       data-paddingleft="[0,0,0,0]"
+
+                       style="z-index: 7;background-color:{{ block.settings.title_border_color }};"> </div>
+{% if block.settings.slider_description != '' %}
+                  <!-- LAYER NR. 4 -->
+                  <div class="tp-caption   tp-resizeme" 
+                       id="slide-22-layer-4" 
+                       data-x="['left','left','left','left']" data-hoffset="['90','90','50','30']" 
+                       data-y="['top','top','top','top']" data-voffset="['170','170','139','100']" 
+                       data-width="424"
+                       data-height="none"
+                       data-whitespace="normal"
+
+                       data-type="text" 
+                       data-responsive_offset="on" 
+
+                       data-frames='[{"delay":"+1090","speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                       data-margintop="[0,0,0,0]"
+                       data-marginright="[0,0,0,0]"
+                       data-marginbottom="[0,0,0,0]"
+                       data-marginleft="[0,0,0,0]"
+                       data-textAlign="['inherit','inherit','inherit','inherit']"
+                       data-paddingtop="[0,0,0,0]"
+                       data-paddingright="[0,0,0,0]"
+                       data-paddingbottom="[0,0,0,0]"
+                       data-paddingleft="[0,0,0,0]"
+
+                       style="z-index: 8; min-width: 424px; max-width: 424px; white-space: normal; font-size: 16px; line-height: 24px; font-weight: 400; color: {{ block.settings.description_color }}; letter-spacing: 0px;font-family:Montserrat;">{{ block.settings.slider_description }} </div>
+
+                        {% endif %}
+            {% if block.settings.button_title != '' %}
+                  <!-- LAYER NR. 5 -->
+                  <a class="tp-caption LaBtnOutlineBlack rev-btn " href="{{ block.settings.button_url }}"
+                     id="slide-22-layer-5" 
+                     data-x="['left','left','left','left']" data-hoffset="['90','90','50','30']" 
+                     data-y="['top','top','top','top']" data-voffset="['275','275','240','194']" 
+                     data-width="none"
+                     data-height="none"
+                     data-whitespace="nowrap"
+
+                     data-type="button" 
+                     data-responsive_offset="on" 
+                     data-responsive="off"
+                     data-frames='[{"delay":"+1390","speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(255,255,255);bg:rgb(40,40,40);bc:rgb(40,40,40);bw:2 2 2 2;"}]'
+                     data-margintop="[0,0,0,0]"
+                     data-marginright="[0,0,0,0]"
+                     data-marginbottom="[0,0,0,0]"
+                     data-marginleft="[0,0,0,0]"
+                     data-textAlign="['inherit','inherit','inherit','inherit']"
+                     data-paddingtop="[15,15,15,12]"
+                     data-paddingright="[45,45,45,35]"
+                     data-paddingbottom="[15,15,15,12]"
+                     data-paddingleft="[45,45,45,35]"
+
+                     style="z-index: 9; white-space: nowrap; color: {{ block.settings.button_text_color }}; background-color:{{ block.settings.button_bg_color }}; border-color:{{ block.settings.button_border_color }};border-width:2px 2px 2px 2px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">{{ block.settings.button_title }} </a>
+                
+                  {% endif %}
+                </div>
+              </li>
+              
+              {% when 'slide-2' %}
+              <!-- SLIDE  -->
+              <li data-index="rs-22-1-{{ forloop.index }}" data-transition="random" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                <!-- MAIN IMAGE -->
+                <img src="{% if block.settings.slider_img_2 %}{{ block.settings.slider_img_2 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/1800x710{% endif %}"  alt="{{ slider_img_2.alt }}"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="2" class="rev-slidebg" data-no-retina>
+                <!-- LAYERS -->
+
+                <!-- LAYER NR. 6 -->
+                <div class="tp-caption     rev_group" 
+                     id="slide-221-layer-1" 
+                     data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']" 
+                     data-y="['bottom','bottom','bottom','bottom']" data-voffset="['0','0','0','0']" 
+                     data-width="['900','900','566','457']"
+                     data-height="['411','411','337','277']"
+                     data-whitespace="nowrap"
+
+                     data-type="group" 
+                     data-basealign="slide" 
+                     data-responsive_offset="on" 
+
+                     data-frames='[{"delay":350,"speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                     data-margintop="[0,0,0,0]"
+                     data-marginright="[0,0,0,0]"
+                     data-marginbottom="[0,0,0,0]"
+                     data-marginleft="[0,0,0,0]"
+                     data-textAlign="['inherit','inherit','inherit','inherit']"
+                     data-paddingtop="[0,0,0,0]"
+                     data-paddingright="[0,0,0,0]"
+                     data-paddingbottom="[0,0,0,0]"
+                     data-paddingleft="[0,0,0,0]"
+
+                     style="z-index: 5; min-width: 900px; max-width: 900px; max-width: 411px; max-width: 411px; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: rgb(255,255,255); letter-spacing: 0px;">
+                  <div class="tp-element-background" style=" background: url('{% if block.settings.text_bg_img_2 %}{{ block.settings.text_bg_img_2 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/1030x407{% endif %}') no-repeat left center; background-size: cover; opacity: 1;"></div>
+                  
+                   {% if block.settings.slider_title_2 != '' %}
+                  <!-- LAYER NR. 7 -->
+                  <div class="tp-caption   tp-resizeme" 
+                       id="slide-221-layer-2" 
+                       data-x="['left','left','left','left']" data-hoffset="['90','90','50','30']" 
+                       data-y="['top','top','top','top']" data-voffset="['56','56','50','30']" 
+                       data-fontsize="['50','50','30','26']"
+                       data-lineheight="['60','60','40','30']"
+                       data-letterspacing="['-1','-1','0','0']"
+                       data-width="none"
+                       data-height="none"
+                       data-whitespace="nowrap"
+
+                       data-type="text" 
+                       data-responsive_offset="on" 
+
+                       data-frames='[{"delay":"+290","speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                       data-margintop="[0,0,0,0]"
+                       data-marginright="[0,0,0,0]"
+                       data-marginbottom="[0,0,0,0]"
+                       data-marginleft="[0,0,0,0]"
+                       data-textAlign="['inherit','inherit','inherit','inherit']"
+                       data-paddingtop="[0,0,0,0]"
+                       data-paddingright="[0,0,0,0]"
+                       data-paddingbottom="[0,0,0,0]"
+                       data-paddingleft="[0,0,0,0]"
+
+                       style="z-index: 6; white-space: nowrap; font-size: 50px; line-height: 60px; font-weight: 700; color: {{ block.settings.title_color }}; letter-spacing: -1px;font-family:Montserrat;text-transform:uppercase;">{{ block.settings.slider_title_2 }} </div>
+  {% endif %}
+                  <!-- LAYER NR. 8 -->
+                  <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme" 
+                       id="slide-221-layer-3" 
+                       data-x="['left','left','left','left']" data-hoffset="['90','90','50','30']" 
+                       data-y="['top','top','top','top']" data-voffset="['140','140','110','80']" 
+                       data-width="50"
+                       data-height="2"
+                       data-whitespace="nowrap"
+
+                       data-type="shape" 
+                       data-responsive_offset="on" 
+
+                       data-frames='[{"delay":"+690","speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                       data-margintop="[0,0,0,0]"
+                       data-marginright="[0,0,0,0]"
+                       data-marginbottom="[0,0,0,0]"
+                       data-marginleft="[0,0,0,0]"
+                       data-textAlign="['inherit','inherit','inherit','inherit']"
+                       data-paddingtop="[0,0,0,0]"
+                       data-paddingright="[0,0,0,0]"
+                       data-paddingbottom="[0,0,0,0]"
+                       data-paddingleft="[0,0,0,0]"
+
+                       style="z-index: 7;background-color:{{ block.settings.title_border_color }};"> </div>
+
+                  {% if block.settings.slider_description_2 != '' %}
+                  <!-- LAYER NR. 9 -->
+                  <div class="tp-caption   tp-resizeme" 
+                       id="slide-221-layer-4" 
+                       data-x="['left','left','left','left']" data-hoffset="['90','90','50','30']" 
+                       data-y="['top','top','top','top']" data-voffset="['170','170','139','100']" 
+                       data-width="424"
+                       data-height="none"
+                       data-whitespace="normal"
+
+                       data-type="text" 
+                       data-responsive_offset="on" 
+
+                       data-frames='[{"delay":"+1090","speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                       data-margintop="[0,0,0,0]"
+                       data-marginright="[0,0,0,0]"
+                       data-marginbottom="[0,0,0,0]"
+                       data-marginleft="[0,0,0,0]"
+                       data-textAlign="['inherit','inherit','inherit','inherit']"
+                       data-paddingtop="[0,0,0,0]"
+                       data-paddingright="[0,0,0,0]"
+                       data-paddingbottom="[0,0,0,0]"
+                       data-paddingleft="[0,0,0,0]"
+
+                       style="z-index: 8; min-width: 424px; max-width: 424px; white-space: normal; font-size: 16px; line-height: 24px; font-weight: 400; color: {{ block.settings.description_color }}; letter-spacing: 0px;font-family:Montserrat;">{{ block.settings.slider_description_2 }} </div>
+
+                     {% endif %}
+                  {% if block.settings.button_title_2 != '' %}
+                  <!-- LAYER NR. 10 -->
+                  <div class="tp-caption LaBtnOutlineBlack rev-btn " 
+                       id="slide-221-layer-5" 
+                       data-x="['left','left','left','left']" data-hoffset="['90','90','50','30']" 
+                       data-y="['top','top','top','top']" data-voffset="['275','275','240','194']" 
+                       data-width="none"
+                       data-height="none"
+                       data-whitespace="nowrap"
+
+                       data-type="button" 
+                       data-actions='[{"event":"click","action":"simplelink","target":"_self","url":"\/shop\/","delay":""}]'
+                       data-responsive_offset="on" 
+                       data-responsive="off"
+                       data-frames='[{"delay":"+1390","speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(255,255,255);bg:rgb(40,40,40);bc:rgb(40,40,40);bw:2 2 2 2;"}]'
+                       data-margintop="[0,0,0,0]"
+                       data-marginright="[0,0,0,0]"
+                       data-marginbottom="[0,0,0,0]"
+                       data-marginleft="[0,0,0,0]"
+                       data-textAlign="['inherit','inherit','inherit','inherit']"
+                       data-paddingtop="[15,15,15,12]"
+                       data-paddingright="[45,45,45,35]"
+                       data-paddingbottom="[15,15,15,12]"
+                       data-paddingleft="[45,45,45,35]"
+
+                       style="z-index: 9; white-space: nowrap; color: {{ block.settings.button_text_color }}; background-color:{{ block.settings.button_bg_color }};  border-color:{{ block.settings.button_border_color }};border-width:2px 2px 2px 2px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">{{ block.settings.button_title_2 }} </div>
+                {% endif %}
+                
+                </div>
+              </li>
+              
+        {% endcase %}
+        {% endfor %}
+              
+            </ul>
+            <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div> 
+          </div>
+        </div><!-- END REVOLUTION SLIDER -->      
+      </div>
+    </div>
+  </div>
+</div>
+
+{%- style -%}
+  #section-{{ section.id }}{
+    {%- for block in section.blocks -%}
+    {%- case block.type -%}
+    {%- when 'section_margin' -%}
+    margin-top: {{ block.settings.section_margin_top }}px;
+    margin-bottom: {{ block.settings.section_margin_bottom }}px;
+    {%- when 'section_padding' -%}
+    padding-top: {{ block.settings.section_padding_top }}px;
+    padding-bottom: {{ block.settings.section_padding_bottom }}px;
+    {%- when 'section_background' -%}    
+    background: {{ block.settings.section_bg_color }} 
+      {%- if block.settings.section_bg_image -%}url("{{ block.settings.section_bg_image | img_url: 'master' }}"){%- endif -%} no-repeat scroll center center / cover;
+    {%- endcase -%}
+    {%- endfor -%}
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {% case block.type %}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_md }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_md }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_md }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_md }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+  @media (max-width: 767px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {%- case block.type -%}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_xs }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_xs }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_xs }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_xs }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+{%- endstyle -%}
+
+
+
+{% schema %}
+  {
+    "name": "Slideshow 13",
+    "settings": [
+		
+	],
+	"blocks":[
+	   {
+          "type": "slide",
+          "name": "Slide(Style 1)",
+          "settings": [
+			    {
+                    "type": "image_picker",
+                    "id": "slider_img",
+                    "label": "Image",
+                    "info": "Recommended Size: 1800 x 710px"
+                },
+				{
+                    "type": "image_picker",
+                    "id": "text_bg_img",
+                    "label": "Text Bg Image",
+                    "info": "Recommended Size: 1030 x 407px"
+                },
+                {
+                    "type": "text",
+                    "id": "slider_title",
+                    "label": "Slider Title",
+                    "default": "Luxury Living Room"
+                },
+				{
+                    "type": "textarea",
+                    "id": "slider_description",
+                    "label": "Slider Description",
+                    "default": "Integer ut ligula quis lectus fringilla elementum porttitor sed est. Duis fringilla efficitur ligula sed lobortis. Sed tempus faucibus mi"
+                },
+				{
+                    "type": "text",
+                    "id": "button_title",
+                    "label": "Button Title", 
+                    "default": "Discover Now"
+                },
+				{
+                    "type": "url",
+                    "id": "button_url",
+                    "label": "URL"
+                },
+                  {
+                    "type": "header",
+                    "content": "Color"
+                  },
+                  {
+                    "type": "color",
+                    "id": "title_color",
+                    "label": "Title Color",
+                    "default": "#ffffff"
+                  },
+                  {
+                    "type": "color",
+                    "id": "title_border_color",
+                    "label": "Title Border Color",
+                    "default": "#ffffff"
+                  },
+                  {
+                    "type": "color",
+                    "id": "description_color",
+                    "label": "Description Color",
+                    "default": "#ffffff"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_text_color",
+                    "label": "Button Text Color",
+                    "default": "#ffffff"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_bg_color",
+                    "label": "Button BG Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_border_color",
+                    "label": "Button Border Color",
+                    "default": "#ffffff"
+                  }
+            ]
+      	 },
+         {
+            "type": "slide-2",
+            "name": "Slide 2(Style 2)",
+            "settings": [
+                  {
+                      "type": "image_picker",
+                      "id": "slider_img_2",
+                      "label": "Image",
+                      "info": "Recommended Size: 1800 x 710px"
+                  },
+				  {
+                      "type": "image_picker",
+                      "id": "text_bg_img_2",
+                      "label": "Text Bg Image",
+                      "info": "Recommended Size: 1030 x 407px"
+                  },
+                  {
+                      "type": "text",
+                      "id": "slider_title_2",
+                      "label": "Slider Title",
+                      "default": "Luxury Living Room"
+                  },
+                  {
+                      "type": "textarea",
+                      "id": "slider_description_2",
+                      "label": "Slider Description",
+                      "default": "Integer ut ligula quis lectus fringilla elementum porttitor sed est. Duis fringilla efficitur ligula sed lobortis. Sed tempus faucibus mi"
+                  },
+                  {
+                      "type": "text",
+                      "id": "button_title_2",
+                      "label": "Button Title",
+                      "default": "Discover Now"
+                  },
+                  {
+                    "type": "header",
+                    "content": "Color"
+                  },
+                  {
+                    "type": "color",
+                    "id": "title_color",
+                    "label": "Title Color",
+                    "default": "#ffffff"
+                  },
+                  {
+                    "type": "color",
+                    "id": "title_border_color",
+                    "label": "Title Border Color",
+                    "default": "#ffffff"
+                  },
+                  {
+                    "type": "color",
+                    "id": "description_color",
+                    "label": "Description Color",
+                    "default": "#ffffff"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_text_color",
+                    "label": "Button Text Color",
+                    "default": "#ffffff"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_bg_color",
+                    "label": "Button BG Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_border_color",
+                    "label": "Button Border Color",
+                    "default": "#ffffff"
+                  }
+              ]
+       },
+	   {
+          "type": "section_padding",
+          "name": "Section Padding",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 100
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 80
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 60
+			}
+          ]
+       },
+	   {
+          "type": "section_margin",
+          "name": "Section Margin",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			}
+          ]
+       },
+	   {
+          "type": "section_background",
+          "name": "Section Background",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "image_picker",
+			  "id": "section_bg_image",
+			  "label": "BG Image"
+			},
+			{
+			  "type": "color",
+			  "id": "section_bg_color",
+			  "label": "BG Color",
+			  "default": "#ffffff"
+			}
+          ]
+       }
+	],
+	"presets": [
+		{
+		  "name": "Slideshow 13",
+		  "category": " slideshow",
+		  "blocks":[
+				{
+					"type": "slide"
+				},
+				{
+					"type": "slide-2"
+				},
+				{
+					"type": "section_padding"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

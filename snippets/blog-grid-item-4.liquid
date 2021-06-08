@@ -1,0 +1,25 @@
+
+<article class="blog blog-style-2">
+  <div class="blog-media">
+    <div class="image">
+      <a href="{{ article.url }}">
+        <img src="{{ article | img_url : '370X230', crop: 'center' }}" alt="{{ article.alt }}">
+      </a>
+    </div>
+  </div>
+  <div class="blog-info">
+    <div class="blog-entry-meta">
+        <span class="posted-on" tabindex="0">{{ article.published_at | date: "%b, %d , %y" }}</span>
+        <span class="meta-separator">-</span>
+      <span  class="posted-by" tabindex="0">{{ article.author }}</span>
+    </div>
+    <h3 class="blog-title blog-title--2">
+      <a href="{{ article.url }}">{{ article.title }}</a>
+    </h3>
+    {% if article.excerpt.size > 0 %}
+    {{ article.excerpt }}
+    {% else %}
+    <p class="blog__excerpt">{{ article.content | strip_html | truncatewords: 20 }}</p>
+    {% endif %}
+  </div>
+</article>

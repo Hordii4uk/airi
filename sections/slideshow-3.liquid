@@ -1,0 +1,1311 @@
+
+<div class="homepage-slider" id="section-{{ section.id }}" data-section2="RevolutionSlider3">
+  <div id="rev_slider_16_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="home-03" data-source="gallery" style="background:transparent;padding:0px;">
+    <!-- START REVOLUTION SLIDER 5.4.7 fullscreen mode -->
+    <div id="rev_slider_16_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.7">
+      <ul> 
+        {% for block in section.blocks %}
+        {% case block.type %}
+        {% when 'slide' %}
+        <!-- SLIDE  -->
+        <li data-index="rs-10-{{ forloop.index }}" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="{% if block.settings.slider_img %}{{ block.settings.slider_img | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/10x10{% endif %}"  data-rotate="0"  data-saveperformance="off"  data-title="" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+          <!-- MAIN IMAGE -->
+          <img src="{% if block.settings.slider_img %}{{ block.settings.slider_img | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/10x10{% endif %}" data-bgcolor='#fffcf8' style='background:#fffcf8' alt="{{ slider_img.alt }}"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+          <!-- LAYERS -->
+
+          <!-- LAYER NR. 1 -->
+          <div class="tp-caption     rev_group" 
+               id="slide-10-layer-8" 
+               data-x="['left','left','left','left']" data-hoffset="['1234','598','375','70']" 
+               data-y="['middle','middle','middle','middle']" data-voffset="['-15','5','25','-160']" 
+               data-width="['531','364','338','353']"
+               data-height="['311','280','257','208']"
+               data-whitespace="nowrap"
+
+               data-type="group" 
+               data-basealign="slide" 
+               data-responsive_offset="on" 
+
+               data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+               data-margintop="[0,0,0,0]"
+               data-marginright="[0,0,0,0]"
+               data-marginbottom="[0,0,0,0]"
+               data-marginleft="[0,0,0,0]"
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[0,0,0,0]"
+               data-paddingright="[0,0,0,0]"
+               data-paddingbottom="[0,0,0,0]"
+               data-paddingleft="[0,0,0,0]"
+
+               style="z-index: 11; min-width: 531px; max-width: 531px; max-width: 311px; max-width: 311px; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: #ffffff; letter-spacing: 0px;">
+
+            {% if block.settings.slider_subtitle != '' %}
+            <!-- LAYER NR. 2 -->
+            <div class="tp-caption   tp-resizeme" 
+                 id="slide-10-layer-9" 
+                 data-x="['left','left','left','center']" data-hoffset="['0','0','0','0']" 
+                 data-y="['top','top','top','top']" data-voffset="['0','0','0','0']" 
+                 data-width="none"
+                 data-height="none"
+                 data-whitespace="nowrap"
+
+                 data-type="text" 
+                 data-responsive_offset="on" 
+
+                 data-frames='[{"delay":"+790","speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                 data-margintop="[0,0,0,0]"
+                 data-marginright="[0,0,0,0]"
+                 data-marginbottom="[0,0,0,0]"
+                 data-marginleft="[0,0,0,0]"
+                 data-textAlign="['inherit','inherit','inherit','inherit']"
+                 data-paddingtop="[0,0,0,0]"
+                 data-paddingright="[0,0,0,0]"
+                 data-paddingbottom="[0,0,0,0]"
+                 data-paddingleft="[0,0,0,0]"
+
+                 style="z-index: 12; white-space: nowrap; font-size: 14px; line-height: 20px; font-weight: 400; color: {{ block.settings.subtitle_color }}; letter-spacing: 0px;font-family:Montserrat;">{{ block.settings.slider_subtitle }} </div>
+
+            {% endif %}
+
+            {% if block.settings.slider_title != '' %}
+            <!-- LAYER NR. 3 -->
+            <div class="tp-caption   tp-resizeme" 
+                 id="slide-10-layer-10" 
+                 data-x="['left','left','left','center']" data-hoffset="['0','0','0','0']" 
+                 data-y="['top','top','top','top']" data-voffset="['19','19','19','27']" 
+                 data-fontsize="['80','50','40','36']"
+                 data-lineheight="['75','55','50','40']"
+                 data-width="['471','289','272','312']"
+                 data-height="['none','121','none','none']"
+                 data-whitespace="normal"
+
+                 data-type="text" 
+                 data-responsive_offset="on" 
+
+                 data-frames='[{"delay":"+1190","speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                 data-margintop="[0,0,0,0]"
+                 data-marginright="[0,0,0,0]"
+                 data-marginbottom="[0,0,0,0]"
+                 data-marginleft="[0,0,0,0]"
+                 data-textAlign="['inherit','inherit','inherit','inherit']"
+                 data-paddingtop="[0,0,0,0]"
+                 data-paddingright="[0,0,0,0]"
+                 data-paddingbottom="[0,0,0,0]"
+                 data-paddingleft="[0,0,0,0]"
+
+                 style="z-index: 13; min-width: 471px; max-width: 471px; white-space: normal; font-size: 80px; line-height: 75px; font-weight: 700; color: {{ block.settings.title_color }}; letter-spacing: 0px;font-family:Playfair Display;">{{ block.settings.slider_title }} </div>
+
+            {% endif %}
+            {% if block.settings.price != '' %}
+            <!-- LAYER NR. 4 -->
+            <div class="tp-caption   tp-resizeme" 
+                 id="slide-10-layer-11" 
+                 data-x="['left','left','left','center']" data-hoffset="['0','0','0','4']" 
+                 data-y="['top','top','top','top']" data-voffset="['191','151','129','90']" 
+                 data-fontsize="['24','24','20','20']"
+                 data-width="none"
+                 data-height="none"
+                 data-whitespace="nowrap"
+
+                 data-type="text" 
+                 data-responsive_offset="on" 
+
+                 data-frames='[{"delay":"+1490","speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                 data-margintop="[0,0,0,0]"
+                 data-marginright="[0,0,0,0]"
+                 data-marginbottom="[0,0,0,0]"
+                 data-marginleft="[0,0,0,0]"
+                 data-textAlign="['inherit','inherit','inherit','inherit']"
+                 data-paddingtop="[0,0,0,0]"
+                 data-paddingright="[0,0,0,0]"
+                 data-paddingbottom="[0,0,0,0]"
+                 data-paddingleft="[0,0,0,0]"
+
+                 style="z-index: 14; white-space: nowrap; font-size: 24px; line-height: 30px; font-weight: 400; color: {{ block.settings.price_color }}; letter-spacing: 0px;font-family:Montserrat;">{{ block.settings.price }} </div>
+
+            {% endif %}
+
+            {% if block.settings.button_title != '' %}
+            <!-- LAYER NR. 5 -->
+            <a class="tp-caption LaBtnOutlineBlack rev-btn " href="{{ block.settings.button_url }}" 
+               id="slide-10-layer-12" 
+               data-x="['left','left','left','center']" data-hoffset="['2','0','-2','4']" 
+               data-y="['top','top','top','top']" data-voffset="['249','213','182','141']" 
+               data-width="none"
+               data-height="none"
+               data-whitespace="nowrap"
+
+               data-type="button" 
+               data-responsive_offset="on" 
+               data-responsive="off"
+               data-frames='[{"delay":"+1990","speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(255,255,255);bg:rgb(40,40,40);bw:2 2 2 2;"}]'
+               data-margintop="[0,0,0,0]"
+               data-marginright="[0,0,0,0]"
+               data-marginbottom="[0,0,0,0]"
+               data-marginleft="[0,0,0,0]"
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[15,15,15,12]"
+               data-paddingright="[45,45,45,35]"
+               data-paddingbottom="[15,15,15,12]"
+               data-paddingleft="[45,45,45,35]"
+
+               style="z-index: 15; white-space: nowrap;  color: {{ block.settings.button_text_color }}; background-color:{{ block.settings.button_bg_color }}; border-color: {{ block.settings.button_border_color }} ;border-width:2px 2px 2px 2px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">{{ block.settings.button_title }} </a>
+
+            {% endif %}
+          </div>
+
+          <!-- LAYER NR. 6 -->
+          <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme" 
+               id="slide-10-layer-1" 
+               data-x="['left','left','left','left']" data-hoffset="['400','162','64','49']" 
+               data-y="['top','top','middle','middle']" data-voffset="['100','181','0','143']" 
+               data-fontweight="['100','400','400','400']"
+               data-width="['770','400','280','280']"
+               data-height="['770','400','280','280']"
+               data-whitespace="nowrap"
+
+               data-type="shape" 
+               data-basealign="slide" 
+               data-responsive_offset="on" 
+
+               data-frames='[{"delay":10,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[0,0,0,0]"
+               data-paddingright="[0,0,0,0]"
+               data-paddingbottom="[0,0,0,0]"
+               data-paddingleft="[0,0,0,0]"
+
+               style="z-index: 5;background-color:rgb(255,239,213);border-radius:500px 500px 500px 500px;">
+            <div class="rs-looped rs-wave"  data-speed="2" data-angle="0" data-radius="10" data-origin="50% 50%"> </div>
+          </div>
+
+          <!-- LAYER NR. 7 -->
+          <div class="tp-caption   tp-resizeme" 
+               id="slide-10-layer-6" 
+               data-x="['left','left','left','left']" data-hoffset="['858','430','292','292']" 
+               data-y="['top','bottom','bottom','bottom']" data-voffset="['801','-82','-73','-73']" 
+               data-width="none"
+               data-height="none"
+               data-whitespace="nowrap"
+               data-visibility="['on','on','off','off']"
+
+               data-type="image" 
+               data-basealign="slide" 
+               data-responsive_offset="on" 
+
+               data-frames='[{"delay":340,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[0,0,0,0]"
+               data-paddingright="[0,0,0,0]"
+               data-paddingbottom="[0,0,0,0]"
+               data-paddingleft="[0,0,0,0]"
+
+               style="z-index: 6;"><img src="{% if block.settings.buble_img %}{{ block.settings.buble_img | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/419x419{% endif %}" alt="{{ buble_img.alt }}" data-ww="['419px','179px','120px','120px']" data-hh="['419px','179px','120px','120px']" data-no-retina> </div>
+
+          <!-- LAYER NR. 8 -->
+          <div class="tp-caption   tp-resizeme" 
+               id="slide-10-layer-2" 
+               data-x="['left','left','left','left']" data-hoffset="['400','80','52','36']" 
+               data-y="['bottom','bottom','middle','middle']" data-voffset="['0','0','0','165']" 
+               data-width="none"
+               data-height="none"
+               data-whitespace="nowrap"
+
+               data-type="image" 
+               data-basealign="slide" 
+               data-responsive_offset="on" 
+
+               data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[0,0,0,0]"
+               data-paddingright="[0,0,0,0]"
+               data-paddingbottom="[0,0,0,0]"
+               data-paddingleft="[0,0,0,0]"
+
+               style="z-index: 7;"><img src="{% if block.settings.buble_img_2 %}{{ block.settings.buble_img_2 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/419x419{% endif %}" alt="{{ buble_img_2.alt }}" data-ww="['710px','480px','286px','286px']" data-hh="['959px','648px','386px','386px']" data-no-retina> </div>
+
+          <!-- LAYER NR. 9 -->
+          <div class="tp-caption   tp-resizeme" 
+               id="slide-10-layer-3" 
+               data-x="['left','left','left','left']" data-hoffset="['480','220','132','120']" 
+               data-y="['top','top','middle','middle']" data-voffset="['132','194','-119','30']" 
+               data-width="none"
+               data-height="none"
+               data-whitespace="nowrap"
+
+               data-type="image" 
+               data-basealign="slide" 
+               data-responsive_offset="on" 
+
+               data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;rZ:268;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[0,0,0,0]"
+               data-paddingright="[0,0,0,0]"
+               data-paddingbottom="[0,0,0,0]"
+               data-paddingleft="[0,0,0,0]"
+
+               style="z-index: 8;">
+            <div class="rs-looped rs-pulse"  data-easing="" data-speed="2" data-zoomstart="1" data-zoomend="1.2"><img src="{% if block.settings.buble_img_3 %}{{ block.settings.buble_img_3 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/419x419{% endif %}" alt="{{ buble_img_3.alt }}" data-ww="['111px','53px','27px','27px']" data-hh="['111px','53px','27px','27px']" data-no-retina> </div>
+          </div>
+
+          <!-- LAYER NR. 10 -->
+          <div class="tp-caption   tp-resizeme" 
+               id="slide-10-layer-4" 
+               data-x="['left','left','left','left']" data-hoffset="['918','472','281','278']" 
+               data-y="['top','top','top','top']" data-voffset="['245','268','355','399']" 
+               data-width="none"
+               data-height="none"
+               data-whitespace="nowrap"
+
+               data-type="image" 
+               data-basealign="slide" 
+               data-responsive_offset="on" 
+
+               data-frames='[{"delay":1190,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[0,0,0,0]"
+               data-paddingright="[0,0,0,0]"
+               data-paddingbottom="[0,0,0,0]"
+               data-paddingleft="[0,0,0,0]"
+
+               style="z-index: 9;">
+            <div class="rs-looped rs-pulse"  data-easing="" data-speed="2" data-zoomstart="0.8" data-zoomend="1.2"><img src="{% if block.settings.buble_img_4 %}{{ block.settings.buble_img_4 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/419x419{% endif %}" alt="{{ buble_img_4.alt }}" data-ww="['167px','49px','44px','44px']" data-hh="['167px','49px','44px','44px']" data-no-retina> </div>
+          </div>
+
+          <!-- LAYER NR. 11 -->
+          <div class="tp-caption   tp-resizeme" 
+               id="slide-10-layer-5" 
+               data-x="['left','left','left','left']" data-hoffset="['344','137','59','58']" 
+               data-y="['top','top','top','top']" data-voffset="['394','298','432','461']" 
+               data-width="none"
+               data-height="none"
+               data-whitespace="nowrap"
+
+               data-type="image" 
+               data-basealign="slide" 
+               data-responsive_offset="on" 
+
+               data-frames='[{"delay":1410,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[0,0,0,0]"
+               data-paddingright="[0,0,0,0]"
+               data-paddingbottom="[0,0,0,0]"
+               data-paddingleft="[0,0,0,0]"
+
+               style="z-index: 10;">
+            <div class="rs-looped rs-wave"  data-speed="2" data-angle="5" data-radius="10px" data-origin="50% 50%"><img src="{% if block.settings.buble_img_5 %}{{ block.settings.buble_img_5 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/419x419{% endif %}" alt="{{ buble_img_5.alt }}" data-ww="['139px','66px','35px','35px']" data-hh="['139px','66px','35px','35px']" data-no-retina> </div>
+          </div>
+
+          <!-- LAYER NR. 12 -->
+          <div class="tp-caption   tp-resizeme" 
+               id="slide-10-layer-14" 
+               data-x="['left','left','left','left']" data-hoffset="['1022','482','283','262']" 
+               data-y="['bottom','bottom','bottom','bottom']" data-voffset="['601','413','514','229']" 
+               data-width="20"
+               data-height="20"
+               data-whitespace="nowrap"
+
+               data-type="text" 
+               data-basealign="slide" 
+               data-responsive_offset="on" 
+
+               data-frames='[{"delay":1530,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(255,255,255);bg:rgb(40,40,40);"}]'
+               data-textAlign="['center','center','center','center']"
+               data-paddingtop="[0,0,0,0]"
+               data-paddingright="[0,0,0,0]"
+               data-paddingbottom="[0,0,0,0]"
+               data-paddingleft="[0,0,0,0]"
+
+               style="z-index: 16; min-width: 20px; max-width: 20px; max-width: 20px; max-width: 20px; white-space: nowrap; font-size: 20px; line-height: 20px; font-weight: 400; color: #282828; letter-spacing: 0px;font-family:Open Sans;background-color:rgba(255,255,255,0.8);border-radius:50px 50px 50px 50px;cursor:pointer;">+ </div>
+
+          <!-- LAYER NR. 13 -->
+          <div class="tp-caption   tp-resizeme" 
+               id="slide-10-layer-15" 
+               data-x="['left','left','left','left']" data-hoffset="['744','307','179','164']" 
+               data-y="['bottom','bottom','bottom','bottom']" data-voffset="['719','478','572','278']" 
+               data-width="20"
+               data-height="20"
+               data-whitespace="nowrap"
+
+               data-type="text" 
+               data-basealign="slide" 
+               data-responsive_offset="on" 
+
+               data-frames='[{"delay":1760,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;rZ:354;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(255,255,255);bg:rgb(40,40,40);"}]'
+               data-textAlign="['center','center','center','center']"
+               data-paddingtop="[0,0,0,0]"
+               data-paddingright="[0,0,0,0]"
+               data-paddingbottom="[0,0,0,0]"
+               data-paddingleft="[0,0,0,0]"
+
+               style="z-index: 17; min-width: 20px; max-width: 20px; max-width: 20px; max-width: 20px; white-space: nowrap; font-size: 20px; line-height: 20px; font-weight: 400; color: #282828; letter-spacing: 0px;font-family:Open Sans;background-color:rgba(255,255,255,0.8);border-radius:50px 50px 50px 50px;cursor:pointer;">+ </div>
+
+          <!-- LAYER NR. 14 -->
+          <div class="tp-caption   tp-resizeme" 
+               id="slide-10-layer-16" 
+               data-x="['left','left','left','left']" data-hoffset="['912','422','239','240']" 
+               data-y="['bottom','bottom','bottom','bottom']" data-voffset="['159','99','334','63']" 
+               data-width="20"
+               data-height="20"
+               data-whitespace="nowrap"
+
+               data-type="text" 
+               data-basealign="slide" 
+               data-responsive_offset="on" 
+
+               data-frames='[{"delay":2100,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(255,255,255);bg:rgb(40,40,40);"}]'
+               data-textAlign="['center','center','center','center']"
+               data-paddingtop="[0,0,0,0]"
+               data-paddingright="[0,0,0,0]"
+               data-paddingbottom="[0,0,0,0]"
+               data-paddingleft="[0,0,0,0]"
+
+               style="z-index: 18; min-width: 20px; max-width: 20px; max-width: 20px; max-width: 20px; white-space: nowrap; font-size: 20px; line-height: 20px; font-weight: 400; color: #282828; letter-spacing: 0px;font-family:Open Sans;background-color:rgba(255,255,255,0.8);border-radius:50px 50px 50px 50px;cursor:pointer;">+ </div>
+        </li>
+
+        {% when 'slide-2' %}
+        <!-- SLIDE  -->
+        <li data-index="rs-11-{{ forloop.index }}" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="{% if block.settings.slider_img_2 %}{{ block.settings.slider_img_2 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/10x10{% endif %}"  data-rotate="0"  data-saveperformance="off"  data-title="" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+          <!-- MAIN IMAGE -->
+          <img src="{% if block.settings.slider_img_2 %}{{ block.settings.slider_img_2 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/10x10{% endif %}" data-bgcolor='#f6fbff' style='background:#f6fbff' alt="{{ slider_img_2.alt }}"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+          <!-- LAYERS -->
+
+          <!-- LAYER NR. 15 -->
+          <div class="tp-caption     rev_group" 
+               id="slide-11-layer-8" 
+               data-x="['left','left','left','left']" data-hoffset="['1234','560','89','8']" 
+               data-y="['middle','middle','middle','middle']" data-voffset="['-15','-28','-248','-194']" 
+               data-width="['576','428','421','366']"
+               data-height="['308','284','257','228']"
+               data-whitespace="nowrap"
+
+               data-type="group" 
+               data-basealign="slide" 
+               data-responsive_offset="on" 
+
+               data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+               data-margintop="[0,0,0,0]"
+               data-marginright="[0,0,0,0]"
+               data-marginbottom="[0,0,0,0]"
+               data-marginleft="[0,0,0,0]"
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[0,0,0,0]"
+               data-paddingright="[0,0,0,0]"
+               data-paddingbottom="[0,0,0,0]"
+               data-paddingleft="[0,0,0,0]"
+
+               style="z-index: 7; min-width: 576px; max-width: 576px; max-width: 308px; max-width: 308px; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: #ffffff; letter-spacing: 0px;">
+
+            {% if block.settings.slider_subtitle_2 != '' %}
+            <!-- LAYER NR. 16 -->
+            <div class="tp-caption   tp-resizeme" 
+                 id="slide-11-layer-9" 
+                 data-x="['left','left','center','center']" data-hoffset="['0','0','0','0']" 
+                 data-y="['top','top','top','top']" data-voffset="['0','0','0','0']" 
+                 data-width="none"
+                 data-height="none"
+                 data-whitespace="nowrap"
+
+                 data-type="text" 
+                 data-responsive_offset="on" 
+
+                 data-frames='[{"delay":"+790","speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                 data-margintop="[0,0,0,0]"
+                 data-marginright="[0,0,0,0]"
+                 data-marginbottom="[0,0,0,0]"
+                 data-marginleft="[0,0,0,0]"
+                 data-textAlign="['inherit','inherit','center','center']"
+                 data-paddingtop="[0,0,0,0]"
+                 data-paddingright="[0,0,0,0]"
+                 data-paddingbottom="[0,0,0,0]"
+                 data-paddingleft="[0,0,0,0]"
+
+                 style="z-index: 8; white-space: nowrap; font-size: 14px; line-height: 20px; font-weight: 400; color: {{ block.settings.subtitle_color }}; letter-spacing: 0px;font-family:Montserrat;">{{ block.settings.slider_subtitle_2 }} </div>
+            {% endif %}
+
+            {% if block.settings.slider_title_2 != '' %}
+            <!-- LAYER NR. 17 -->
+            <div class="tp-caption   tp-resizeme" 
+                 id="slide-11-layer-10" 
+                 data-x="['left','left','center','center']" data-hoffset="['0','0','0','0']" 
+                 data-y="['top','top','top','top']" data-voffset="['19','19','19','22']" 
+                 data-fontsize="['60','40','40','36']"
+                 data-lineheight="['75','50','50','40']"
+                 data-width="['471','388','387','334']"
+                 data-height="['none','101','102','none']"
+                 data-whitespace="normal"
+
+                 data-type="text" 
+                 data-responsive_offset="on" 
+
+                 data-frames='[{"delay":"+1190","speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                 data-margintop="[0,0,0,0]"
+                 data-marginright="[0,0,0,0]"
+                 data-marginbottom="[0,0,0,0]"
+                 data-marginleft="[0,0,0,0]"
+                 data-textAlign="['inherit','inherit','center','center']"
+                 data-paddingtop="[0,0,0,0]"
+                 data-paddingright="[0,0,0,0]"
+                 data-paddingbottom="[0,0,0,0]"
+                 data-paddingleft="[0,0,0,0]"
+
+                 style="z-index: 9; min-width: 471px; max-width: 471px; white-space: normal; font-size: 60px; line-height: 75px; font-weight: 700; color: {{ block.settings.title_color }}; letter-spacing: 0px;font-family:Playfair Display;">{{ block.settings.slider_title_2 }} </div>
+
+            {% endif %}
+            {% if block.settings.price_2 != '' %}
+            <!-- LAYER NR. 18 -->
+            <div class="tp-caption   tp-resizeme" 
+                 id="slide-11-layer-11" 
+                 data-x="['left','left','center','center']" data-hoffset="['0','2','0','0']" 
+                 data-y="['top','top','top','top']" data-voffset="['191','142','137','123']" 
+                 data-fontsize="['24','24','24','20']"
+                 data-lineheight="['30','30','30','24']"
+                 data-width="none"
+                 data-height="none"
+                 data-whitespace="nowrap"
+
+                 data-type="text" 
+                 data-responsive_offset="on" 
+
+                 data-frames='[{"delay":"+1490","speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                 data-margintop="[0,0,0,0]"
+                 data-marginright="[0,0,0,0]"
+                 data-marginbottom="[0,0,0,0]"
+                 data-marginleft="[0,0,0,0]"
+                 data-textAlign="['inherit','inherit','inherit','inherit']"
+                 data-paddingtop="[0,0,0,0]"
+                 data-paddingright="[0,0,0,0]"
+                 data-paddingbottom="[0,0,0,0]"
+                 data-paddingleft="[0,0,0,0]"
+
+                 style="z-index: 10; white-space: nowrap; font-size: 24px; line-height: 30px; font-weight: 400; color: {{ block.settings.price_color }}; letter-spacing: 0px;font-family:Montserrat;">{{ block.settings.price_2 }} </div>
+            {% endif %}
+            {% if block.settings.button_title_2 != '' %}
+            <!-- LAYER NR. 19 -->
+            <a class="tp-caption LaBtnOutlineBlack rev-btn " href="{{ block.settings.button_url_2 }}" 
+               id="slide-11-layer-12" 
+               data-x="['left','left','center','center']" data-hoffset="['2','0','0','0']" 
+               data-y="['top','top','top','top']" data-voffset="['249','205','191','171']" 
+               data-width="none"
+               data-height="none"
+               data-whitespace="nowrap"
+
+               data-type="button" 
+               data-responsive_offset="on" 
+               data-responsive="off"
+               data-frames='[{"delay":"+1990","speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(255,255,255);bg:rgb(40,40,40);bw:2 2 2 2;"}]'
+               data-margintop="[0,0,0,0]"
+               data-marginright="[0,0,0,0]"
+               data-marginbottom="[0,0,0,0]"
+               data-marginleft="[0,0,0,0]"
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[15,15,15,12]"
+               data-paddingright="[45,45,45,35]"
+               data-paddingbottom="[15,15,15,12]"
+               data-paddingleft="[45,45,45,35]"
+
+               style="z-index: 11; white-space: nowrap color: {{ block.settings.button_text_color }}; background-color:{{ block.settings.button_bg_color }}; border-color: {{ block.settings.button_border_color }} ;border-width:2px 2px 2px 2px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">{{ block.settings.button_title_2 }} </a>
+          </div>
+          {% endif %}
+          <!-- LAYER NR. 20 -->
+          <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme" 
+               id="slide-11-layer-1" 
+               data-x="['left','left','left','left']" data-hoffset="['261','95','338','157']" 
+               data-y="['top','top','bottom','bottom']" data-voffset="['172','210','130','78']" 
+               data-fontweight="['100','700','700','700']"
+               data-width="['700','400','400','300']"
+               data-height="['700','400','400','300']"
+               data-whitespace="nowrap"
+
+               data-type="shape" 
+               data-basealign="slide" 
+               data-responsive_offset="on" 
+
+               data-frames='[{"delay":10,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[0,0,0,0]"
+               data-paddingright="[0,0,0,0]"
+               data-paddingbottom="[0,0,0,0]"
+               data-paddingleft="[0,0,0,0]"
+
+               style="z-index: 5;background-color:rgb(219,238,254);border-radius:500px 500px 500px 500px;">
+            <div class="rs-looped rs-wave"  data-speed="2" data-angle="0" data-radius="10" data-origin="50% 50%"> </div>
+          </div>
+
+          <!-- LAYER NR. 21 -->
+          <div class="tp-caption   tp-resizeme" 
+               id="slide-11-layer-2" 
+               data-x="['left','left','left','left']" data-hoffset="['400','170','391','221']" 
+               data-y="['bottom','bottom','bottom','bottom']" data-voffset="['0','9','62','-5']" 
+               data-width="none"
+               data-height="none"
+               data-whitespace="nowrap"
+
+               data-type="image" 
+               data-basealign="slide" 
+               data-responsive_offset="on" 
+
+               data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[0,0,0,0]"
+               data-paddingright="[0,0,0,0]"
+               data-paddingbottom="[0,0,0,0]"
+               data-paddingleft="[0,0,0,0]"
+
+               style="z-index: 6;"><img src="{% if block.settings.buble_img_6 %}{{ block.settings.buble_img_6 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/419x419{% endif %}" alt="{{ buble_img_6.alt }}" data-ww="['575px','357px','299px','250px']" data-hh="['985px','612px','512px','428px']" data-no-retina> </div>
+        </li>
+
+        {% when 'slide-3' %}
+        <!-- SLIDE  -->
+        <li data-index="rs-12-{{ forloop.index }}" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="{% if block.settings.slider_img_3 %}{{ block.settings.slider_img_3 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/10x10{% endif %}"  data-rotate="0"  data-saveperformance="off"  data-title="" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+          <!-- MAIN IMAGE -->
+          <img src="{% if block.settings.slider_img_3 %}{{ block.settings.slider_img_3 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/10x10{% endif %}" data-bgcolor='#e4e3e3' style='background:#e4e3e3' alt="{{ slider_img_3.alt }}"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+          <!-- LAYERS -->
+
+          <!-- LAYER NR. 22 -->
+          <div class="tp-caption     rev_group" 
+               id="slide-12-layer-8" 
+               data-x="['left','left','center','center']" data-hoffset="['1234','449','-5','0']" 
+               data-y="['middle','middle','middle','middle']" data-voffset="['-15','-49','-252','-190']" 
+               data-width="['531','493','491','333']"
+               data-height="['311','272','242','221']"
+               data-whitespace="nowrap"
+
+               data-type="group" 
+               data-basealign="slide" 
+               data-responsive_offset="on" 
+
+               data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+               data-margintop="[0,0,0,0]"
+               data-marginright="[0,0,0,0]"
+               data-marginbottom="[0,0,0,0]"
+               data-marginleft="[0,0,0,0]"
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[0,0,0,0]"
+               data-paddingright="[0,0,0,0]"
+               data-paddingbottom="[0,0,0,0]"
+               data-paddingleft="[0,0,0,0]"
+
+               style="z-index: 6; min-width: 531px; max-width: 531px; max-width: 311px; max-width: 311px; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: #ffffff; letter-spacing: 0px;">
+            {% if block.settings.slider_subtitle_3 != '' %}
+
+            <!-- LAYER NR. 23 -->
+            <div class="tp-caption   tp-resizeme" 
+                 id="slide-12-layer-9" 
+                 data-x="['left','left','center','center']" data-hoffset="['0','0','0','0']" 
+                 data-y="['top','top','top','top']" data-voffset="['0','0','0','0']" 
+                 data-width="none"
+                 data-height="none"
+                 data-whitespace="nowrap"
+
+                 data-type="text" 
+                 data-responsive_offset="on" 
+
+                 data-frames='[{"delay":"+790","speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                 data-margintop="[0,0,0,0]"
+                 data-marginright="[0,0,0,0]"
+                 data-marginbottom="[0,0,0,0]"
+                 data-marginleft="[0,0,0,0]"
+                 data-textAlign="['inherit','inherit','inherit','inherit']"
+                 data-paddingtop="[0,0,0,0]"
+                 data-paddingright="[0,0,0,0]"
+                 data-paddingbottom="[0,0,0,0]"
+                 data-paddingleft="[0,0,0,0]"
+
+                 style="z-index: 7; white-space: nowrap; font-size: 14px; line-height: 20px; font-weight: 400; color: {{ block.settings.subtitle_color }}; letter-spacing: 0px;font-family:Montserrat;">{{ block.settings.slider_subtitle_3 }}  </div>
+
+            {% endif %}
+            {% if block.settings.slider_title_3 != '' %}
+            <!-- LAYER NR. 24 -->
+            <div class="tp-caption   tp-resizeme" 
+                 id="slide-12-layer-10" 
+                 data-x="['left','left','center','center']" data-hoffset="['0','0','0','0']" 
+                 data-y="['top','top','top','top']" data-voffset="['19','19','19','18']" 
+                 data-fontsize="['80','50','40','36']"
+                 data-lineheight="['75','60','50','40']"
+                 data-width="['518','409','330','288']"
+                 data-height="['166','none','105','none']"
+                 data-whitespace="normal"
+
+                 data-type="text" 
+                 data-responsive_offset="on" 
+
+                 data-frames='[{"delay":"+1190","speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                 data-margintop="[0,0,0,0]"
+                 data-marginright="[0,0,0,0]"
+                 data-marginbottom="[0,0,0,0]"
+                 data-marginleft="[0,0,0,0]"
+                 data-textAlign="['inherit','inherit','center','center']"
+                 data-paddingtop="[0,0,0,0]"
+                 data-paddingright="[0,0,0,0]"
+                 data-paddingbottom="[0,0,0,0]"
+                 data-paddingleft="[0,0,0,0]"
+
+                 style="z-index: 8; min-width: 518px; max-width: 518px; max-width: 166px; max-width: 166px; white-space: normal; font-size: 80px; line-height: 75px; font-weight: 700; color: {{ block.settings.title_color }}; letter-spacing: 0px;font-family:Playfair Display;">{{ block.settings.slider_title_3 }} </div>
+
+            {% endif %}
+            {% if block.settings.price_3 != '' %}
+            <!-- LAYER NR. 25 -->
+            <div class="tp-caption   tp-resizeme" 
+                 id="slide-12-layer-11" 
+                 data-x="['left','left','center','center']" data-hoffset="['0','0','0','0']" 
+                 data-y="['top','top','top','top']" data-voffset="['191','155','140','117']" 
+                 data-fontsize="['24','24','20','20']"
+                 data-lineheight="['30','30','24','24']"
+                 data-width="none"
+                 data-height="none"
+                 data-whitespace="nowrap"
+
+                 data-type="text" 
+                 data-responsive_offset="on" 
+
+                 data-frames='[{"delay":"+1490","speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                 data-margintop="[0,0,0,0]"
+                 data-marginright="[0,0,0,0]"
+                 data-marginbottom="[0,0,0,0]"
+                 data-marginleft="[0,0,0,0]"
+                 data-textAlign="['inherit','inherit','inherit','inherit']"
+                 data-paddingtop="[0,0,0,0]"
+                 data-paddingright="[0,0,0,0]"
+                 data-paddingbottom="[0,0,0,0]"
+                 data-paddingleft="[0,0,0,0]"
+
+                 style="z-index: 9; white-space: nowrap; font-size: 24px; line-height: 30px; font-weight: 400; color: {{ block.settings.price_color }}; letter-spacing: 0px;font-family:Montserrat;">{{ block.settings.price_3 }} </div>
+            {% endif %}
+            {% if block.settings.button_title_3 != '' %}
+            <!-- LAYER NR. 26 -->
+            <a class="tp-caption LaBtnOutlineBlack rev-btn " href="{{ block.settings.button_url_3 }}" 
+               id="slide-12-layer-12" 
+               data-x="['left','left','center','center']" data-hoffset="['2','0','0','0']" 
+               data-y="['top','top','top','top']" data-voffset="['249','212','186','167']" 
+               data-width="none"
+               data-height="none"
+               data-whitespace="nowrap"
+
+               data-type="button" 
+               data-responsive_offset="on" 
+               data-responsive="off"
+               data-frames='[{"delay":"+1990","speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(255,255,255);bg:rgb(40,40,40);bw:2 2 2 2;"}]'
+               data-margintop="[0,0,0,0]"
+               data-marginright="[0,0,0,0]"
+               data-marginbottom="[0,0,0,0]"
+               data-marginleft="[0,0,0,0]"
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[15,15,12,12]"
+               data-paddingright="[45,45,35,35]"
+               data-paddingbottom="[15,15,12,12]"
+               data-paddingleft="[45,45,35,35]"
+
+               style="z-index: 10; white-space: nowrap;color: {{ block.settings.button_text_color }}; background-color:{{ block.settings.button_bg_color }}; border-color: {{ block.settings.button_border_color }} ;border-width:2px 2px 2px 2px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">{{ block.settings.button_title_3 }} </a>
+            {% endif %}
+          </div>
+
+          <!-- LAYER NR. 27 -->
+          <div class="tp-caption   tp-resizeme" 
+               id="slide-12-layer-2" 
+               data-x="['left','left','center','center']" data-hoffset="['400','30','-6','1']" 
+               data-y="['middle','middle','middle','middle']" data-voffset="['0','0','129','160']" 
+               data-width="none"
+               data-height="none"
+               data-whitespace="nowrap"
+
+               data-type="image" 
+               data-basealign="slide" 
+               data-responsive_offset="on" 
+
+               data-frames='[{"delay":510,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+               data-textAlign="['inherit','inherit','inherit','inherit']"
+               data-paddingtop="[0,0,0,0]"
+               data-paddingright="[0,0,0,0]"
+               data-paddingbottom="[0,0,0,0]"
+               data-paddingleft="[0,0,0,0]"
+
+               style="z-index: 5;"><img src="{% if block.settings.buble_img_7 %}{{ block.settings.buble_img_7 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/419x419{% endif %}" alt="{{ buble_img_7.alt }}" data-ww="['710px','390px','398px','287px']" data-hh="['959px','545px','555px','400px']" data-no-retina> </div>
+        </li>
+
+
+        {% endcase %}
+        {% endfor %}
+
+      </ul>
+      <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div> 
+    </div>
+  </div><!-- END REVOLUTION SLIDER -->
+</div>
+
+
+{%- style -%}
+  #section-{{ section.id }}{
+    {%- for block in section.blocks -%}
+    {%- case block.type -%}
+    {%- when 'section_margin' -%}
+    margin-top: {{ block.settings.section_margin_top }}px;
+    margin-bottom: {{ block.settings.section_margin_bottom }}px;
+    {%- when 'section_padding' -%}
+    padding-top: {{ block.settings.section_padding_top }}px;
+    padding-bottom: {{ block.settings.section_padding_bottom }}px;
+    {%- when 'section_background' -%}    
+    background: {{ block.settings.section_bg_color }} 
+      {%- if block.settings.section_bg_image -%}url("{{ block.settings.section_bg_image | img_url: 'master' }}"){%- endif -%} no-repeat scroll center center / cover;
+    {%- endcase -%}
+    {%- endfor -%}
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {% case block.type %}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_md }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_md }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_md }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_md }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+  @media (max-width: 767px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {%- case block.type -%}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_xs }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_xs }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_xs }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_xs }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+{%- endstyle -%}
+
+
+
+{% schema %}
+  {
+    "name": "Slideshow 3",
+    "settings": [
+		
+	],
+	"blocks":[
+	   {
+          "type": "slide",
+          "name": "Slide(Style 1)",
+          "settings": [
+			    {
+                    "type": "image_picker",
+                    "id": "slider_img",
+                    "label": "Image",
+                    "info": "Recommended Size: 10 x 10px"
+                },
+				{
+                    "type": "text",
+                    "id": "slider_subtitle",
+                    "label": "Slider Subtitle",
+                    "default": "Spring Summer Collections 2018",
+					"info": "Use of <strong>"
+                },
+				{
+                    "type": "text",
+                    "id": "slider_title",
+                    "label": "Slider Title",
+                    "default": "Open-knit sweater",
+					"info": "Use of <strong>"
+                },
+				{
+                    "type": "text",
+                    "id": "price",
+                    "label": "Price", 
+                    "default": "$39.99"
+                },
+				{
+                    "type": "text",
+                    "id": "button_title",
+                    "label": "Button Title", 
+                    "default": "Shop now"
+                },
+				{
+                    "type": "url",
+                    "id": "button_url",
+                    "label": "URL"
+                },
+          		{
+                    "type": "header",
+                    "content": "Buble Image 1"
+                },
+				{
+                    "type": "image_picker",
+                    "id": "buble_img",
+                    "label": "Image",
+                    "info": "Recommended Size: 419 x 419px"
+                },
+          		{
+                    "type": "header",
+                    "content": "Buble Image 2"
+                },
+				{
+                    "type": "image_picker",
+                    "id": "buble_img_2",
+                    "label": "Image",
+                    "info": "Recommended Size: 419 x 419px"
+                },
+          		{
+                    "type": "header",
+                    "content": "Buble Image 3"
+                },
+				{
+                    "type": "image_picker",
+                    "id": "buble_img_3",
+                    "label": "Image",
+                    "info": "Recommended Size: 419 x 419px"
+                },
+          		{
+                    "type": "header",
+                    "content": "Buble Image 4"
+                },
+				{
+                    "type": "image_picker",
+                    "id": "buble_img_4",
+                    "label": "Image",
+                    "info": "Recommended Size: 419 x 419px"
+                },
+          		{
+                    "type": "header",
+                    "content": "Buble Image 5"
+                },
+				{
+                    "type": "image_picker",
+                    "id": "buble_img_5",
+                    "label": "Image",
+                    "info": "Recommended Size: 419 x 419px"
+                },
+                  {
+                    "type": "header",
+                    "content": "Color"
+                  },
+                  {
+                    "type": "color",
+                    "id": "subtitle_color",
+                    "label": "Sub-title Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "title_color",
+                    "label": "Title Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "price_color",
+                    "label": "Price Color",
+                    "default": "#cf987e"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_text_color",
+                    "label": "Button Text Color",
+                    "default": "#fff"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_bg_color",
+                    "label": "Button BG Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_border_color",
+                    "label": "Button Border Color",
+                    "default": "#282828"
+                  }
+            ]
+      	 },
+         {
+            "type": "slide-2",
+            "name": "Slide 2(Style 2)",
+            "settings": [
+                  {
+                      "type": "image_picker",
+                      "id": "slider_img_2",
+                      "label": "Image",
+                      "info": "Recommended Size: 10 x 10px"
+                  },
+                  {
+                      "type": "text",
+                      "id": "slider_subtitle_2",
+                      "label": "Slider Subtitle",
+                      "default": "#Spring Summer"
+                  },
+                  {
+                      "type": "text",
+                      "id": "slider_title_2",
+                      "label": "Slider Title",
+                      "default": "Slim-fit Tailored striped shirt"
+                  },
+                  {
+                      "type": "text",
+                      "id": "price_2",
+                      "label": "Price", 
+                      "default": "$39.99"
+                  },
+                  {
+                      "type": "text",
+                      "id": "button_title_2",
+                      "label": "Button Title",
+                      "default": "Shop now"
+                  },
+                  {
+                      "type": "url",
+                      "id": "button_url_2",
+                      "label": "URL"
+                  },
+                  {
+                      "type": "header",
+                      "content": "Buble Image"
+                  },
+                  {
+                      "type": "image_picker",
+                      "id": "buble_img_6",
+                      "label": "Image",
+                      "info": "Recommended Size: 419 x 419px"
+                  },
+                  {
+                    "type": "header",
+                    "content": "Color"
+                  },
+                  {
+                    "type": "color",
+                    "id": "subtitle_color",
+                    "label": "Sub-title Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "title_color",
+                    "label": "Title Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "price_color",
+                    "label": "Price Color",
+                    "default": "#cf987e"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_text_color",
+                    "label": "Button Text Color",
+                    "default": "#fff"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_bg_color",
+                    "label": "Button BG Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_border_color",
+                    "label": "Button Border Color",
+                    "default": "#282828"
+                  }
+               ]
+           },
+           {
+              "type": "slide-3",
+              "name": "Slide 3(Style 3)",
+              "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "slider_img_3",
+                        "label": "Image",
+                        "info": "Recommended Size: 10 x 10px"
+                    },
+                    {
+                        "type": "text",
+                        "id": "slider_subtitle_3",
+                        "label": "Slider Subtitle",
+                        "default": "Spring Summer Collections 2018"
+                    },
+                    {
+                        "type": "text",
+                        "id": "slider_title_3",
+                        "label": "Slider Title",
+                        "default": "Embroidered long dress"
+                    },
+                    {
+                        "type": "text",
+                        "id": "price_3",
+                        "label": "Price", 
+                        "default": "$39.99"
+                    },
+                    {
+                        "type": "text",
+                        "id": "button_title_3",
+                        "label": "Button Title",
+                        "default": "Shop now"
+                    },
+                    {
+                        "type": "url",
+                        "id": "button_url_3",
+                        "label": "URL"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Buble Image"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "buble_img_7",
+                        "label": "Image",
+                        "info": "Recommended Size: 419 x 419px"
+                    },
+                  {
+                    "type": "header",
+                    "content": "Color"
+                  },
+                  {
+                    "type": "color",
+                    "id": "subtitle_color",
+                    "label": "Sub-title Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "title_color",
+                    "label": "Title Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "price_color",
+                    "label": "Price Color",
+                    "default": "#cf987e"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_text_color",
+                    "label": "Button Text Color",
+                    "default": "#fff"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_bg_color",
+                    "label": "Button BG Color",
+                    "default": "#282828"
+                  },
+                  {
+                    "type": "color",
+                    "id": "button_border_color",
+                    "label": "Button Border Color",
+                    "default": "#282828"
+                  }
+                ]
+       },
+	   {
+          "type": "section_padding",
+          "name": "Section Padding",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 100
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 80
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 60
+			}
+          ]
+       },
+	   {
+          "type": "section_margin",
+          "name": "Section Margin",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			}
+          ]
+       },
+	   {
+          "type": "section_background",
+          "name": "Section Background",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "image_picker",
+			  "id": "section_bg_image",
+			  "label": "BG Image"
+			},
+			{
+			  "type": "color",
+			  "id": "section_bg_color",
+			  "label": "BG Color",
+			  "default": "#ffffff"
+			}
+          ]
+       }
+	],
+	"presets": [
+		{
+		  "name": "Slideshow 3",
+		  "category": " slideshow",
+		  "blocks":[
+				{
+					"type": "slide"
+				},
+				{
+					"type": "slide-2"
+				},
+				{
+					"type": "slide-3"
+				},
+				{
+					"type": "section_padding"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

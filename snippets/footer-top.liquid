@@ -1,0 +1,186 @@
+{% if section.settings.footer_top_enable %}
+<div class="footer-top" id="footer-top">
+  <div class="container">
+    <div class="row">
+       {% for block in section.blocks %}
+      {% case  block.type %}
+      {% when 'contact_about' %}
+      <div class="col-lg-{{ block.settings.footer_about_coloum }} col-md-8" id="block-{{ block.id }}">
+        <div class="footer-widget">
+          <div class="textwidget">
+             {%- if block.settings.footer_logo -%}
+            <a href="/">
+              <img src="{{ block.settings.footer_logo | img_url: '300x300' }}" alt="{{ block.settings.logo.alt | default: shop.name }}"  class="mb--10">
+            </a>
+            {%- else -%}
+            <a href="/">
+              {{ shop.name }}
+            </a>
+            {%- endif -%}
+            {% if block.settings.address_descrption != '' %}
+            <p class="font-size-16 font-2 mb--20">{{ block.settings.address_descrption }}</p>
+               {% endif %}
+            <!-- Social Icons Start Here -->
+            <ul class="social">
+               {% include 'footer-social' %}
+            </ul>
+            <!-- Social Icons End Here -->
+          </div>
+        </div>
+      </div>
+      {% when 'footer_menu' %}
+      <div class="col-lg-{{ block.settings.footer_menu_coloum }} col-md-4" id="block-{{ block.id }}">
+        <div class="footer-widget">
+          {% if block.settings.footer_menu_title != '' %}
+          <h3 class="widget-title">{{ block.settings.footer_menu_title }}</h3>
+          {% endif %}
+          <ul class="widget-menu">
+            {% assign footer_menu = block.settings.footer_menu_handle %}
+            {% for link in linklists[footer_menu].links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+   
+       {% when 'contact_information' %}
+      <div class="col-lg-{{ block.settings.contact_information_coloum }} col-md-4" id="block-{{ block.id }}">
+        <div class="footer-widget">
+           {% if block.settings.footer_contact_title != '' %}
+          <h4 class="widget-title">{{ block.settings.footer_contact_title }}</h4>
+             {% endif %}
+          <ul class="contact-info">
+            {% if block.settings.phone_number != '' or block.settings.icon_title_1 != '' %}
+            <li class="contact-info__item">
+              <i class="fa {{ block.settings.icon_title_1 }}"></i>
+              <span><a href="{{ block.settings.phone_number }}" class="contact-info__link">{{ block.settings.phone_number }}</a></span>
+            </li>
+                {% endif %}
+            {% if block.settings.email_address != '' or block.settings.icon_title_2 != ''  %}
+            <li class="contact-info__item">
+              <i class="fa {{ block.settings.icon_title_2 }}"></i>
+              <span><a href="{{ block.settings.email_address }}" class="contact-info__link">{{ block.settings.email_address }}</a></span>
+            </li>
+             {% endif %}
+             {% if block.settings.address != '' or block.settings.icon_title_3 != ''  %}
+            <li class="contact-info__item">
+              <i class="fa {{ block.settings.icon_title_3 }}"></i>
+              <span>{{ block.settings.address }}</span>
+            </li>
+             {% endif %}
+          </ul>
+          {% if block.settings.payment_logo %}
+          <div class="textwidget">
+            <img src="{{ block.settings.payment_logo | img_url: 'master' }}" alt="{{ payment_logo.alt }}">
+          </div>
+          {% endif %}
+        </div>
+      </div>
+         {% endcase %}
+      {% endfor %}
+      
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+<style>
+  
+      {% for block in section.blocks %}
+      {% case  block.type %}
+      {% when 'contact_about' %}
+  
+  #block-{{ block.id }} .textwidget p {
+    color: {{ block.settings.content_color }};
+}
+
+#block-{{ block.id }} .social__link.color--white {
+    color: {{ block.settings.icon_color }}!important;
+}
+#block-{{ block.id }} .social__link.color--white:hover {
+    color: {{ block.settings.icon_hover_color }}!important;
+}
+   {% when 'footer_menu' %}
+  
+     #block-{{ block.id }} .footer-widget .widget-title {
+    color: {{ block.settings.title_color }};
+} 
+  #block-{{ block.id }} .footer-widget .widget-title:after {
+    background-color: {{ block.settings.title_border_color }};
+}
+  
+   #block-{{ block.id }} .footer-widget .widget-menu a  {
+    color: {{ block.settings.menu_color }};
+}
+     #block-{{ block.id }} .footer-widget .widget-menu a:hover  {
+    color: {{ block.settings.menu_hover_color }};
+}
+  
+  
+  {% when 'contact_information' %}
+  
+  
+       #block-{{ block.id }} .footer-widget .widget-title {
+    color: {{ block.settings.title_color }};
+} 
+  #block-{{ block.id }} .footer-widget .widget-title:after {
+    background-color: {{ block.settings.title_border_color }};
+}
+    
+  #block-{{ block.id }} .footer-widget .contact-info__item i {
+        color: {{ block.settings.icon_2_color }};
+}
+
+  #block-{{ block.id }} .footer-widget .contact-info__item span a {
+    color: {{ block.settings.content_2_color }};
+}
+  
+    #block-{{ block.id }} .footer-widget .contact-info__item span {
+    color: {{ block.settings.content_2_color }};
+}
+  
+  
+         {% endcase %}
+      {% endfor %}
+  
+  
+  
+  #section-{{ section.id }} #footer-top.footer-top {
+    background-color: {{ section.settings.bg_color_1 }};
+  }
+
+  #section-{{ section.id }} #footer-top.footer-top{
+    padding-top:{{ section.settings.section_padding_top_1 }}rem;
+  }
+
+  #section-{{ section.id }} #footer-top.footer-top{
+    padding-bottom:{{ section.settings.section_padding_bottom_1 }}rem;
+  }
+
+
+  @media (min-width: 768px) and (max-width: 991px){
+
+   #section-{{ section.id }} #footer-top.footer-top{
+      padding-top:{{ section.settings.section_padding_top_md_1 }}rem;
+    }
+
+    #section-{{ section.id }} #footer-top.footer-top{
+      padding-bottom:{{ section.settings.section_padding_bottom_md_1 }}rem;
+    }
+
+  }
+  @media (max-width: 767px) {
+
+    #section-{{ section.id }} #footer-top.footer-top{
+      padding-top:{{ section.settings.section_padding_top_xs_1 }}rem;
+    }
+
+    #section-{{ section.id }} #footer-top.footer-top{
+      padding-bottom:{{ section.settings.section_padding_bottom_xs_1 }}rem;
+    }
+  }
+  
+  
+
+</style> 

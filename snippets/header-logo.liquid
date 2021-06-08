@@ -1,0 +1,18 @@
+{%- if section.settings.logo -%}
+<a href="/" class="theme-logo logo-box">
+  
+  <figure class="logo--normal"> 
+    <img src="{{ section.settings.logo_sticky | img_url: '300x300' }}" alt="{{ section.settings.logo_sticky.alt | default: shop.name }}">  
+  </figure>
+
+
+  <figure class="logo--transparency">
+    <img src="{{ section.settings.logo | img_url: '300x300' }}" alt="{{ section.settings.logo.alt | default: shop.name }}">
+  </figure>
+  
+</a>
+{%- else -%}
+<a href="/" class="theme-logo logo-box">
+  {{ shop.name }}
+</a>
+{%- endif -%}

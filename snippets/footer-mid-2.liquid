@@ -1,0 +1,143 @@
+{% if section.settings.footer_mid_enable %}
+<div class="row footer-middle" id="footer-middle">
+  {% for block in section.blocks %}
+  {% case  block.type %}
+  {% when 'footer_menu_2' %}
+  <div class="col-xl-{{ block.settings.footer_menu_coloum_2 }} col-md-4 mb-lg--30" id="block-{{ block.id }}">
+    <div class="footer-widget">
+      {% if block.settings.footer_menu_title_2 != '' %}
+      <h3 class="widget-title widget-title--2">{{ block.settings.footer_menu_title_2 }}</h3>
+      {% endif %}
+      <ul class="widget-menu widget-menu--2">
+        {% assign footer_menu_2 = block.settings.footer_menu_handle_2 %}
+        {% for link in linklists[footer_menu_2].links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% when 'newslatter_area' %}
+  <div class="col-xl-{{ block.settings.newslatter_coloum }} offset-xl-1 col-lg-6 offset-lg-3 col-md-8 offset-md-2" id="block-{{ block.id }}">
+    <div class="footer-widget">
+      {% if block.settings.newslatter_title != '' %}
+      <h3 class="widget-title widget-title--2 widget-title--icon">{{ block.settings.newslatter_title }}</h3>
+      {% endif %}
+      {%- if settings.newsletter_system == 'by_shopify_form' -%}
+      {%- assign formId = 'Contact_' | append: section.id -%}
+      {%- form 'customer', id: formId -%}
+      {%- if form.posted_successfully? -%}
+      <p class="form-message form-message--success form-success">{{ 'general.newsletter_form.confirmation'| t }}</p>
+      {%- else -%}
+      {%- if form.errors -%}
+      <div class="form-message form-message--error">
+        {{ form.errors | default_errors }}
+      </div>
+      {%- endif -%}
+      <div class="newsletter-form newsletter-form--3 mc-form">
+        <div id="mc_embed_signup_scroll" class="mc-form">
+          <div class="mc-form subscribe-form" >
+            <input class="input_text  newsletter-form__input email" type="hidden" name="contact[tags]" value="newsletter">
+            <input class="input_text newsletter-form__input email" type="email" name="contact[email]" id="Email" value="{% if customer %}{{ customer.email }}{% endif %}"
+                   placeholder="{{ 'general.newsletter_form.newsletter_email'| t }}" aria-label="{{ 'general.newsletter_form.newsletter_email'| t }}" {% if form.errors %}aria-invalid="true"{% endif %} autocorrect="off" autocapitalize="off">
+            <button type="submit" name="commit" id="Subscribe" class="newsletter-form__submit"> <i class="dl-icon-right"></i></button>
+          </div>
+        </div>
+      </div>
+      {%- endif -%}
+      {%- endform -%}
+      {%- elsif settings.newsletter_system == 'by_mailchimp' -%}
+      <form action="{{ settings.newsletter_action }}" class="newsletter-form newsletter-form--3 mc-form" method="post" id="mc-embedded-subscribe-form"  name="mc-embedded-subscribe-form" target="_blank" novalidate>
+        <div id="mc_embed_signup_scroll" class="mc-form">
+          <div id="mc-form" class="mc-form subscribe-form" >
+            <input type="email" value="" name="EMAIL" class="newsletter-form__input email" id="mce-EMAIL" placeholder="Enter your email address" required>
+            <button type="submit" id="mc-submit" class="newsletter-form__submit"> <i class="dl-icon-right"></i></button>
+          </div>
+        </div>
+      </form>
+      {%- endif -%}
+    </div>
+  </div>
+  {% endcase %}
+  {% endfor %}
+
+</div>
+
+{% endif %}
+
+<style>
+
+    {% for block in section.blocks %}
+  {% case  block.type %}
+  {% when 'footer_menu_2' %}
+  
+    #block-{{ block.id }}  .footer-widget .widget-title--2 {
+    color: {{ block.settings.title_color }}!important;
+}
+  #block-{{ block.id }} .footer-widget .widget-menu a{
+    color: {{ block.settings.menu_color }};
+}
+    #block-{{ block.id }} .footer-widget .widget-menu a:hover{
+    color: {{ block.settings.menu_hover_color }};
+}
+  
+  
+  {% when 'newslatter_area' %}
+  
+
+    #block-{{ block.id }} .footer-widget .widget-title--2 {
+    color: {{ block.settings.newslatter_title_color }}!important;
+}
+#block-{{ block.id }} .newsletter-form--3 .newsletter-form__input {
+    border-color: {{ block.settings.input_border_color }};
+    color: {{ block.settings.input_text_color }};
+}
+  
+#block-{{ block.id }} .newsletter-form--3 .newsletter-form__submit{
+    color: {{ block.settings.input_button_color }};
+}
+#block-{{ block.id }} .newsletter-form--3 .newsletter-form__submit:hover{
+    color: {{ block.settings.input_button_hover_color }};
+}
+  
+  
+  {% endcase %}
+  {% endfor %}
+  
+  
+  #section-{{ section.id }} #footer-middle.footer-middle {
+    background-color: {{ section.settings.bg_color_2 }};
+  }
+    #section-{{ section.id }} #footer-middle.footer-middle{
+    padding-top:{{ section.settings.section_padding_top_2 }}rem;
+  }
+
+  #section-{{ section.id }} #footer-middle.footer-middle{
+    padding-bottom:{{ section.settings.section_padding_bottom_2 }}rem;
+  }
+
+
+  @media (min-width: 768px) and (max-width: 991px){
+
+   #section-{{ section.id }} #footer-middle.footer-middle{
+      padding-top:{{ section.settings.section_padding_top_md_2 }}rem;
+    }
+
+    #section-{{ section.id }} #footer-middle.footer-middle{
+      padding-bottom:{{ section.settings.section_padding_bottom_md_2 }}rem;
+    }
+
+  }
+  @media (max-width: 767px) {
+
+    #section-{{ section.id }} #footer-middle.footer-middle{
+      padding-top:{{ section.settings.section_padding_top_xs_2 }}rem;
+    }
+
+    #section-{{ section.id }} #footer-middle.footer-middle{
+      padding-bottom:{{ section.settings.section_padding_bottom_xs_2 }}rem;
+    }
+  }
+  
+  
+  
+</style> 

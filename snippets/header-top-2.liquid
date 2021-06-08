@@ -1,0 +1,102 @@
+
+<div class="container-fluid">
+  <div class="row align-items-center">
+    <div class="col-12">
+      <ul class="header-toolbar text-right">
+        {% if section.settings.account_enable %}
+        <li class="header-toolbar__item user-info-menu-btn">
+          <a href="#">
+            <i class="fa fa-user-circle-o"></i>
+          </a>
+          <ul class="user-info-menu">
+            {% if shop.customer_accounts_enabled and customer %}
+            <li><a href="/account/logout">{{ section.settings.signout_title }}</a></li>
+            {% else %}
+            <li><a href="/account/login">{{ section.settings.signin_title }}</a></li>
+            {% endif %}
+            {% assign header_top_menu_handle = section.settings.header_top_menu %}
+            {% for link in linklists[header_top_menu_handle].links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+        {% endif %}
+        {% if section.settings.mini_cart_enable %}
+        <li class="header-toolbar__item">
+          <a href="#miniCart" class="mini-cart-btn toolbar-btn">
+            <i class="dl-icon-cart4"></i>
+            {%- assign item_count = cart.item_count -%}
+            <sup class="mini-cart-count bigcounter">{{ item_count }}</sup>
+          </a>
+        </li>
+        {% endif %}
+        {% if section.settings.search_enable %}
+        <li class="header-toolbar__item">
+          <a href="#searchForm" class="search-btn toolbar-btn">
+            <i class="dl-icon-search1"></i>
+          </a>
+        </li>
+        {% endif %}
+
+        {% if section.settings.side_menu_enable %}
+        <li class="header-toolbar__item d-lg-none">
+          <a href="#" class="menu-btn"></a>                 
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<style>
+  
+  #section-{{ section.id }} .main-navigation.vertical-nav .mainmenu__link {
+    color: {{ section.settings.menu_color }};
+}
+  
+  #section-{{ section.id }} .main-navigation .mainmenu__link:hover {
+    color: {{ section.settings.menu_hover_color }};
+}
+  
+  #section-{{ section.id }}  .main-navigation .mainmenu .sub-menu li a {
+    color: {{ section.settings.sub_menu_color }};
+}
+  
+  #section-{{ section.id }}  .main-navigation .mainmenu .sub-menu li a:hover {
+    color: {{ section.settings.sub_menu_hover_color }};
+}
+  
+  
+    #section-{{ section.id }} .main-navigation .mainmenu__item.menu-item-has-children > ul.megamenu > li a.megamenu-title {
+    color: {{ section.settings.mega_menu_title_color }};
+}
+    #section-{{ section.id }} .main-navigation .mainmenu__item.menu-item-has-children > ul.megamenu > li a.megamenu-title:hover {
+    color: {{ section.settings.mega_menu_title_hover_color }};
+}
+  
+  #section-{{ section.id }} .main-navigation .mainmenu__item.menu-item-has-children > ul.megamenu > li a {
+    color: {{ section.settings.mega_menu_color }};
+}
+  #section-{{ section.id }} .main-navigation .mainmenu__item.menu-item-has-children > ul.megamenu > li a:hover {
+    color: {{ section.settings.mega_menu_hover_color }};
+}
+  
+  
+  
+  
+  #section-{{ section.id }} .header-toolbar__item > a{
+    color: {{ section.settings.icon_color }};
+} 
+  #section-{{ section.id }}  .header-toolbar__item > a:hover{
+    color: {{ section.settings.icon_hover_color }};
+} 
+  #section-{{ section.id }}  .user-info-menu li a {
+    color: {{ section.settings.sub_menu_color }};
+}
+  #section-{{ section.id }}  .user-info-menu li a:hover{
+    color: {{ section.settings.sub_menu_hover_color }};
+}
+  
+  </style>
+  

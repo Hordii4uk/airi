@@ -1,0 +1,402 @@
+<!-- Method area Start Here -->
+<section class="method-area" id="section-{{ section.id }}">
+  <div class="{% if section.settings.container_style == 'style_1' %}container {% else %} container-fluid{% endif %}">
+    <div class="row">
+      {% for block in section.blocks %}
+      {%- case block.type -%}
+      {%- when 'service' -%}
+      <div class="col-lg-{{ block.settings.service_coloum }} col-md-6 mb-md--30" id="block-{{ block.id }}">
+        <div class="method-box method-box-2 text-{% if block.settings.text_style == 'text_style_left' %}left{% elsif block.settings.text_style == 'text_style_center' %}center{% elsif block.settings.text_style == 'text_style_right' %}right{% endif %}">
+          {% if block.settings.service_img %}
+          <img src="{{ block.settings.service_img | img_url: 'master' }}" alt="{{ block.settings.service_img.alt }}">
+          {% endif %}
+          {% if block.settings.service_title != '' %}
+          <h4 class=" {% if block.settings.font_weight_400_enable %}font-weight-400{% endif %} mt--20">{{ block.settings.service_title }}</h4>
+          {% endif %}
+          {% if block.settings.service_description != '' %}
+          <p>{{ block.settings.service_description }}</p>
+          {% endif %}
+        </div>
+      </div>
+      {%- endcase -%}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- Method area End Here -->
+
+
+
+{%- style -%}
+
+
+{% for block in section.blocks %}
+{%- case block.type -%}
+{%- when 'service' -%}
+
+#block-{{ block.id }} .method-box-2 h4 {
+color: {{ block.settings.service_title_color }};
+}
+
+#block-{{ block.id }} .method-box-2 p {
+color: {{ block.settings.service_description_color }};
+}
+
+
+{%- endcase -%}
+{% endfor %}
+
+  #section-{{ section.id }}{
+    {%- for block in section.blocks -%}
+    {%- case block.type -%}
+    {%- when 'section_margin' -%}
+    margin-top: {{ block.settings.section_margin_top }}px;
+    margin-bottom: {{ block.settings.section_margin_bottom }}px;
+    {%- when 'section_padding' -%}
+    padding-top: {{ block.settings.section_padding_top }}px;
+    padding-bottom: {{ block.settings.section_padding_bottom }}px;
+    {%- when 'section_background' -%}    
+    background: {{ block.settings.section_bg_color }} 
+      {%- if block.settings.section_bg_image -%}url("{{ block.settings.section_bg_image | img_url: 'master' }}"){%- endif -%} no-repeat scroll center center / cover;
+    {%- endcase -%}
+    {%- endfor -%}
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {% case block.type %}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_md }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_md }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_md }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_md }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+  @media (max-width: 767px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {%- case block.type -%}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_xs }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_xs }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_xs }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_xs }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+{%- endstyle -%}
+
+
+{% schema %}
+  {
+    "name": "Service Area",
+    "settings": [
+		{
+          "type": "header",
+          "content": "Container Style"
+        },
+        {
+            "type": "radio",
+            "id": "container_style",
+            "label": "Container Style",
+            "options":[
+              {
+                  "value":"style_1",
+                  "label": "Container"
+              },
+              {
+                  "value":"style_2",
+                  "label": "Container Fluid"
+              }
+            ],
+
+           "default": "style_1"
+        }
+	],
+	"blocks":[
+	   {
+         "type": "service",
+         "name": "Service",
+         "settings": [
+			{
+				"type": "text",
+				"id": "service_coloum",
+				"label": "Service Column",
+                "default": "3",
+                "info": "Follow Bootstrap Column"
+			},
+            {
+              "type": "select",
+              "id": "text_style",
+              "label": "Text Align",
+              "options":[
+                {
+                  "value":"text_style_left",
+                  "label": "Left"
+                },
+                {
+                  "value":"text_style_center",
+                  "label": "center"
+                },
+                {
+                  "value":"text_style_right",
+                  "label": "right"
+                }
+              ],
+              "default": "text_style_center"
+            },
+            {
+                "type": "image_picker",
+                "id": "service_img",
+                "label": "Image",
+                "info": "Recommended Size: 50 x 50px"
+            },
+			{
+				"type": "text",
+				"id": "service_title",
+				"label": "Service Title",
+                "default": "FREESHIPPING WORLD WIDE"
+			},
+            {
+              "type": "checkbox",
+              "id": "font_weight_400_enable",
+              "label": "Title Font Weight 400 Enable",
+              "default": false
+            },
+			{
+				"type": "textarea",
+				"id": "service_description",
+				"label": "Service Description",
+                "default": "Freeship over oder $100"
+			},
+            {
+              "type": "header",
+              "content": "Color"
+            },
+            {
+              "type": "color",
+              "id": "service_title_color",
+              "label": "Title Color",
+              "default": "#282828"
+            },
+            {
+              "type": "color",
+              "id": "service_description_color",
+              "label": "Description Color",
+              "default": "#8a8a8a"
+            }
+        ]
+       },
+	   {
+          "type": "section_padding",
+          "name": "Section Padding",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 100
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 80
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 60
+			}
+          ]
+       },
+	   {
+          "type": "section_margin",
+          "name": "Section Margin",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			}
+          ]
+       },
+	   {
+          "type": "section_background",
+          "name": "Section Background",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "image_picker",
+			  "id": "section_bg_image",
+			  "label": "BG Image"
+			},
+			{
+			  "type": "color",
+			  "id": "section_bg_color",
+			  "label": "BG Color",
+			  "default": "#ffffff"
+			}
+          ]
+       }
+	],
+	"presets": [
+		{
+		  "name": "Service Area",
+		  "category": " about",
+		  "blocks":[
+				{
+					"type": "service"
+				},
+				{
+					"type": "service"
+				},
+				{
+					"type": "service"
+				},
+				{
+					"type": "service"
+				},
+				{
+					"type": "section_padding"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

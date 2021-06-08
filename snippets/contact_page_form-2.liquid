@@ -1,0 +1,38 @@
+
+
+{% form 'contact' %}
+{% if form.posted_successfully? %}
+<p class="note form-success">{{ 'contact.form.post_success' | t }}</p>
+{% endif %}
+{{ form.errors | default_errors }}
+{% if section.settings.contact_form_title != '' %}
+<h3 class="text-center font-size-md-25 font-size-sm-20">{{ section.settings.contact_form_title }}</h3>
+{% endif %}
+
+{% if section.settings.contact_form_description != '' %}
+<hr class="separator separator--2 mt--15 mb--25">
+<p class="text-center mb--40 mb-sm--30">{{ section.settings.contact_form_description }}</p>
+{% endif %}
+
+<!-- Contact Form Start here -->
+<div class="form" action="mail.php" id="contact-form">
+   <div class="form__group mb--20">
+    <input type="text" id="ContactFormName" name="contact[name]" class="form__input form__input--2 {% if form.errors contains 'name' %}error{% endif %}" placeholder="{{ section.settings.name_placeholder }}" value="{% if form.name %}{{ form.name }}{% elsif customer.name %}{{ customer.name }}{% endif %}">
+  </div>
+  <div class="form__group mb--20">
+    <input type="email" name="contact[email]" id="ContactFormEmail" class="form__input form__input--2 {% if form.errors contains 'email' %}error{% endif %}" placeholder="{{ section.settings.email_placeholder }}" value="{% if form.email %}{{ form.email }}{% elsif customer.email %}{{ customer.email }}{% endif %}">
+  </div>
+  <div class="form__group mb--20">
+    <input type="text" id="contactSubject" name="contact[subject]" class="form__input form__input--2 {% if form.error contains 'email' %}error{% endif %}" placeholder="{{ section.settings.subject_placeholder }}" value="{% if form.subject %}{{ form.subject }}{% elsif customer %}{{ customer.subject }}{% endif %}">
+  </div>
+  <div class="form__group mb--20">
+    <textarea class="form__input form__input--textarea" name="contact[body]" id="ContactFormMessage" placeholder="{{ section.settings.message_placeholder }}">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+  </div>
+  <div class="form__group">
+    <input type="submit" value="{{ section.settings.button_title }}" class="btn btn-submit btn-style-1">
+  </div>
+  <div class="form__output"></div>
+</div>
+<!-- Contact Form End here -->
+
+{% endform %}

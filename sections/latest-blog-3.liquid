@@ -1,0 +1,594 @@
+<!-- Blog area Start Here -->
+<section class="blog-area" id="section-{{ section.id }}" data-section="LatestBlog_3">
+  <div class="{% if section.settings.container_style == 'style_1' %}container {% else %} container-fluid{% endif %}">
+    {% if section.settings.section_title != '' or section.settings.section_description != '' %}
+    <div class="row mb--35 mb-md--25">
+      <div class="col-12 text-{% if section.settings.text_style == 'text_style_left' %}left{% elsif section.settings.text_style == 'text_style_center' %}center{% elsif section.settings.text_style == 'text_style_right' %}right{% endif %}">
+        <div class="tex-block ">
+          <h2 class="heading-secondary">{{ section.settings.section_title }}</h2>
+          {% if section.settings.section_title_border %}
+          <hr class="separator separator--2 mt--25 mt-md--15 mb--30 mb-md--20">
+          {% endif %}
+          <p class="font-size-16">{{ section.settings.section_description }}</p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    <div class="row">
+      <div class="col-12">
+          
+          {%- capture data_slick_activation -%}
+          data-slick='{
+              {%- if section.settings.autoplay_true -%}
+              "autoplay": true,
+              "autoplaySpeed": {{ section.settings.autoplay_speed }},
+              {%- endif -%}
+                                 
+                                 {% if settings.rtl_enable %} "rtl": true,{% endif %} 
+                                 "slidesToScroll": 3,
+               "slidesToShow": {{ section.settings.blog_column }},
+                "responsive":[
+                    {"breakpoint":992, "settings": {"slidesToShow": {{ section.settings.blog_column_md }}} },
+                    {"breakpoint":768, "settings": {"slidesToShow": {{ section.settings.blog_column_sm }}} },
+                    {"breakpoint":480, "settings": {"slidesToShow": {{ section.settings.blog_column_sm }}} }
+                  ] 
+
+          }'
+  		 {%- endcapture -%}
+        
+        <div class="airi-element-carousel slick-gutter-30 blog-carousel" {% if settings.rtl_enable %} dir="rtl"{% endif %}  {{ data_slick_activation }}>
+
+
+          {% assign blog = blogs[section.settings.blog_handle] %}
+          {% assign blog_limit = section.settings.blog_limit_handle %}
+          {% for article in blog.articles limit: blog_limit %}
+          <div class="item">
+            {% include 'blog-grid-item-4' %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% if section.settings.button_title != '' %}
+    <div class="row mt--10">
+      <div class="col-12 text-{% if section.settings.section_text_align_2 == 'section_text_left' %}left{% elsif section.settings.section_text_align_2 == 'section_text_center' %}center{% elsif section.settings.section_text_align_2 == 'section_text_right' %}right{% endif %}">
+        <a href="{{ section.settings.button_url }}" class="view-all">{{ section.settings.button_title }}</a>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+<!-- Blog area End Here -->
+
+
+{%- style -%}
+  #section-{{ section.id }}{
+    {%- for block in section.blocks -%}
+    {%- case block.type -%}
+    {%- when 'section_margin' -%}
+    margin-top: {{ block.settings.section_margin_top }}px;
+    margin-bottom: {{ block.settings.section_margin_bottom }}px;
+    {%- when 'section_padding' -%}
+    padding-top: {{ block.settings.section_padding_top }}px;
+    padding-bottom: {{ block.settings.section_padding_bottom }}px;
+    {%- when 'section_background' -%}    
+    background: {{ block.settings.section_bg_color }} 
+      {%- if block.settings.section_bg_image -%}url("{{ block.settings.section_bg_image | img_url: 'master' }}"){%- endif -%} no-repeat scroll center center / cover;
+    {%- endcase -%}
+    {%- endfor -%}
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {% case block.type %}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_md }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_md }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_md }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_md }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+  @media (max-width: 767px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {%- case block.type -%}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_xs }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_xs }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_xs }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_xs }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+
+
+#section-{{ section.id }} .heading-secondary {
+    color:  {{ section.settings.section_title_color }};
+}
+#section-{{ section.id }} .separator {
+    border-color: {{ section.settings.section_border_color }};
+}
+
+#section-{{ section.id }} .tex-block p{
+	color: {{ section.settings.section_description_color }};
+}
+
+#section-{{ section.id }} .blog-style-2 .blog-entry-meta {
+	color: {{ section.settings.blog_meta_color }};
+}
+
+#section-{{ section.id }} .blog-style-2 .blog-title a{
+	color: {{ section.settings.blog_title_color }};
+}
+#section-{{ section.id }} .blog-style-2 .blog-title a:hover{
+	 color: {{ section.settings.blog_title_hover_color }};
+}
+#section-{{ section.id }} .blog-style-2 .blog-info p {
+   color: {{ section.settings.blog_description_color }};
+}
+
+#section-{{ section.id }} .view-all {
+color: {{ section.settings.button_text_color }};
+border-bottom: 2px solid {{ section.settings.button_border_color }};
+}
+
+#section-{{ section.id }} .view-all:hover  {
+border-bottom: 1px solid {{ section.settings.button_border_hover_color }};
+color: {{ section.settings.button_text_hover_color }};
+}
+
+
+{%- endstyle -%}
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Latest Blog 3",
+    "settings": [
+		{
+          "type": "header",
+          "content": "Container Style"
+        },
+        {
+            "type": "radio",
+            "id": "container_style",
+            "label": "Container Style",
+            "options":[
+              {
+                  "value":"style_1",
+                  "label": "Container"
+              },
+              {
+                  "value":"style_2",
+                  "label": "Container Fluid"
+              }
+            ],
+
+           "default": "style_1"
+        },
+		{
+		  "type": "header",
+          "content": "Section Heading"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "label": "Heading Text Align",
+          "options":[
+            {
+              "value":"text_style_left",
+              "label": "Left"
+            },
+            {
+              "value":"text_style_center",
+              "label": "center"
+            },
+            {
+              "value":"text_style_right",
+              "label": "right"
+            }
+          ],
+          "default": "text_style_center"
+        },
+		{
+          "type": "text",
+          "id": "section_title",
+          "label": "Section Title",
+          "default": "Latest News"
+      	},
+		{
+          "type": "header",
+          "content": "Section Title Border"
+        },
+        {
+          "type": "checkbox",
+          "id": "section_title_border",
+          "label": "Border Enable",
+          "default": false
+        },
+		{
+          "type": "textarea",
+          "id": "section_description",
+          "label": "Section Description",
+          "default": "Integer ut ligula quis lectus fringilla elementum porttitor sed est. Duis fringilla efficitur ligula sed lobortis. Sed tempus faucibus mi, quis fringilla mauris lacinia se"
+      	},	
+		{
+			"type": "header",
+            "content": "Blog"
+        },
+		{
+          "type": "blog",
+          "id": "blog_handle",
+          "label": "Select Blog"
+        },
+		{
+            "type": "range",
+            "id": "blog_limit_handle",
+            "min": 2,
+            "max": 12,
+            "step": 1,
+            "label": "Limit",
+            "default": 3
+        },
+		{
+			"type": "header",
+            "content": "Options"
+        },
+		{
+          "type": "checkbox",
+          "id": "autoplay_true",
+          "label": "Autoplay Enable",
+          "default": false
+      	},
+		{
+            "type": "range",
+            "id": "autoplay_speed",
+            "min": 1000,
+            "max": 9000,
+            "step": 1000,
+            "label": "Autoplay Speed",
+            "unit": "ms",
+            "default": 5000
+        },
+		{
+			"type": "header",
+            "content": "Blog Carousel Column"
+        },
+		{
+            "type": "range",
+            "id": "blog_column",
+            "min": 1,
+            "max": 12,
+            "step": 1,
+            "label": "Desktop",
+            "default": 3
+        },
+		{
+            "type": "range",
+            "id": "blog_column_md",
+            "min": 1,
+            "max": 12,
+            "step": 1,
+            "label": "Tablet",
+            "default": 2
+        },
+		{
+            "type": "range",
+            "id": "blog_column_sm",
+            "min": 1,
+            "max": 12,
+            "step": 1,
+            "label": "Mobile",
+            "default": 1
+        },	
+		{
+			"type": "header",
+            "content": "Button"
+        },
+		{
+          "type": "select",
+          "id": "section_text_align_2",
+          "label": "Button Text Align",
+		  "options":[
+				{
+					"label": "Left",
+					"value": "section_text_left"
+				},
+				{
+					"label": "Center",
+					"value": "section_text_center"
+				},
+				{
+					"label": "Right",
+					"value": "section_text_right"
+				}
+			],
+			"default": "section_text_center"
+      	},
+		{
+          "type": "text",
+          "id": "button_title",
+          "label": "Button Title",
+          "default": "View All Blog"
+      	},
+		{
+          "type": "url",
+          "id": "button_url",
+          "label": "URL"
+      	},
+		{
+          "type": "header",
+          "content": "Color"
+        }, 
+        {
+           "type": "color",
+           "id": "section_title_color",
+           "label": "Section Title Color",
+           "default": "#282828"
+        }, 
+        {
+           "type": "color",
+           "id": "section_border_color",
+           "label": "Border Color",
+           "default": "#cf987e"
+        }, 
+        {
+           "type": "color",
+           "id": "section_description_color",
+           "label": "Section Description Color",
+           "default": "#8a8a8a"
+        },  
+        {
+           "type": "color",
+           "id": "blog_meta_color",
+           "label": "Blog Meta Color",
+           "default": "#8a8a8a"
+        },  
+        {
+           "type": "color",
+           "id": "blog_title_color",
+           "label": "Blog Title Color",
+           "default": "#282828"
+        },
+        {
+           "type": "color",
+           "id": "blog_title_hover_color",
+           "label": "Blog Title Hover Color",
+           "default": "#cf987e"
+        }, 
+        {
+           "type": "color",
+           "id": "blog_description_color",
+           "label": "Blog Description Color",
+           "default": "#8a8a8a"
+        },  
+        {
+           "type": "color",
+           "id": "button_text_color",
+           "label": "Button Text Color",
+           "default": "#282828"
+        }, 
+        {
+           "type": "color",
+           "id": "button_border_color",
+           "label": "Button Border Color",
+           "default": "#282828"
+        }, 
+        {
+           "type": "color",
+           "id": "button_text_hover_color",
+           "label": "Button Text Hover Color",
+           "default": "#cf987e"
+        }, 
+        {
+           "type": "color",
+           "id": "button_border_hover_color",
+           "label": "Button Border Hover Color",
+           "default": "#cf987e"
+        }
+	],
+	"blocks":[
+	   {
+          "type": "section_padding",
+          "name": "Section Padding",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 100
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 80
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 60
+			}
+          ]
+       },
+	   {
+          "type": "section_margin",
+          "name": "Section Margin",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			}
+          ]
+       },
+	   {
+          "type": "section_background",
+          "name": "Section Background",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "image_picker",
+			  "id": "section_bg_image",
+			  "label": "BG Image"
+			},
+			{
+			  "type": "color",
+			  "id": "section_bg_color",
+			  "label": "BG Color",
+			  "default": "#ffffff"
+			}
+          ]
+       }
+	],
+	"presets": [
+		{
+		  "name": "Latest Blog 3",
+		  "category": " blog",
+		  "blocks":[
+				{
+					"type": "section_padding"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

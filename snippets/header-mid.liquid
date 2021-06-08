@@ -1,0 +1,144 @@
+<div class="header-middle">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="col-xl-4 col-lg-5 d-lg-block d-none">
+        {% if section.settings.social_icon_enable %}
+        <!-- Social Icons Start Here -->
+        <ul class="social social-medium mb--20">
+          {%- include 'header-social-area' -%}
+        </ul>
+        <!-- Social Icons End Here -->
+        {% endif %}
+        {% if section.settings.header_contact_enable %}
+        <!-- Contact Info Start Here -->
+        <div class="header-contact-info">
+          {% if section.settings.hotline_title != '' or section.settings.contact_number != '' %}
+          <div class="header-contact-info__item">
+            <span>{{ section.settings.hotline_title }}</span>
+            <span>{{ section.settings.contact_number }}</span>
+          </div>
+          {% endif %}
+          {% if section.settings.location_title != '' or section.settings.location_space != '' %}
+          <div class="header-contact-info__item">
+            <span>{{ section.settings.location_title }}</span>
+            <span>{{ section.settings.location_space }}</span>
+          </div>
+          {% endif %}
+        </div>
+        <!-- Contact Info End Here -->
+        {% endif %}
+      </div>
+      <div class="col-xl-4 col-lg-2 col-4 text-lg-center">
+        {%- include 'header-logo-6' -%}
+      </div>
+      <div class="col-xl-4 col-lg-5 col-8">
+        <div class="header-middle-right">
+          {% if section.settings.search_enable_2 %}
+          <div class="searchform-wrapper d-none d-lg-block">
+            {%- include 'header-search' -%}
+          </div>
+          {% endif %}
+          <ul class="header-toolbar text-right">
+            
+            {% if section.settings.side_menu_enable %}
+            <li class="header-toolbar__item d-none d-lg-block">
+              <a href="#sideNav" class="toolbar-btn">
+                <i class="dl-icon-menu2"></i>
+              </a>                                    
+            </li>
+            {% endif %}
+            {% if section.settings.account_enable %}
+            <li class="header-toolbar__item user-info-menu-btn">
+              <a href="#">
+                <i class="fa fa-user-circle-o"></i>
+              </a>
+              <ul class="user-info-menu">
+                {% if shop.customer_accounts_enabled and customer %}
+                <li><a href="/account/logout">{{ section.settings.signout_title }}</a></li>
+                {% else %}
+                <li><a href="/account/login">{{ section.settings.signin_title }}</a></li>
+                {% endif %}
+                {% assign header_top_menu_handle = section.settings.header_top_menu %}
+                {% for link in linklists[header_top_menu_handle].links %}
+                <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+            {% endif %}
+            {% if section.settings.mini_cart_enable %}
+            <li class="header-toolbar__item">
+              <a href="#miniCart" class="mini-cart-btn toolbar-btn">
+                <i class="dl-icon-cart4"></i>
+                {%- assign item_count = cart.item_count -%}
+                <sup class="mini-cart-count bigcounter">{{ item_count }}</sup>
+              </a>
+            </li>
+            {% endif %}
+            {% if section.settings.search_enable %}
+            <li class="header-toolbar__item">
+              <a href="#searchForm" class="search-btn toolbar-btn">
+                <i class="dl-icon-search1"></i>
+              </a>
+            </li>
+            {% endif %}
+
+            {% if section.settings.side_menu_enable %}
+            <li class="header-toolbar__item d-lg-none">
+              <a href="#" class="menu-btn"></a>                 
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <style>
+
+
+  #section-{{ section.id }}.header:not(.header-transparent) .header-toolbar__item > a{
+    color: {{ section.settings.icon_color }};
+}
+    #section-{{ section.id }}.header:not(.header-transparent) .header-toolbar__item > a:hover{
+    color: {{ section.settings.icon_hover_color }};
+}
+   #section-{{ section.id }} .user-info-menu li a{
+    color: {{ section.settings.sub_menu_color }};
+}
+     #section-{{ section.id }} .user-info-menu li a:hover{
+    color: {{ section.settings.sub_menu_hover_color }};
+}
+    
+    #section-{{ section.id }} .social-medium .social__link{
+    color: {{ section.settings.social_icon_color }};
+}
+   #section-{{ section.id }} .social-medium .social__link:hover {
+    color: {{ section.settings.social_icon_hover_color }};
+}
+   #section-{{ section.id }} .header-contact-info__item span:first-child{
+    color: {{ section.settings.contact_title_color }};
+}
+   #section-{{ section.id }} .header-contact-info__item span{
+    color: {{ section.settings.contact_description_color }};
+}
+   #section-{{ section.id }} span.header-text{
+    	    color: {{ section.settings.wellcome_text_color }};
+    }
+    
+   #section-{{ section.id }} .searchform-2 .searchform__submit {
+     color: {{ section.settings.button_search_color }};
+   }
+      
+   #section-{{ section.id }} .searchform-2 .searchform__submit:hover {
+     color: {{ section.settings.button_search_hover_color }};
+   }
+  
+    #section-{{ section.id }} .header-component__item > a {
+    color: {{ section.settings.currency_title_color }};
+    }
+    #section-{{ section.id }}  .header-component__menu li a {
+    color: {{ section.settings.currency_submenu_color }};
+}
+    
+  </style>

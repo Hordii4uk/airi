@@ -1,0 +1,713 @@
+<div class="banner-area" id="section-{{ section.id }}">
+  <div class="{% if section.settings.container_style == 'style_1' %}container {% else %} container-fluid{% endif %}">
+    {% if section.settings.section_title != '' or section.settings.section_description != '' %}
+    <div class="row mb--35 mb-md--25">
+      <div class="col-12 text-{% if section.settings.text_style == 'text_style_left' %}left{% elsif section.settings.text_style == 'text_style_center' %}center{% elsif section.settings.text_style == 'text_style_right' %}right{% endif %}">
+        <div class="tex-block">
+          <h2 class="heading-secondary">{{ section.settings.section_title }}</h2>
+          {% if section.settings.section_title_border %}
+          <hr class="separator separator--2 mt--25 mt-md--15 mb--30 mb-md--20">
+          {% endif %}
+          <p class="font-size-16">{{ section.settings.section_description }}</p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    <div class="row row-5">
+      {% for block in section.blocks %}
+      {% case block.type %}
+      {% when 'banner' %}
+      <div class="col-md-{{ block.settings.banner_coloum }}" id="block-{{ block.id }}">
+        <div class="banner-box banner-type-8 banner-hover-3 mb-sm--10">
+          <div class="banner-inner">
+            <div class="banner-image">
+              <img src="{% if block.settings.banner_img %}{{ block.settings.banner_img | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/690x580{% endif %}" alt="{{ block.settings.banner_img.alt }}">
+            </div>
+            {% if  block.settings.banner_title != '' %}
+            <div class="banner-info">
+              <a href="{{ block.settings.banner_title_url }}" class="banner-btn banner-btn-4">{{ block.settings.banner_title }} <i class="dl-icon-right"></i></a>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% when 'double_banner' %}
+      <div class="col-md-{{ block.settings.double_banner_coloum }}" id="block-{{ block.id }}">
+        <div class="banner-box banner-type-8 banner-hover-3 mb--10">
+          <div class="banner-inner">
+            <div class="banner-image">
+              <img src="{% if block.settings.banner_img_1 %}{{ block.settings.banner_img_1 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/690x290{% endif %}" alt="{{ block.settings.banner_img_1.alt }}">
+            </div>
+            {% if block.settings.banner_title_2 != '' %}
+            <div class="banner-info">
+              <a href="{{ block.settings.banner_title_url_2 }}" class="banner-btn banner-btn-4">{{ block.settings.banner_title_2 }} <i class="dl-icon-right"></i></a>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="banner-box banner-box-2  banner-type-8 banner-hover-3">
+          <div class="banner-inner">
+            <div class="banner-image">
+              <img src="{% if block.settings.banner_img_2 %}{{ block.settings.banner_img_2 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/690x290{% endif %}" alt="Banner">
+            </div>
+            {% if block.settings.banner_title_3 != '' %}
+            <div class="banner-info">
+              <a href="{{ block.settings.banner_title_url_3 }}" class="banner-btn banner-btn-4">{{ block.settings.banner_title_3 }} <i class="dl-icon-right"></i></a>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endcase %}
+      {% endfor %}
+    </div>
+    {% if section.settings.button_title != '' %}
+    <div class="row mt--40 mt-md--30">
+      <div class="col-12 text-center">
+        <a href="{{ section.settings.button_url }}" class="view-all">{{ section.settings.button_title }}</a>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+</div>
+
+
+
+{%- style -%}
+
+
+
+      {% for block in section.blocks %}
+      {% case block.type %}
+      {% when 'banner' %}
+
+
+#block-{{ block.id }} .banner-box .banner-btn{
+	    color: {{ block.settings.title_color }};
+		background-color: {{ block.settings.title_bg_color }};
+}
+
+#block-{{ block.id }} .banner-box.banner-hover-3:hover .banner-btn-4 {
+    color: {{ block.settings.title_hover_color }};
+    background-color: {{ block.settings.title_bg_hover_color }};
+}
+
+
+
+ {% when 'double_banner' %}
+
+
+
+#block-{{ block.id }} .banner-box .banner-btn{
+	    color: {{ block.settings.title_color }};
+		background-color: {{ block.settings.title_bg_color }};
+}
+
+#block-{{ block.id }} .banner-box.banner-hover-3:hover .banner-btn-4 {
+    color: {{ block.settings.title_hover_color }};
+    background-color: {{ block.settings.title_bg_hover_color }};
+}
+
+
+
+#block-{{ block.id }} .banner-box.banner-box-2 .banner-btn{
+	    color: {{ block.settings.title_2_color }};
+		background-color: {{ block.settings.title_bg_2_color }};
+}
+
+#block-{{ block.id }} .banner-box.banner-box-2.banner-hover-3:hover .banner-btn-4 {
+    color: {{ block.settings.title_2_hover_color }};
+    background-color: {{ block.settings.title_bg_2_hover_color }};
+}
+
+
+      {% endcase %}
+      {% endfor %}
+
+
+  #section-{{ section.id }}{
+    {%- for block in section.blocks -%}
+    {%- case block.type -%}
+    {%- when 'section_margin' -%}
+    margin-top: {{ block.settings.section_margin_top }}px;
+    margin-bottom: {{ block.settings.section_margin_bottom }}px;
+    {%- when 'section_padding' -%}
+    padding-top: {{ block.settings.section_padding_top }}px;
+    padding-bottom: {{ block.settings.section_padding_bottom }}px;
+    {%- when 'section_background' -%}    
+    background: {{ block.settings.section_bg_color }} 
+      {%- if block.settings.section_bg_image -%}url("{{ block.settings.section_bg_image | img_url: 'master' }}"){%- endif -%} no-repeat scroll center center / cover;
+    {%- endcase -%}
+    {%- endfor -%}
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {% case block.type %}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_md }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_md }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_md }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_md }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+  @media (max-width: 767px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {%- case block.type -%}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_xs }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_xs }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_xs }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_xs }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+
+
+#section-{{ section.id }} .heading-secondary {
+    color: {{ section.settings.section_title_color }};
+}
+
+#section-{{ section.id }} .separator {
+    border-color:{{ section.settings.section_border_color }};
+}
+
+#section-{{ section.id }} .tex-block p {
+    color: {{ section.settings.section_description_color }};
+}
+
+#section-{{ section.id }} a.view-all {
+    border-bottom: 1px solid {{ section.settings.button_border_color }};
+	color: {{ section.settings.button_text_color }};
+    }
+
+#section-{{ section.id }} a.view-all:hover {
+    border-bottom: 1px solid {{ section.settings.button_border_hover_color }};
+	color: {{ section.settings.button_text_hover_color }};
+    }
+
+
+
+{%- endstyle -%}
+
+
+
+
+{% schema %}
+  {
+    "name": "Banner Area 9",
+    "settings": [
+		{
+            "type": "header",
+            "content": "Container Style"
+        },
+        {
+            "type": "radio",
+            "id": "container_style",
+            "label": "Container Style",
+            "options":[
+               {
+                   "value":"style_1",
+                   "label": "Container"
+               },
+               {
+                   "value":"style_2",
+                   "label": "Container Fulied"
+               }
+             ],
+
+            "default": "style_2"
+        },
+		{
+		  "type": "header",
+          "content": "Section Heading"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "label": "Heading Text Align",
+          "options":[
+            {
+              "value":"text_style_left",
+              "label": "Left"
+            },
+            {
+              "value":"text_style_center",
+              "label": "center"
+            },
+            {
+              "value":"text_style_right",
+              "label": "right"
+            }
+          ],
+          "default": "text_style_center"
+        },
+		{
+          "type": "text",
+          "id": "section_title",
+          "label": "Section Title",
+          "default": "New Collections 2019"
+      	},
+		{
+          "type": "textarea",
+          "id": "section_description",
+          "label": "Section Description",
+          "default": "Integer ut ligula quis lectus fringilla elementum porttitor sed est. Duis fringilla efficitur ligula sed lobortis. Sed tempus faucibus mi, quis fringilla mauris lacinia se"
+      	},
+		{
+          "type": "header",
+          "content": "Section Title Border"
+        },
+        {
+          "type": "checkbox",
+          "id": "section_title_border",
+          "label": "Border Enable",
+          "default": false
+        },
+		{
+          "type": "header",
+          "content": "Button"
+        },
+		{
+          "type": "text",
+          "id": "button_title",
+          "label": "Button Title",
+          "default": "VIEW ALL COLLECTIONS"
+      	},
+		{
+          "type": "url",
+          "id": "button_url",
+          "label": "URL"
+      	},
+		{
+          "type": "header",
+          "content": "Color"
+        }, 
+        {
+           "type": "color",
+           "id": "section_title_color",
+           "label": "Section Title Color",
+           "default": "#282828"
+        }, 
+        {
+           "type": "color",
+           "id": "section_border_color",
+           "label": "Border Color",
+           "default": "#cf987e"
+        }, 
+        {
+           "type": "color",
+           "id": "section_description_color",
+           "label": "Section Description Color",
+           "default": "#8a8a8a"
+        },
+        {
+           "type": "color",
+           "id": "button_text_color",
+           "label": "Button Text Color",
+           "default": "#282828"
+        },  
+        {
+           "type": "color",
+           "id": "button_border_color",
+           "label": "Button Border Color",
+           "default": "#282828"
+        }, 
+        {
+           "type": "color",
+           "id": "button_text_hover_color",
+           "label": "Button Text Hover Color",
+           "default": "#cf987e"
+        }, 
+        {
+           "type": "color",
+           "id": "button_border_hover_color",
+           "label": "Button Border Hover Color",
+           "default": "#cf987e"
+        }
+	],
+	"blocks":[
+       {
+           "type": "banner",
+           "name": "Banner",
+           "settings": [
+              {
+                  "type": "text",
+                  "id": "banner_coloum",
+                  "label": "Banner Column",
+                  "default": "6",
+                  "info": "Follow Bootstrap Column"
+              },
+              {
+                  "type": "image_picker",
+                  "id": "banner_img",
+                  "label": "Image",
+                  "info": "Recommended Size: 690 x 580"
+              },
+              {
+                  "type": "text",
+                  "id": "banner_sub_title",
+                  "label": "Banner SubTitle",
+                  "default": "Bed Room 2019"
+              },
+              {
+                  "type": "text",
+                  "id": "banner_title",
+                  "label": "Banner Title",
+                  "default": "Beutiful Living Room"
+              },
+              {
+                  "type": "url",
+                  "id": "banner_title_url",
+                  "label": "URL"
+              },
+              {
+                "type": "header",
+                "content": "Color"
+              }, 
+              {
+                 "type": "color",
+                 "id": "title_color",
+                 "label": "Title Color",
+                 "default": "#ffffff"
+              },  
+              {
+                 "type": "color",
+                 "id": "title_bg_color",
+                 "label": "Title BG Color",
+                 "default": "#282828"
+              },
+              {
+                 "type": "color",
+                 "id": "title_hover_color",
+                 "label": "Title Hover Color",
+                 "default": "#ffffff"
+              },  
+              {
+                 "type": "color",
+                 "id": "title_bg_hover_color",
+                 "label": "Title BG Hover Color",
+                 "default": "#282828"
+              }
+           ]
+       },
+	   {
+           "type": "double_banner",
+           "name": "Double Banner",
+           "settings": [
+              {
+                  "type": "text",
+                  "id": "double_banner_coloum",
+                  "label": "Double Banner Column",
+                  "default": "6",
+                  "info": "Follow Bootstrap Column"
+              },
+              {
+                "type": "header",
+                "content": "Image 1"
+              },
+              {
+                  "type": "image_picker",
+                  "id": "banner_img_1",
+                  "label": "Image",
+                  "info": "Recommended Size: 690 x 290"
+              },
+              {
+                  "type": "text",
+                  "id": "banner_title_2",
+                  "label": "Banner Title",
+                  "default": "Home Decoration"
+              },
+              {
+                  "type": "url",
+                  "id": "banner_title_url_2",
+                  "label": "Shop Now"
+              },
+              {
+                "type": "header",
+                "content": "Color"
+              }, 
+              {
+                 "type": "color",
+                 "id": "title_color",
+                 "label": "Title Color",
+                 "default": "#ffffff"
+              },  
+              {
+                 "type": "color",
+                 "id": "title_bg_color",
+                 "label": "Title BG Color",
+                 "default": "#282828"
+              },
+              {
+                 "type": "color",
+                 "id": "title_hover_color",
+                 "label": "Title Hover Color",
+                 "default": "#ffffff"
+              },  
+              {
+                 "type": "color",
+                 "id": "title_bg_hover_color",
+                 "label": "Title BG Hover Color",
+                 "default": "#282828"
+              },
+              {
+                "type": "header",
+                "content": "Image 2"
+              },
+              {
+                  "type": "image_picker",
+                  "id": "banner_img_2",
+                  "label": "Image",
+                  "info": "Recommended Size: 690 x 290"
+              },
+              {
+                  "type": "text",
+                  "id": "banner_title_3",
+                  "label": "Banner Title",
+                  "default": "Bath Room 2019"
+              },
+              {
+                  "type": "url",
+                  "id": "banner_title_url_3",
+                  "label": "Shop Now"
+              },
+              {
+                "type": "header",
+                "content": "Color"
+              }, 
+              {
+                 "type": "color",
+                 "id": "title_2_color",
+                 "label": "Title Color",
+                 "default": "#ffffff"
+              },  
+              {
+                 "type": "color",
+                 "id": "title_bg_2_color",
+                 "label": "Title BG Color",
+                 "default": "#282828"
+              },
+              {
+                 "type": "color",
+                 "id": "title_2_hover_color",
+                 "label": "Title Hover Color",
+                 "default": "#ffffff"
+              },  
+              {
+                 "type": "color",
+                 "id": "title_bg_2_hover_color",
+                 "label": "Title BG Hover Color",
+                 "default": "#282828"
+              }
+           ]
+       },
+	   {
+          "type": "section_padding",
+          "name": "Section Padding",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 100
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 80
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 60
+			}
+          ]
+       },
+	   {
+          "type": "section_margin",
+          "name": "Section Margin",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			}
+          ]
+       },
+	   {
+          "type": "section_background",
+          "name": "Section Background",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "image_picker",
+			  "id": "section_bg_image",
+			  "label": "BG Image"
+			},
+			{
+			  "type": "color",
+			  "id": "section_bg_color",
+			  "label": "BG Color",
+			  "default": "#ffffff"
+			}
+          ]
+       }
+	],
+	"presets": [
+		{
+		  "name": "Banner Area 9",
+		  "category": " banner",
+		  "blocks":[
+				{
+					"type": "banner"
+				},
+				{
+					"type": "double_banner"
+				},
+				{
+					"type": "section_padding"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

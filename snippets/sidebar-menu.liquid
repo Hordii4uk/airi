@@ -1,0 +1,70 @@
+<!-- Side Navigation Start -->
+<aside class="side-navigation" id="sideNav">
+  <div class="side-navigation-wrapper">
+    <a href="" class="btn-close"><i class="dl-icon-close"></i></a>
+    <div class="side-navigation-inner">
+      
+      {% if section.settings.sideber_nemu_enable %}
+      <div class="widget">
+        <ul class="sidenav-menu">
+          {% assign sidebar_menu_handle = section.settings.sidebar_menu %}
+          {% for link in linklists[sidebar_menu_handle].links %}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+        {% endif %}
+      
+      {% if section.settings.payment_enable %}
+      <div class="widget pt--30 pr--20">
+        <div class="text-widget">
+          <p>
+            <img src="{% if section.settings.payment_logo %}{{ section.settings.payment_logo | img_url: 'master' }}{% endif %}" alt="{{ payment_logo.alt }}">
+          </p>
+          <p>{{ section.settings.payment_description }}</p>
+        </div>
+      </div>
+       {% endif %}
+      
+      {% if section.settings.contact_enable %}
+      <div class="widget">
+        <div class="text-widget">
+          <p>
+            <a href="{{ section.settings.phone_number }}">{{ section.settings.phone_number }}</a>
+            <a href="{{ section.settings.email_id }}">{{ section.settings.email_id }}</a>
+            {{ section.settings.address }}
+          </p>
+        </div>
+      </div>
+      {% endif %}
+      {% if section.settings.google_map_enable %}
+      <div class="widget">
+        <div class="text-widget google-map-link">
+          <p>
+            <a href="{{ section.settings.google_map_url}}" target="_blank">{{ section.settings.google_map_title }}</a>
+          </p>
+        </div>
+      </div>
+      {% endif %}
+      {% if section.settings.social_icon_enable %}
+      <div class="widget">
+        <div class="text-widget">
+          <!-- Social Icons Start Here -->
+          <ul class="social social-small">
+            {% include 'header-social-area' %}
+          </ul>
+          <!-- Social Icons End Here -->
+        </div>
+      </div>
+      {% endif %}
+      {% if section.settings.copy_right_header_enable %}
+      <div class="widget">
+        <div class="text-widget">
+          <div class="copyright-text">{{ section.settings.copy_ritht_text_header }}</div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</aside>
+<!-- Side Navigation End -->

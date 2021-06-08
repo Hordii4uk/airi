@@ -1,0 +1,45 @@
+<ul class="grid-color-swatch">
+  {% for option in product.options %}
+  {% if option == 'Color' %}
+  {% assign index = forloop.index0 %}
+  {% assign colorlist = '' %}
+  {% assign color = '' %}
+  {% for variant in product.variants limit: 5 %}
+  {% capture color %}
+  {{ variant.options[index] }}
+  {% endcapture %}
+  {% unless colorlist contains color %}
+
+  {% assign text = color | handleize %}
+
+  <li>
+    <label style="{% if text == 'white' %}border: 1px solid #f1f1f1; {% endif %}background-color: {{ color | split: ' ' | last | handle }};"></label>
+
+    {% if variant.image != null %}
+    <div class="hidden">
+      <a href="{{ variant.image.src | product_img_url: 'large' }}"></a>
+    </div>
+    {% endif %}
+  </li>
+
+  {% capture tempList %}
+  {{ colorlist | append: color | append: ' ' }}
+  {% endcapture %}
+
+  {% assign colorlist = tempList %}
+  {% endunless %}
+
+  {% endfor %}
+  {% endif %}
+  {% endfor %}
+</ul>
+
+
+<script>
+  //grid-color-swatch
+  $('.product-color li label').hover(function(){
+    var variantImage = jQuery(this).parent().find('.hidden a').attr('href');
+    jQuery(this).parents('.product-wrapper').find('.product-img > a > img').attr({ src: variantImage }); 
+    return false;
+  });
+</script>

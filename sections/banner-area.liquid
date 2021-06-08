@@ -1,0 +1,626 @@
+
+<!-- Banner Start Here -->
+<div class="banner-area" id="section-{{ section.id }}">
+  <div class="{% if section.settings.container_style == 'style_1' %}container {% else %} container-fluid p-0{% endif %}">
+    <div class="row no-gutters">
+      {% for block in section.blocks %}
+      {% case block.type %}
+      {% when 'banner' %}
+      <div class="col-lg-{{ block.settings.banner_coloum }} col-md-6" id="block-{{ block.id }}">
+        <div class="banner-box banner-type-2 banner-hover-2">
+          <div class="banner-inner">
+            <div class="banner-image">
+              <img src="{% if block.settings.banner_img %}{{ block.settings.banner_img | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/480x630{% endif %}" alt="{{ block.settings.banner_img.alt }}">
+            </div>
+            {% if block.settings.banner_button != '' or block.settings.banner_text != '' %}
+            <div class="banner-info">
+              <a class="banner-btn-2" href="{{ block.settings.banner_button_url }}">
+                <span class="normal-view">{{ block.settings.banner_text }}</span>
+                <span class="hover-view">{{ block.settings.banner_button }}</span>
+              </a>
+            </div>
+            {% endif %}
+            {% if block.settings.banner_button != '' %}
+            <a class="banner-link banner-overlay" href="{{ block.settings.banner_button_url }}">{{ block.settings.banner_button }}</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% when 'double_banner' %}
+      <div class="col-lg-{{ block.settings.double_banner_coloum }} col-md-6" id="block-{{ block.id }}">
+        <div class="banner-box banner-type-2 banner-hover-2">
+          <div class="banner-inner">
+            <div class="banner-image">
+              <img src="{% if block.settings.banner_img_1 %}{{ block.settings.banner_img_1 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/480x320{% endif %}" alt="{{ block.settings.banner_img_1.alt }}">
+            </div>
+             {% if block.settings.banner_button_1 != '' or block.settings.banner_text_2 != '' %}
+            <div class="banner-info">
+              <a class="banner-btn-2" href="{{ block.settings.banner_button_1_url }}">
+                <span class="normal-view">{{ block.settings.banner_text_2 }}</span>
+                <span class="hover-view">{{ block.settings.banner_button_1 }}</span>
+              </a>
+            </div>
+             {% endif %}
+            {% if block.settings.banner_button_1 != '' %}
+            <a class="banner-link banner-overlay" href="{{ block.settings.banner_button_1_url }}">{{ block.settings.banner_button_1 }}</a>
+              {% endif %}
+          </div>
+        </div>
+        <div class="banner-box banner-type-2 banner-hover-2">
+          <div class="banner-inner">
+            <div class="banner-image">
+              <img src="{% if block.settings.banner_img_2 %}{{ block.settings.banner_img_2 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/480x320{% endif %}" alt="{{ block.settings.banner_img_2.alt }}">
+            </div>
+             {% if block.settings.banner_button_2 != '' or block.settings.banner_text_2 != '' %}
+            <div class="banner-info">
+              <a class="banner-btn-2" href="{{ block.settings.banner_button_2_url }}">
+                <span class="normal-view">{{ block.settings.banner_text_3 }}</span>
+                <span class="hover-view">{{ block.settings.banner_button_2 }}</span>
+              </a>
+            </div>
+                   {% endif %}
+            {% if block.settings.banner_button_2 != '' %}
+            <a class="banner-link banner-overlay" href="{{ block.settings.banner_button_2_url }}">{{ block.settings.banner_button_2 }}</a>
+              {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<!-- Banner End Here -->
+
+
+
+
+{%- style -%}
+
+
+  {% for block in section.blocks %}
+      {% case block.type %}
+      {% when 'banner' %}
+
+#block-{{ block.id }} .banner-btn-2 {
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+}
+
+#block-{{ block.id }} .banner-box.banner-type-2:hover .banner-btn-2 {
+    background: {{ block.settings.button_hover_bg_color }};
+ 	color: {{ block.settings.button_hover_text_color }};
+}
+
+#block-{{ block.id }} .banner-box.banner-type-2 .banner-image:after {
+    border-color: {{ block.settings.image_hover_border_color }};
+}
+
+
+{% when 'double_banner' %}
+
+
+
+#block-{{ block.id }} .banner-btn-2 {
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+}
+
+#block-{{ block.id }} .banner-box.banner-type-2:hover .banner-btn-2 {
+    background: {{ block.settings.button_hover_bg_color }};
+ 	color: {{ block.settings.button_hover_text_color }};
+}
+
+#block-{{ block.id }} .banner-box.banner-type-2 .banner-image:after {
+     border-color: {{ block.settings.image_hover_border_color }};
+}
+
+
+#block-{{ block.id }} .banner-type-3 .banner-btn-2 {
+    background-color: {{ block.settings.button_bg_2_color }};
+    color: {{ block.settings.button_text_2_color }};
+}
+
+#block-{{ block.id }} .banner-box.banner-type-2.banner-type-3:hover .banner-btn-2 {
+    background: {{ block.settings.button_hover_bg_2_color }};
+ 	color: {{ block.settings.button_hover_text_2_color }};
+}
+
+#block-{{ block.id }} .banner-box.banner-type-2.banner-type-3 .banner-image:after {
+     border-color: {{ block.settings.image_hover_border_color }};
+}
+
+
+
+      {% endcase %}
+      {% endfor %}
+
+  #section-{{ section.id }}{
+    {%- for block in section.blocks -%}
+    {%- case block.type -%}
+    {%- when 'section_margin' -%}
+    margin-top: {{ block.settings.section_margin_top }}px;
+    margin-bottom: {{ block.settings.section_margin_bottom }}px;
+    {%- when 'section_padding' -%}
+    padding-top: {{ block.settings.section_padding_top }}px;
+    padding-bottom: {{ block.settings.section_padding_bottom }}px;
+    {%- when 'section_background' -%}    
+    background: {{ block.settings.section_bg_color }} 
+      {%- if block.settings.section_bg_image -%}url("{{ block.settings.section_bg_image | img_url: 'master' }}"){%- endif -%} no-repeat scroll center center / cover;
+    {%- endcase -%}
+    {%- endfor -%}
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {% case block.type %}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_md }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_md }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_md }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_md }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+  @media (max-width: 767px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {%- case block.type -%}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_xs }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_xs }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_xs }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_xs }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+
+
+
+{%- endstyle -%}
+
+
+{% schema %}
+  {
+    "name": "Banner Area",
+    "settings": [
+		{
+            "type": "header",
+            "content": "Container Style"
+        },
+        {
+            "type": "radio",
+            "id": "container_style",
+            "label": "Container Style",
+            "options":[
+               {
+                   "value":"style_1",
+                   "label": "Container"
+               },
+               {
+                   "value":"style_2",
+                   "label": "Container Fluid"
+               }
+             ],
+
+            "default": "style_2"
+        }
+	],
+	"blocks":[
+       {
+           "type": "banner",
+           "name": "Banner",
+           "settings": [
+              {
+                  "type": "text",
+                  "id": "banner_coloum",
+                  "label": "Banner Column",
+                  "default": "3",
+                  "info": "Follow Bootstrap Column"
+              },
+              {
+                  "type": "image_picker",
+                  "id": "banner_img",
+                  "label": "Image",
+                  "info": "Recommended Size: 480 x 630px"
+              },
+              {
+                  "type": "text",
+                  "id": "banner_text",
+                  "label": "Banner Title",
+                  "default": "Autumn/Winter 2018"
+              },
+              {
+                  "type": "text",
+                  "id": "banner_button",
+                  "label": "Button Title",
+                  "default": "Shop Now"
+              },
+              {
+                  "type": "url",
+                  "id": "banner_button_url",
+                  "label": "URL"
+              },
+              {
+                "type": "header",
+                "content": "Color"
+              }, 
+              {
+                 "type": "color",
+                 "id": "image_hover_border_color",
+                 "label": "Image Hover Border Color",
+                 "default": "#fff"
+              },  
+              {
+                 "type": "color",
+                 "id": "button_text_color",
+                 "label": "Button Text Color",
+                 "default": "#282828"
+              }, 
+              {
+                 "type": "color",
+                 "id": "button_bg_color",
+                 "label": "Button BG Color",
+                 "default": "#fff"
+              }, 
+              {
+                 "type": "color",
+                 "id": "button_hover_text_color",
+                 "label": "Button Text Hover Color",
+                 "default": "#fff"
+              }, 
+              {
+                 "type": "color",
+                 "id": "button_hover_bg_color",
+                 "label": "Button BG Hover Color",
+                 "default": "#282828"
+              }
+           ]
+         },
+         {
+           "type": "double_banner",
+           "name": "Double Banner",
+           "settings": [
+              {
+                  "type": "text",
+                  "id": "double_banner_coloum",
+                  "label": "Banner Column",
+                  "default": "3",
+                  "info": "Follow Bootstrap Column"
+              },
+        	  {
+                  "type": "header",
+                  "content": "Image 1"
+              },
+              {
+                  "type": "image_picker",
+                  "id": "banner_img_1",
+                  "label": "Image",
+                  "info": "Recommended Size: 285 x 220px"
+              },
+              {
+                  "type": "text",
+                  "id": "banner_text_2",
+                  "label": "Banner Title",
+                  "default": "Men Shoes 2018"
+              },
+              {
+                  "type": "text",
+                  "id": "banner_button_1",
+                  "label": "Button Title",
+                  "default": "Shop Now"
+              },
+              {
+                  "type": "url",
+                  "id": "banner_button_1_url",
+                  "label": "URL"
+              },
+              {
+                "type": "header",
+                "content": "Color"
+              }, 
+              {
+                 "type": "color",
+                 "id": "image_hover_border_color",
+                 "label": "Image Hover Border Color",
+                 "default": "#fff"
+              }, 
+              {
+                 "type": "color",
+                 "id": "button_text_color",
+                 "label": "Button Text Color",
+                 "default": "#282828"
+              }, 
+              {
+                 "type": "color",
+                 "id": "button_bg_color",
+                 "label": "Button BG Color",
+                 "default": "#fff"
+              }, 
+              {
+                 "type": "color",
+                 "id": "button_hover_text_color",
+                 "label": "Button Text Hover Color",
+                 "default": "#fff"
+              }, 
+              {
+                 "type": "color",
+                 "id": "button_hover_bg_color",
+                 "label": "Button BG Hover Color",
+                 "default": "#282828"
+              },
+        	  {
+                  "type": "header",
+                  "content": "Image 2"
+              },
+              {
+                  "type": "image_picker",
+                  "id": "banner_img_2",
+                  "label": "Image",
+                  "info": "Recommended Size: 285 x 220px"
+              },
+              {
+                  "type": "text",
+                  "id": "banner_text_3",
+                  "label": "Banner Title",
+                  "default": "Bags/New Arrival"
+              },
+              {
+                  "type": "text",
+                  "id": "banner_button_2",
+                  "label": "Button Title",
+                  "default": "Shop Now"
+              },
+              {
+                  "type": "url",
+                  "id": "banner_button_2_url",
+                  "label": "URL"
+              },
+              {
+                "type": "header",
+                "content": "Color"
+              }, 
+              {
+                 "type": "color",
+                 "id": "image_hover_border_2_color",
+                 "label": "Image Hover Border Color",
+                 "default": "#fff"
+              },  
+              {
+                 "type": "color",
+                 "id": "button_text_2_color",
+                 "label": "Button Text Color",
+                 "default": "#282828"
+              }, 
+              {
+                 "type": "color",
+                 "id": "button_bg_2_color",
+                 "label": "Button BG Color",
+                 "default": "#fff"
+              }, 
+              {
+                 "type": "color",
+                 "id": "button_hover_text_2_color",
+                 "label": "Button Text Hover Color",
+                 "default": "#fff"
+              }, 
+              {
+                 "type": "color",
+                 "id": "button_hover_bg_2_color",
+                 "label": "Button BG Hover Color",
+                 "default": "#282828"
+              }
+           ]
+       },
+	   {
+          "type": "section_padding",
+          "name": "Section Padding",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 100
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 80
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 60
+			}
+          ]
+       },
+	   {
+          "type": "section_margin",
+          "name": "Section Margin",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			}
+          ]
+       },
+	   {
+          "type": "section_background",
+          "name": "Section Background",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "image_picker",
+			  "id": "section_bg_image",
+			  "label": "BG Image"
+			},
+			{
+			  "type": "color",
+			  "id": "section_bg_color",
+			  "label": "BG Color",
+			  "default": "#ffffff"
+			}
+          ]
+       }
+	],
+	"presets": [
+		{
+		  "name": "Banner Area",
+		  "category": " banner",
+		  "blocks":[
+				{
+					"type": "banner"
+				},
+				{
+					"type": "banner"
+				},
+				{
+					"type": "double_banner"
+				},
+				{
+					"type": "banner"
+				},
+				{
+					"type": "section_padding"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,27 @@
+<article class="post post-listview">
+  <div class="post-media">
+    <div class="image">
+      <a href="{{ article.url }}">
+        <img src="{{ article | img_url : '1024x1024', crop: 'center' }}" alt="{{ article.alt }}">
+      </a>
+    </div>
+  </div>
+  <div class="post-info post-info--3">
+    <h3 class="post-title">
+      <a href="{{ article.url }}">{{ article.title }}</a>
+    </h3>
+    <div class="post-meta">
+        <span class="posted-on" tabindex="0">{{ article.published_at | date: "%b, %d , %y" }}</span>
+        <span class="meta-separator">-</span>
+      <span  class="posted-by" tabindex="0">{{ article.author }}</span>
+    </div>
+    <div class="post-content">
+      {% if article.excerpt.size > 0 %}
+      {{ article.excerpt }}
+      {% else %}
+      <p>{{ article.content | strip_html | truncatewords: 50 }}</p>
+      {% endif %}
+    </div>
+    <a href="{{ article.url }}" class="read-more-btn">{{ 'blogs.article.read_more' | t }}</a>
+  </div>
+</article>

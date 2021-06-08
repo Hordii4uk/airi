@@ -1,0 +1,479 @@
+
+<!-- Banner Area Start -->
+<div class="banner-area" id="section-{{ section.id }}">
+  <div class="{% if section.settings.container_style == 'style_1' %}container {% else %} container-fluid p-0{% endif %}">
+    <div class="row no-gutters">
+      {% for block in section.blocks %}
+      {% case block.type %}
+      {% when 'banner' %}
+      <div class="col-md-{{ block.settings.banner_coloum }}" id="block-{{ block.id }}">
+        <div class="banner-box banner-type-1 banner-hover-1">
+          <div class="banner-inner">
+            <div class="banner-image">
+              <img src="{% if block.settings.banner_img %}{{ block.settings.banner_img | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/510x545{% endif %}" alt="{{ block.settings.banner_img.alt }}">
+            </div>
+            {% if block.settings.banner_title != '' %}
+            <div class="banner-info">
+              <a class="banner-btn" href="{{ block.settings.banner_title_url }}">{{ block.settings.banner_title }}</a>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% when 'double_banner' %}
+      <div class="col-md-{{ block.settings.double_banner_coloum }}" id="block-{{ block.id }}">
+        <div class="banner-box banner-type-1 banner-hover-1">
+          <div class="banner-inner">
+            <div class="banner-image">
+              <img src="{% if block.settings.banner_img_1 %}{{ block.settings.banner_img_1 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/510x270{% endif %}" alt="{{ block.settings.banner_img_1.alt }}">
+            </div>
+            {% if block.settings.banner_title_2 != '' %}
+            <div class="banner-info">
+              <a class="banner-btn" href="{{ block.settings.banner_title_url_2 }}">{{ block.settings.banner_title_2 }}</a>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="banner-box banner-box-2 banner-type-1 banner-hover-1">
+          <div class="banner-inner">
+            <div class="banner-image">
+              <img src="{% if block.settings.banner_img_2 %}{{ block.settings.banner_img_2 | img_url: 'master' }}{% else %}http:\/\/via.placeholder.com\/510x270{% endif %}" alt="{{ block.settings.banner_img_2.alt }}">
+            </div>
+            {% if block.settings.banner_title_2 != '' %}
+            <div class="banner-info">
+              <a class="banner-btn" href="{{ block.settings.banner_title_url_3 }}">{{ block.settings.banner_title_3 }}</a>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<!-- Banner Area End -->
+
+
+{%- style -%}
+
+    {% for block in section.blocks %}
+      {% case block.type %}
+      {% when 'banner' %}
+#block-{{ block.id }} .banner-box .banner-btn{
+	color: {{ block.settings.title_color }};
+}
+
+      {% when 'double_banner' %}
+
+#block-{{ block.id }} .banner-box .banner-btn{
+	color: {{ block.settings.title_color }};
+}
+#block-{{ block.id }} .banner-box.banner-box-2 .banner-btn{
+	color: {{ block.settings.title_2_color }};
+}
+      {% endcase %}
+      {% endfor %}
+
+
+  #section-{{ section.id }}{
+    {%- for block in section.blocks -%}
+    {%- case block.type -%}
+    {%- when 'section_margin' -%}
+    margin-top: {{ block.settings.section_margin_top }}px;
+    margin-bottom: {{ block.settings.section_margin_bottom }}px;
+    {%- when 'section_padding' -%}
+    padding-top: {{ block.settings.section_padding_top }}px;
+    padding-bottom: {{ block.settings.section_padding_bottom }}px;
+    {%- when 'section_background' -%}    
+    background: {{ block.settings.section_bg_color }} 
+      {%- if block.settings.section_bg_image -%}url("{{ block.settings.section_bg_image | img_url: 'master' }}"){%- endif -%} no-repeat scroll center center / cover;
+    {%- endcase -%}
+    {%- endfor -%}
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {% case block.type %}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_md }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_md }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_md }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_md }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+  @media (max-width: 767px) {
+    #section-{{ section.id }}{
+      {%- for block in section.blocks -%}
+      {%- case block.type -%}
+      {%- when 'section_margin' -%}
+      margin-top: {{ block.settings.section_margin_top_xs }}px;
+      margin-bottom: {{ block.settings.section_margin_bottom_xs }}px;
+      {%- when 'section_padding' -%}
+      padding-top: {{ block.settings.section_padding_top_xs }}px;
+      padding-bottom: {{ block.settings.section_padding_bottom_xs }}px;
+      {%- endcase -%}
+      {%- endfor -%}
+    }
+  }
+
+
+
+
+
+
+{%- endstyle -%}
+
+
+
+
+{% schema %}
+  {
+    "name": "Banner Area 3",
+    "settings": [
+		{
+            "type": "header",
+            "content": "Container Style"
+        },
+        {
+            "type": "radio",
+            "id": "container_style",
+            "label": "Container Style",
+            "options":[
+               {
+                   "value":"style_1",
+                   "label": "Container"
+               },
+               {
+                   "value":"style_2",
+                   "label": "Container Fluid"
+               }
+             ],
+
+            "default": "style_2"
+        }
+	],
+	"blocks":[
+       {
+           "type": "banner",
+           "name": "Banner",
+           "settings": [
+              {
+                  "type": "text",
+                  "id": "banner_coloum",
+                  "label": "Banner Column",
+                  "default": "4",
+                  "info": "Follow Bootstrap Column"
+              },
+              {
+                  "type": "image_picker",
+                  "id": "banner_img",
+                  "label": "Image",
+                  "info": "Recommended Size: 510 x 545px"
+              },
+              {
+                  "type": "text",
+                  "id": "banner_title",
+                  "label": "Banner Title",
+                  "default": "Collections"
+              },
+              {
+                  "type": "url",
+                  "id": "banner_title_url",
+                  "label": "URL"
+              },
+              {
+                "type": "header",
+                "content": "Color"
+              },
+              {
+                 "type": "color",
+                 "id": "title_color",
+                 "label": "Title Color",
+                 "default": "#ffffff"
+              }
+           ]
+       },
+	   {
+           "type": "double_banner",
+           "name": "Double Banner",
+           "settings": [
+              {
+                  "type": "text",
+                  "id": "double_banner_coloum",
+                  "label": "Double Banner Column",
+                  "default": "4",
+                  "info": "Follow Bootstrap Column"
+              },
+              {
+                "type": "header",
+                "content": "Image 1"
+              },
+              {
+                  "type": "image_picker",
+                  "id": "banner_img_1",
+                  "label": "Image",
+                  "info": "Recommended Size: 510 x 270px"
+              },
+              {
+                  "type": "text",
+                  "id": "banner_title_2",
+                  "label": "Banner Title",
+                  "default": "Collections"
+              },
+              {
+                  "type": "url",
+                  "id": "banner_title_url_2",
+                  "label": "URL"
+              },
+              {
+                "type": "header",
+                "content": "Color"
+              },
+              {
+                 "type": "color",
+                 "id": "title_color",
+                 "label": "Title Color",
+                 "default": "#ffffff"
+              },
+              {
+                "type": "header",
+                "content": "Image 2"
+              },
+              {
+                  "type": "image_picker",
+                  "id": "banner_img_2",
+                  "label": "Image",
+                  "info": "Recommended Size: 510 x 270px"
+              },
+              {
+                  "type": "text",
+                  "id": "banner_title_3",
+                  "label": "Banner Title",
+                  "default": "Collections"
+              },
+              {
+                  "type": "url",
+                  "id": "banner_title_url_3",
+                  "label": "URL"
+              },
+              {
+                "type": "header",
+                "content": "Color"
+              },
+              {
+                 "type": "color",
+                 "id": "title_2_color",
+                 "label": "Title Color",
+                 "default": "#ffffff"
+              }
+           ]
+       },
+	   {
+          "type": "section_padding",
+          "name": "Section Padding",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 100
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 80
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 60
+			}
+          ]
+       },
+	   {
+          "type": "section_margin",
+          "name": "Section Margin",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			}
+          ]
+       },
+	   {
+          "type": "section_background",
+          "name": "Section Background",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "image_picker",
+			  "id": "section_bg_image",
+			  "label": "BG Image"
+			},
+			{
+			  "type": "color",
+			  "id": "section_bg_color",
+			  "label": "BG Color",
+			  "default": "#ffffff"
+			}
+          ]
+       }
+	],
+	"presets": [
+		{
+		  "name": "Banner Area 3",
+		  "category": " banner",
+		  "blocks":[
+				{
+					"type": "banner"
+				},
+				{
+					"type": "double_banner"
+				},
+				{
+					"type": "banner"
+				},
+				{
+					"type": "section_padding"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

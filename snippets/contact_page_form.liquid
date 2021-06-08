@@ -1,0 +1,32 @@
+
+
+{% form 'contact' %}
+{% if form.posted_successfully? %}
+<p class="note form-success">{{ 'contact.form.post_success' | t }}</p>
+{% endif %}
+{{ form.errors | default_errors }}
+{% if section.settings.contact_form_title != '' %}
+<h2 class="heading-secondary mb--50 mb-md--35 mb-sm--20">{{ section.settings.contact_form_title }}</h2>
+{% endif %}
+<!-- Contact form Start Here -->
+<div class="form"  id="contact-form">
+  <div class="form__group mb--20">
+    <input type="text" id="ContactFormName" name="contact[name]" class="form__input form__input--2 {% if form.errors contains 'name' %}error{% endif %}" placeholder="{{ section.settings.name_placeholder }}" value="{% if form.name %}{{ form.name }}{% elsif customer.name %}{{ customer.name }}{% endif %}">
+  </div>
+  <div class="form__group mb--20">
+    <input type="email" name="contact[email]" id="ContactFormEmail" class="form__input form__input--2 {% if form.errors contains 'email' %}error{% endif %}" placeholder="{{ section.settings.email_placeholder }}" value="{% if form.email %}{{ form.email }}{% elsif customer.email %}{{ customer.email }}{% endif %}">
+  </div>
+  <div class="form__group mb--20">
+    <input type="text" id="contactSubject" name="contact[subject]" class="form__input form__input--2 {% if form.error contains 'email' %}error{% endif %}" placeholder="{{ section.settings.subject_placeholder }}" value="{% if form.subject %}{{ form.subject }}{% elsif customer %}{{ customer.subject }}{% endif %}">
+  </div>
+  <div class="form__group mb--20">
+    <textarea class="form__input form__input--textarea" name="contact[body]" id="ContactFormMessage" placeholder="{{ section.settings.message_placeholder }}">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+  </div>
+  <div class="form__group">
+    <input type="submit" value="{{ section.settings.button_title }}" class="btn btn-submit btn-style-1">
+  </div>
+  <div class="form__output"></div>
+</div>
+<!-- Contact form end Here -->
+
+{% endform %}

@@ -1,0 +1,28 @@
+
+<article class="blog blog-list blog-list-small mb--40 mb-md--30">
+  <div class="blog-media">
+    <div class="image">
+      <a href="{{ article.url }}" class="blog-link-overlay">
+        <img src="{{ article | img_url : '180X220', crop: 'center' }}" alt="{{ article.alt }}">
+      </a>
+    </div>
+  </div>
+  <div class="blog-info">
+    <div class="blog-entry-meta">
+        <span class="posted-on" tabindex="0">{{ article.published_at | date: "%b, %d , %y" }}</span>
+        <span class="meta-separator">-</span>
+      <span  class="posted-by" tabindex="0">{{ article.author }}</span>
+    </div>
+    <h3 class="blog-title">
+      <a href="{{ article.url }}">{{ article.title }}</a>
+    </h3>
+        {% if article.excerpt.size > 0 %}
+    {{ article.excerpt }}
+    {% else %}
+    <p class="blog__excerpt">{{ article.content | strip_html | truncatewords: 20 }}</p>
+     {% endif %}
+    
+    <a href="{{ article.url }}" class="btn btn-medium btn-color-black btn-bordered-3">{{ 'blogs.article.read_more' | t }}</a>
+    
+  </div>
+</article>
